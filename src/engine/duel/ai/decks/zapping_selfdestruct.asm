@@ -32,37 +32,37 @@ AIActionTable_ZappingSelfdestruct:
 	ret
 
 .list_arena
-	db KANGASKHAN
 	db ELECTABUZZ_LV35
-	db TAUROS
 	db MAGNEMITE_LV13
 	db VOLTORB
+	db KANGASKHAN
 	db $00
 
 .list_bench
 	db MAGNEMITE_LV13
 	db VOLTORB
 	db ELECTABUZZ_LV35
-	db TAUROS
 	db KANGASKHAN
 	db $00
 
 .list_retreat
-	ai_retreat VOLTORB, -1
+	ai_retreat VOLTORB,        -2
+	ai_retreat MAGNEMITE_LV13, -1
 	db $00
 
 .list_energy
-	ai_energy MAGNEMITE_LV13,  3, +1
-	ai_energy MAGNETON_LV28,   4, +0
+	ai_energy MAGNEMITE_LV13,  1, -1
+	ai_energy MAGNETON_LV28,   3, +1
+	ai_energy MAGNETON_LV35,   3, +1
 	ai_energy VOLTORB,         3, +1
 	ai_energy ELECTRODE_LV35,  3, +0
-	ai_energy ELECTABUZZ_LV35, 1, +0
-	ai_energy KANGASKHAN,      2, -2
-	ai_energy TAUROS,          3, +0
+	ai_energy ELECTABUZZ_LV35, 2, +1
+	ai_energy KANGASKHAN,      4, +0
 	db $00
 
 .list_prize
-	db KANGASKHAN
+	db MAGNETON_LV35
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers

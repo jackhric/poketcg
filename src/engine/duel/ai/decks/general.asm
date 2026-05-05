@@ -170,7 +170,11 @@ AIProcessRetreat:
 	ld a, [wPreviousAIFlags]
 	and AI_FLAG_USED_SWITCH
 	jr nz, .used_switch
-; ... else try retreating normally.
+
+; ... no Switch in hand: try Energy Trans to power retreat,
+; then attempt to retreat normally.
+	ld a, AI_ENERGY_TRANS_RETREAT
+	farcall HandleAIEnergyTrans
 	ld a, [wAIPlayAreaCardToSwitch]
 	call AITryToRetreat
 	ret
@@ -180,7 +184,4 @@ AIProcessRetreat:
 	ld a, [wPreviousAIFlags]
 	and ~AI_FLAG_USED_SWITCH ; clear Switch flag
 	ld [wPreviousAIFlags], a
-
-	ld a, AI_ENERGY_TRANS_RETREAT
-	farcall HandleAIEnergyTrans
 	ret

@@ -32,8 +32,8 @@ AIActionTable_RockCrusher:
 	ret
 
 .list_arena
-	db RHYHORN
 	db ONIX
+	db RHYHORN
 	db GEODUDE
 	db DIGLETT
 	db $00
@@ -46,22 +46,24 @@ AIActionTable_RockCrusher:
 	db $00
 
 .list_retreat
-	ai_retreat DIGLETT, -1
+	ai_retreat DIGLETT,  -1
+	ai_retreat GEODUDE,  -1
 	db $00
 
 .list_energy
 	ai_energy DIGLETT,  3, +1
-	ai_energy DUGTRIO,  4, +0
-	ai_energy GEODUDE,  2, +1
+	ai_energy DUGTRIO,  4, +1
+	ai_energy GEODUDE,  2, +0
 	ai_energy GRAVELER, 3, +0
 	ai_energy GOLEM,    4, +0
-	ai_energy ONIX,     2, -1
+	ai_energy ONIX,     3, +1
 	ai_energy RHYHORN,  3, +0
+	ai_energy RHYDON,   4, +0
 	db $00
 
 .list_prize
-	db ENERGY_REMOVAL
-	db RHYHORN
+	db RHYDON
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers

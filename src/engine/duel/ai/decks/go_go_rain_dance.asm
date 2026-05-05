@@ -40,33 +40,31 @@ AIActionTable_GoGoRainDance:
 
 .list_bench
 	db SQUIRTLE
+	db LAPRAS
 	db HORSEA
 	db GOLDEEN
-	db LAPRAS
 	db $00
 
 .list_retreat
-	ai_retreat SQUIRTLE,  -3
+	ai_retreat SQUIRTLE,  -4
 	ai_retreat WARTORTLE, -2
 	ai_retreat HORSEA,    -1
 	db $00
 
 .list_energy
-	ai_energy SQUIRTLE,  2, +0
-	ai_energy WARTORTLE, 3, +0
-	ai_energy BLASTOISE, 5, +0
+	ai_energy SQUIRTLE,  1, -1
+	ai_energy WARTORTLE, 2, -1
+	ai_energy BLASTOISE, 5, -2
 	ai_energy GOLDEEN,   1, +0
-	ai_energy SEAKING,   2, +0
+	ai_energy SEAKING,   2, +1
 	ai_energy HORSEA,    2, +0
 	ai_energy SEADRA,    3, +0
-	ai_energy LAPRAS,    3, +0
+	ai_energy LAPRAS,    3, +1
 	db $00
 
 .list_prize
-	db GAMBLER
-	db ENERGY_RETRIEVAL
-	db SUPER_ENERGY_RETRIEVAL
 	db BLASTOISE
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers

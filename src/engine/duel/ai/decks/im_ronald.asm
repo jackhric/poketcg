@@ -33,41 +33,40 @@ AIActionTable_ImRonald:
 
 .list_arena
 	db LAPRAS
-	db SEEL
 	db CHARMANDER
 	db CUBONE
 	db SQUIRTLE
-	db GROWLITHE
 	db $00
 
 .list_bench
 	db CHARMANDER
 	db SQUIRTLE
-	db SEEL
 	db CUBONE
-	db GROWLITHE
 	db LAPRAS
 	db $00
 
 .list_retreat
+	ai_retreat CHARMANDER, -1
+	ai_retreat SQUIRTLE,   -1
+	ai_retreat CUBONE,     -1
 	db $00
 
 .list_energy
 	ai_energy CHARMANDER,     3, +0
-	ai_energy CHARMELEON,     5, +0
-	ai_energy GROWLITHE,      2, +0
-	ai_energy ARCANINE_LV45,  4, +0
+	ai_energy CHARMELEON,     4, +1
+	ai_energy CHARIZARD,      5, +1
 	ai_energy SQUIRTLE,       2, +0
 	ai_energy WARTORTLE,      3, +0
-	ai_energy SEEL,           3, +0
-	ai_energy DEWGONG,        4, +0
-	ai_energy LAPRAS,         3, +0
-	ai_energy CUBONE,         3, +0
-	ai_energy MAROWAK_LV26,   3, +0
+	ai_energy BLASTOISE,      4, +1
+	ai_energy LAPRAS,         3, +1
+	ai_energy CUBONE,         2, +0
+	ai_energy MAROWAK_LV26,   3, +1
 	db $00
 
 .list_prize
-	db LAPRAS
+	db CHARIZARD
+	db BLASTOISE
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers

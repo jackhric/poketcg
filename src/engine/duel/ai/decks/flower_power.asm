@@ -63,6 +63,7 @@ AIActionTable_FlowerPower:
 
 .list_prize
 	db VENUSAUR_LV67
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers
