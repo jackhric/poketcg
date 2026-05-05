@@ -34,38 +34,44 @@ AIActionTable_LegendaryArticuno:
 .list_arena
 	db CHANSEY
 	db LAPRAS
-	db DITTO
 	db SEEL
 	db ARTICUNO_LV35
 	db ARTICUNO_LV37
+	db MR_MIME
+	db TAUROS
 	db $00
 
 .list_bench
 	db ARTICUNO_LV35
-	db SEEL
+	db ARTICUNO_LV37
 	db LAPRAS
 	db CHANSEY
-	db DITTO
+	db MR_MIME
+	db SEEL
+	db TAUROS
 	db $00
 
 .list_retreat
-	ai_retreat SEEL,  -3
-	ai_retreat DITTO, -3
+	ai_retreat SEEL,    -3
+	ai_retreat MR_MIME, -3
+	ai_retreat TAUROS,  +1
 	db $00
 
 .list_energy
-	ai_energy SEEL,          3, +1
-	ai_energy DEWGONG,       4, +0
-	ai_energy LAPRAS,        3, +0
+	ai_energy SEEL,          1, +0
+	ai_energy DEWGONG,       4, +1
+	ai_energy LAPRAS,        3, +1
 	ai_energy ARTICUNO_LV35, 4, +1
-	ai_energy ARTICUNO_LV37, 3, +0
+	ai_energy ARTICUNO_LV37, 4, +1
 	ai_energy CHANSEY,       0, -8
-	ai_energy DITTO,         3, +0
+	ai_energy MR_MIME,       1, -2
+	ai_energy TAUROS,        3, +0
 	db $00
 
 .list_prize
-	db GAMBLER
 	db ARTICUNO_LV37
+	db PROFESSOR_OAK
+	db COMPUTER_SEARCH
 	db $00
 
 .store_list_pointers

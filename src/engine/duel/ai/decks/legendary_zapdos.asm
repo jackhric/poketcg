@@ -33,41 +33,40 @@ AIActionTable_LegendaryZapdos:
 
 .list_arena
 	db ELECTABUZZ_LV35
+	db MAGNEMITE_LV13
 	db VOLTORB
-	db EEVEE
-	db ZAPDOS_LV40
-	db ZAPDOS_LV64
 	db ZAPDOS_LV68
+	db ZAPDOS_LV64
 	db $00
 
 .list_bench
+	db ZAPDOS_LV68
 	db ZAPDOS_LV64
-	db ZAPDOS_LV40
-	db EEVEE
+	db MAGNEMITE_LV13
 	db VOLTORB
 	db ELECTABUZZ_LV35
 	db $00
 
 .list_retreat
-	ai_retreat EEVEE,           -5
 	ai_retreat VOLTORB,         -5
-	ai_retreat ELECTABUZZ_LV35, -5
+	ai_retreat MAGNEMITE_LV13,  -2
+	ai_retreat ELECTABUZZ_LV35, -3
 	db $00
 
 .list_energy
 	ai_energy VOLTORB,         1, -1
 	ai_energy ELECTRODE_LV35,  3, +0
-	ai_energy ELECTABUZZ_LV35, 2, -1
-	ai_energy JOLTEON_LV29,    3, +1
-	ai_energy ZAPDOS_LV40,     4, +2
-	ai_energy ZAPDOS_LV64,     4, +2
-	ai_energy ZAPDOS_LV68,     3, +1
-	ai_energy EEVEE,           3, +0
+	ai_energy MAGNEMITE_LV13,  1, -1
+	ai_energy MAGNETON_LV28,   3, +1
+	ai_energy ELECTABUZZ_LV35, 2, +1
+	ai_energy ZAPDOS_LV68,     4, +2
+	ai_energy ZAPDOS_LV64,     4, +1
 	db $00
 
 .list_prize
-	db GAMBLER
 	db ZAPDOS_LV68
+	db PROFESSOR_OAK
+	db COMPUTER_SEARCH
 	db $00
 
 .store_list_pointers

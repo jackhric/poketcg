@@ -2177,7 +2177,7 @@ ScytherCard:
 	db TYPE_PKMN_GRASS ; type
 	gfx ScytherCardGfx ; gfx
 	tx ScytherName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db COLOSSEUM | JUNGLE ; sets
 	db SCYTHER
 	db 70 ; hp
@@ -5594,7 +5594,7 @@ ElectabuzzLv35Card:
 	db TYPE_PKMN_LIGHTNING ; type
 	gfx ElectabuzzLv35CardGfx ; gfx
 	tx ElectabuzzName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db COLOSSEUM | NONE ; sets
 	db ELECTABUZZ_LV35
 	db 70 ; hp
@@ -6767,7 +6767,7 @@ HitmonchanCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx HitmonchanCardGfx ; gfx
 	tx HitmonchanName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db COLOSSEUM | NONE ; sets
 	db HITMONCHAN
 	db 70 ; hp
@@ -7736,7 +7736,7 @@ MrMimeCard:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx MrMimeCardGfx ; gfx
 	tx MrMimeName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db LABORATORY | JUNGLE ; sets
 	db MR_MIME
 	db 40 ; hp
@@ -8807,7 +8807,7 @@ WigglytuffCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx WigglytuffCardGfx ; gfx
 	tx WigglytuffName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db COLOSSEUM | JUNGLE ; sets
 	db WIGGLYTUFF
 	db 80 ; hp
@@ -9215,7 +9215,7 @@ ChanseyCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx ChanseyCardGfx ; gfx
 	tx ChanseyName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db COLOSSEUM | NONE ; sets
 	db CHANSEY
 	db 120 ; hp
@@ -9853,7 +9853,7 @@ ProfessorOakCard:
 	db TYPE_TRAINER ; type
 	gfx ProfessorOakCardGfx ; gfx
 	tx ProfessorOakName ; name
-	db DIAMOND ; rarity
+	db CIRCLE ; rarity
 	db COLOSSEUM | NONE ; sets
 	db PROFESSOR_OAK
 	dw ProfessorOakEffectCommands ; effect commands
@@ -9864,7 +9864,7 @@ ImposterProfessorOakCard:
 	db TYPE_TRAINER ; type
 	gfx ImposterProfessorOakCardGfx ; gfx
 	tx ImposterProfessorOakName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db LABORATORY | NONE ; sets
 	db IMPOSTER_PROFESSOR_OAK
 	dw ImposterProfessorOakEffectCommands ; effect commands
@@ -9897,7 +9897,7 @@ LassCard:
 	db TYPE_TRAINER ; type
 	gfx LassCardGfx ; gfx
 	tx LassName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db LABORATORY | NONE ; sets
 	db LASS
 	dw LassEffectCommands ; effect commands
@@ -9919,7 +9919,7 @@ PokemonTraderCard:
 	db TYPE_TRAINER ; type
 	gfx PokemonTraderCardGfx ; gfx
 	tx PokemonTraderName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db EVOLUTION | NONE ; sets
 	db POKEMON_TRADER
 	dw PokemonTraderEffectCommands ; effect commands
@@ -9930,7 +9930,7 @@ PokemonBreederCard:
 	db TYPE_TRAINER ; type
 	gfx PokemonBreederCardGfx ; gfx
 	tx PokemonBreederName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db EVOLUTION | NONE ; sets
 	db POKEMON_BREEDER
 	dw PokemonBreederEffectCommands ; effect commands
@@ -9963,7 +9963,7 @@ EnergyRetrievalCard:
 	db TYPE_TRAINER ; type
 	gfx EnergyRetrievalCardGfx ; gfx
 	tx EnergyRetrievalName ; name
-	db DIAMOND ; rarity
+	db CIRCLE ; rarity
 	db EVOLUTION | NONE ; sets
 	db ENERGY_RETRIEVAL
 	dw EnergyRetrievalEffectCommands ; effect commands
@@ -10007,7 +10007,7 @@ SuperEnergyRemovalCard:
 	db TYPE_TRAINER ; type
 	gfx SuperEnergyRemovalCardGfx ; gfx
 	tx SuperEnergyRemovalName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db LABORATORY | NONE ; sets
 	db SUPER_ENERGY_REMOVAL
 	dw SuperEnergyRemovalEffectCommands ; effect commands
@@ -10029,7 +10029,7 @@ PokemonCenterCard:
 	db TYPE_TRAINER ; type
 	gfx PokemonCenterCardGfx ; gfx
 	tx PokemonCenterName ; name
-	db DIAMOND ; rarity
+	db CIRCLE ; rarity
 	db MYSTERY | NONE ; sets
 	db POKEMON_CENTER
 	dw PokemonCenterEffectCommands ; effect commands
@@ -10051,7 +10051,7 @@ ScoopUpCard:
 	db TYPE_TRAINER ; type
 	gfx ScoopUpCardGfx ; gfx
 	tx ScoopUpName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db COLOSSEUM | NONE ; sets
 	db SCOOP_UP
 	dw ScoopUpEffectCommands ; effect commands
@@ -10062,7 +10062,7 @@ ComputerSearchCard:
 	db TYPE_TRAINER ; type
 	gfx ComputerSearchCardGfx ; gfx
 	tx ComputerSearchName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db COLOSSEUM | NONE ; sets
 	db COMPUTER_SEARCH
 	dw ComputerSearchEffectCommands ; effect commands
@@ -10073,7 +10073,7 @@ PokedexCard:
 	db TYPE_TRAINER ; type
 	gfx PokedexCardGfx ; gfx
 	tx PokedexName ; name
-	db DIAMOND ; rarity
+	db CIRCLE ; rarity
 	db LABORATORY | NONE ; sets
 	db POKEDEX
 	dw PokedexEffectCommands ; effect commands
@@ -10084,7 +10084,7 @@ PlusPowerCard:
 	db TYPE_TRAINER ; type
 	gfx PlusPowerCardGfx ; gfx
 	tx PlusPowerName ; name
-	db DIAMOND ; rarity
+	db CIRCLE ; rarity
 	db COLOSSEUM | NONE ; sets
 	db PLUSPOWER
 	dw PlusPowerEffectCommands ; effect commands
@@ -10095,7 +10095,7 @@ DefenderCard:
 	db TYPE_TRAINER ; type
 	gfx DefenderCardGfx ; gfx
 	tx DefenderName ; name
-	db DIAMOND ; rarity
+	db CIRCLE ; rarity
 	db COLOSSEUM | NONE ; sets
 	db DEFENDER
 	dw DefenderEffectCommands ; effect commands
@@ -10106,7 +10106,7 @@ ItemFinderCard:
 	db TYPE_TRAINER ; type
 	gfx ItemFinderCardGfx ; gfx
 	tx ItemFinderName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db COLOSSEUM | NONE ; sets
 	db ITEM_FINDER
 	dw ItemFinderEffectCommands ; effect commands
@@ -10128,7 +10128,7 @@ DevolutionSprayCard:
 	db TYPE_TRAINER ; type
 	gfx DevolutionSprayCardGfx ; gfx
 	tx DevolutionSprayName ; name
-	db STAR ; rarity
+	db DIAMOND ; rarity
 	db LABORATORY | NONE ; sets
 	db DEVOLUTION_SPRAY
 	dw DevolutionSprayEffectCommands ; effect commands
@@ -10183,7 +10183,7 @@ MaintenanceCard:
 	db TYPE_TRAINER ; type
 	gfx MaintenanceCardGfx ; gfx
 	tx MaintenanceName ; name
-	db DIAMOND ; rarity
+	db CIRCLE ; rarity
 	db LABORATORY | NONE ; sets
 	db MAINTENANCE
 	dw MaintenanceEffectCommands ; effect commands
