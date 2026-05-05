@@ -31,16 +31,22 @@ AIDecidePlayPokemonCard:
 	call AIDecidePlayLegendaryBirds
 
 ; if Play Area has more than 4 Pokémon, decrease AI score
-; else, increase AI score
+; else, increase AI score (more aggressively when bench is small)
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
-	cp 4
+	cp 5
 	jr c, .has_4_or_fewer
 	ld a, 20
 	call AIDiscourage
 	jr .check_defending_can_ko
 .has_4_or_fewer
-	ld a, 50
+	cp 3
+	jr nc, .moderate_bench_bonus
+	ld a, 70
+	call AIEncourage
+	jr .check_defending_can_ko
+.moderate_bench_bonus
+	ld a, 55
 	call AIEncourage
 
 ; if defending Pokémon can KO active card, increase AI score
@@ -80,10 +86,10 @@ AIDecidePlayPokemonCard:
 	ld a, 10
 	call AIEncourage
 
-; if AI score is >= 180, play card from hand
+; if AI score is >= 170, play card from hand
 .check_score
 	ld a, [wAIScore]
-	cp 180
+	cp 170
 	jr c, .skip
 	ld a, [wTempAIPokemonCard]
 	ldh [hTemp_ffa0], a
@@ -153,6 +159,13 @@ AIDecideEvolution:
 	ld a, b
 	ld [wTempAI], a
 	ldh [hTempPlayAreaLocation_ff9d], a
+
+	; store HP difference between cards
+	ld a, [wLoadedCard1HP] ; evolution card
+	ld hl, wLoadedCard2HP ; pre-evolution card
+	sub [hl]
+	ld [wEvolutionHPDifference], a
+
 	ld a, $80
 	ld [wAIScore], a
 	call AIDecideSpecialEvolutions
@@ -248,9 +261,21 @@ AIDecideEvolution:
 	ld a, [wTempAI]
 	or a
 	jr nz, .check_mr_mime
+	; temporarily change HP for damage check
+	ld a, DUELVARS_ARENA_CARD_HP
+	call GetTurnDuelistVariable
+	push af
+	push hl
+	ld b, a
+	ld a, [wEvolutionHPDifference]
+	add b
+	ld [hl], a
 	xor a ; PLAY_AREA_ARENA
 	ldh [hTempPlayAreaLocation_ff9d], a
 	call CheckIfDefendingPokemonCanKnockOut
+	pop hl
+	pop bc
+	ld [hl], b
 	jr nc, .check_mr_mime
 	ld a, 5
 	call AIDiscourage
@@ -331,7 +356,7 @@ AIDecideEvolution:
 	cp MYSTERIOUS_FOSSIL
 	jr z, .mysterious_fossil
 	ld a, [wLoadedCard1AIInfo]
-	; bug, should mask out HAS_EVOLUTION flag first
+	and $0f
 	cp AI_INFO_ENCOURAGE_EVO
 	jr nz, .pikachu_deck
 	ld a, 2
@@ -371,6 +396,15 @@ AIDecideEvolution:
 	ldh [hTemp_ffa0], a
 	ld a, OPPACTION_EVOLVE_PKMN
 	bank1call AIMakeDecision
+
+	; disregard PlusPower attack choice
+	; in case the Arena card evolved
+	ld a, [wTempAI]
+	or a
+	jr nz, .skip_reset_pluspower_atk
+	ld hl, wPreviousAIFlags
+	res 0, [hl] ; AI_FLAG_USED_PLUSPOWER
+.skip_reset_pluspower_atk
 	pop bc
 	jr .done_hand_card
 

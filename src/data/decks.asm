@@ -891,7 +891,7 @@ GrassAndPsychicDeck:
 
 LegendaryMoltresDeck:
 	deck_list_start
-	card_item FIRE_ENERGY,            25
+	card_item FIRE_ENERGY,            24
 	card_item VULPIX,                  4
 	card_item NINETALES_LV35,          3
 	card_item GROWLITHE,               4
@@ -900,7 +900,7 @@ LegendaryMoltresDeck:
 	card_item MAGMAR_LV31,             2
 	card_item MOLTRES_LV35,            2
 	card_item MOLTRES_LV37,            2
-	card_item BILL,                    3
+	card_item BILL,                    4
 	card_item LASS,                    2
 	card_item POKEMON_TRADER,          1
 	card_item ENERGY_RETRIEVAL,        1
@@ -914,7 +914,7 @@ LegendaryMoltresDeck:
 
 LegendaryZapdosDeck:
 	deck_list_start
-	card_item LIGHTNING_ENERGY, 25
+	card_item LIGHTNING_ENERGY, 24
 	card_item VOLTORB,           4
 	card_item ELECTRODE_LV35,    3
 	card_item ELECTABUZZ_LV35,   4
@@ -924,7 +924,7 @@ LegendaryZapdosDeck:
 	card_item ZAPDOS_LV68,       2
 	card_item EEVEE,             3
 	card_item BILL,              4
-	card_item ENERGY_RETRIEVAL,  2
+	card_item ENERGY_RETRIEVAL,  3
 	card_item SWITCH,            2
 	card_item PLUSPOWER,         3
 	card_item POTION,            3
@@ -934,7 +934,7 @@ LegendaryZapdosDeck:
 
 LegendaryArticunoDeck:
 	deck_list_start
-	card_item WATER_ENERGY,     25
+	card_item WATER_ENERGY,     24
 	card_item SEEL,              4
 	card_item DEWGONG,           3
 	card_item LAPRAS,            4
@@ -942,7 +942,7 @@ LegendaryArticunoDeck:
 	card_item ARTICUNO_LV35,     2
 	card_item CHANSEY,           3
 	card_item DITTO,             2
-	card_item PROFESSOR_OAK,     2
+	card_item PROFESSOR_OAK,     3
 	card_item POKEMON_TRADER,    2
 	card_item ENERGY_RETRIEVAL,  3
 	card_item SWITCH,            3
@@ -977,11 +977,11 @@ LegendaryDragoniteDeck:
 
 FirstStrikeDeck:
 	deck_list_start
-	card_item FIGHTING_ENERGY, 25
+	card_item FIGHTING_ENERGY, 24
 	card_item MACHOP,           4
 	card_item MACHOKE,          3
 	card_item MACHAMP,          2
-	card_item HITMONCHAN,       2
+	card_item HITMONCHAN,       3
 	card_item HITMONLEE,        4
 	card_item MANKEY,           4
 	card_item PRIMEAPE,         1
@@ -996,7 +996,7 @@ FirstStrikeDeck:
 
 RockCrusherDeck:
 	deck_list_start
-	card_item FIGHTING_ENERGY,         24
+	card_item FIGHTING_ENERGY,         23
 	card_item DOUBLE_COLORLESS_ENERGY,  2
 	card_item DIGLETT,                  4
 	card_item DUGTRIO,                  2
@@ -1005,7 +1005,7 @@ RockCrusherDeck:
 	card_item GOLEM,                    2
 	card_item ONIX,                     3
 	card_item RHYHORN,                  3
-	card_item PROFESSOR_OAK,            2
+	card_item PROFESSOR_OAK,            3
 	card_item POKEMON_BREEDER,          1
 	card_item ENERGY_REMOVAL,           2
 	card_item SWITCH,                   2
@@ -1018,7 +1018,7 @@ RockCrusherDeck:
 
 GoGoRainDanceDeck:
 	deck_list_start
-	card_item WATER_ENERGY,           24
+	card_item WATER_ENERGY,           23
 	card_item SQUIRTLE,                4
 	card_item WARTORTLE,               3
 	card_item BLASTOISE,               2
@@ -1027,7 +1027,7 @@ GoGoRainDanceDeck:
 	card_item HORSEA,                  3
 	card_item SEADRA,                  2
 	card_item LAPRAS,                  2
-	card_item PROFESSOR_OAK,           2
+	card_item PROFESSOR_OAK,           3
 	card_item POKEMON_BREEDER,         1
 	card_item ENERGY_RETRIEVAL,        1
 	card_item SUPER_ENERGY_RETRIEVAL,  1
@@ -1061,7 +1061,7 @@ ZappingSelfdestructDeck:
 
 FlowerPowerDeck:
 	deck_list_start
-	card_item GRASS_ENERGY,     18
+	card_item GRASS_ENERGY,     17
 	card_item PSYCHIC_ENERGY,    4
 	card_item BULBASAUR,         4
 	card_item IVYSAUR,           3
@@ -1071,7 +1071,7 @@ FlowerPowerDeck:
 	card_item VILEPLUME,         2
 	card_item EXEGGCUTE,         4
 	card_item EXEGGUTOR,         3
-	card_item PROFESSOR_OAK,     2
+	card_item PROFESSOR_OAK,     3
 	card_item BILL,              3
 	card_item POKEMON_BREEDER,   2
 	card_item ENERGY_RETRIEVAL,  2
