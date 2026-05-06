@@ -48,6 +48,18 @@ jobs:
             git diff-index HEAD --
             return 1
           fi
+
+      - name: Upload ROM artifact
+        if: ${{ github.repository_owner != 'pret' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: poketcg-${{ github.sha }}
+          path: |
+            poketcg.gbc
+            poketcg.sym
+            poketcg.map
+          if-no-files-found: error
+          retention-days: 30
       - name: Checkout symbols
         if: ${{ github.event_name == 'push' && github.repository_owner == 'pret' }}
         uses: actions/checkout@master
