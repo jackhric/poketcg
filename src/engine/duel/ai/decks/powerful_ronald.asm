@@ -32,54 +32,47 @@ AIActionTable_PowerfulRonald:
 	ret
 
 .list_arena
-	db KANGASKHAN
 	db ELECTABUZZ_LV35
 	db HITMONCHAN
-	db MR_MIME
-	db LICKITUNG
 	db HITMONLEE
+	db KANGASKHAN
+	db MR_MIME
 	db TAUROS
-	db JYNX
 	db MEWTWO_LV53
-	db DODUO
+	db LICKITUNG
 	db $00
 
 .list_bench
-	db KANGASKHAN
-	db HITMONLEE
 	db HITMONCHAN
-	db TAUROS
-	db DODUO
-	db JYNX
-	db MEWTWO_LV53
 	db ELECTABUZZ_LV35
+	db HITMONLEE
 	db MR_MIME
+	db MEWTWO_LV53
+	db KANGASKHAN
+	db TAUROS
 	db LICKITUNG
 	db $00
 
 .list_retreat
+	ai_retreat MR_MIME,    -3
 	ai_retreat KANGASKHAN, -1
-	ai_retreat DODUO,      -1
-	ai_retreat DODRIO,     -1
+	ai_retreat LICKITUNG,  -1
 	db $00
 
 .list_energy
 	ai_energy ELECTABUZZ_LV35, 2, +1
 	ai_energy HITMONLEE,       3, +1
 	ai_energy HITMONCHAN,      3, +1
-	ai_energy MR_MIME,         2, +0
-	ai_energy JYNX,            3, +0
-	ai_energy MEWTWO_LV53,     2, +0
-	ai_energy DODUO,           3, -1
-	ai_energy DODRIO,          3, -1
+	ai_energy MR_MIME,         1, -2
+	ai_energy MEWTWO_LV53,     4, +1
 	ai_energy LICKITUNG,       2, +0
-	ai_energy KANGASKHAN,      4, -1
+	ai_energy KANGASKHAN,      3, +0
 	ai_energy TAUROS,          3, +0
 	db $00
 
 .list_prize
-	db GAMBLER
-	db ENERGY_REMOVAL
+	db MEWTWO_LV53
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers
@@ -87,6 +80,6 @@ AIActionTable_PowerfulRonald:
 	store_list_pointer wAICardListArenaPriority, .list_arena
 	store_list_pointer wAICardListBenchPriority, .list_bench
 	store_list_pointer wAICardListPlayFromHandPriority, .list_bench
-	; missing store_list_pointer wAICardListRetreatBonus, .list_retreat
+	store_list_pointer wAICardListRetreatBonus, .list_retreat
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret

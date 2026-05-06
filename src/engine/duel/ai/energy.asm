@@ -291,7 +291,7 @@ AIProcessEnergyCards:
 	; already reached target number of energy cards
 	ld a, 10
 	call AIDiscourage
-	jr .store_score ; bug, should be jr .check_boss_deck
+	jr .check_boss_deck
 
 .check_id_score
 	ld a, [hli]
@@ -515,10 +515,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	ld a, 3
 	call AIEncourage
 
-; if the attack KOs player and this is the active card, add to AI score.
-	ldh a, [hTempPlayAreaLocation_ff9d]
-	or a
-	jr nz, .check_evolution
+; if the attack KOs player, add to AI score.
 	ld a, [wSelectedAttack]
 	call EstimateDamage_VersusDefendingCard
 	ld a, DUELVARS_ARENA_CARD_HP
@@ -531,9 +528,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	ld a, 20
 	call AIEncourage
 
-; this is possibly a bug.
-; this is an identical check as above to test whether this card is active.
-; in case it is active, the score gets added 10 more points,
+; add 10 more in case it's the Arena card.
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	or a
 	jr nz, .check_evolution

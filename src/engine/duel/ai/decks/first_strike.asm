@@ -33,37 +33,36 @@ AIActionTable_FirstStrike:
 
 .list_arena
 	db HITMONCHAN
-	db MACHOP
-	db HITMONLEE
-	db MANKEY
+	db ELECTABUZZ_LV35
+	db SCYTHER
+	db TAUROS
 	db $00
 
 .list_bench
-	db MACHOP
-	db HITMONLEE
 	db HITMONCHAN
-	db MANKEY
+	db ELECTABUZZ_LV35
+	db SCYTHER
+	db TAUROS
+	db MR_MIME
 	db $00
 
 .list_retreat
-	ai_retreat MACHOP,  -1
-	ai_retreat MACHOKE, -1
-	ai_retreat MANKEY,  -2
+	ai_retreat MR_MIME, -3
+	ai_retreat TAUROS,  +1
 	db $00
 
 .list_energy
-	ai_energy MACHOP,     3, +0
-	ai_energy MACHOKE,    4, +0
-	ai_energy MACHAMP,    4, -1
-	ai_energy HITMONCHAN, 3, +0
-	ai_energy HITMONLEE,  3, +0
-	ai_energy MANKEY,     2, -1
-	ai_energy PRIMEAPE,   3, -1
+	ai_energy HITMONCHAN,      3, +1
+	ai_energy ELECTABUZZ_LV35, 3, +1
+	ai_energy SCYTHER,         3, +0
+	ai_energy TAUROS,          3, +0
+	ai_energy MR_MIME,         1, -1
 	db $00
 
 .list_prize
-	db HITMONLEE
 	db HITMONCHAN
+	db ELECTABUZZ_LV35
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers
@@ -71,6 +70,6 @@ AIActionTable_FirstStrike:
 	store_list_pointer wAICardListArenaPriority, .list_arena
 	store_list_pointer wAICardListBenchPriority, .list_bench
 	store_list_pointer wAICardListPlayFromHandPriority, .list_bench
-	; missing store_list_pointer wAICardListRetreatBonus, .list_retreat
+	store_list_pointer wAICardListRetreatBonus, .list_retreat
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret

@@ -63,6 +63,7 @@ AIActionTable_FlowerPower:
 
 .list_prize
 	db VENUSAUR_LV67
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers
@@ -70,6 +71,6 @@ AIActionTable_FlowerPower:
 	store_list_pointer wAICardListArenaPriority, .list_arena
 	store_list_pointer wAICardListBenchPriority, .list_bench
 	store_list_pointer wAICardListPlayFromHandPriority, .list_bench
-	; missing store_list_pointer wAICardListRetreatBonus, .list_retreat
+	store_list_pointer wAICardListRetreatBonus, .list_retreat
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret

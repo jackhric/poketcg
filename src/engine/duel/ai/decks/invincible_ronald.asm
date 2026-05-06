@@ -50,7 +50,8 @@ AIActionTable_InvincibleRonald:
 	db $00
 
 .list_retreat
-	ai_retreat GRIMER, -1
+	ai_retreat GRIMER,  -1
+	ai_retreat CHANSEY, -1
 	db $00
 
 .list_energy
@@ -65,7 +66,8 @@ AIActionTable_InvincibleRonald:
 	db $00
 
 .list_prize
-	db GAMBLER
+	db SCYTHER
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers
@@ -73,6 +75,6 @@ AIActionTable_InvincibleRonald:
 	store_list_pointer wAICardListArenaPriority, .list_arena
 	store_list_pointer wAICardListBenchPriority, .list_bench
 	store_list_pointer wAICardListPlayFromHandPriority, .list_bench
-	; missing store_list_pointer wAICardListRetreatBonus, .list_retreat
+	store_list_pointer wAICardListRetreatBonus, .list_retreat
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret

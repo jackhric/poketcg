@@ -41,36 +41,37 @@ AIActionTable_LegendaryRonald:
 	db $00
 
 .list_bench
-	db KANGASKHAN
-	db DRATINI
 	db EEVEE
+	db DRATINI
+	db KANGASKHAN
 	db $00
 
 .list_play_hand
 	db MOLTRES_LV37
+	db ARTICUNO_LV37
 	db ZAPDOS_LV68
 	db KANGASKHAN
 	db DRATINI
 	db EEVEE
-	db ARTICUNO_LV37
 	db $00
 
 .list_retreat
-	ai_retreat EEVEE, -2
+	ai_retreat EEVEE,   -2
+	ai_retreat DRATINI, -2
 	db $00
 
 .list_energy
 	ai_energy FLAREON_LV22,   3, +0
-	ai_energy MOLTRES_LV37,   3, +0
+	ai_energy MOLTRES_LV37,   4, +2
 	ai_energy VAPOREON_LV29,  3, +0
-	ai_energy ARTICUNO_LV37,  0, -8
-	ai_energy JOLTEON_LV24,   4, +0
-	ai_energy ZAPDOS_LV68,    0, -8
-	ai_energy KANGASKHAN,     4, -1
-	ai_energy EEVEE,          3, +0
-	ai_energy DRATINI,        3, +0
-	ai_energy DRAGONAIR,      4, +0
-	ai_energy DRAGONITE_LV41, 3, +0
+	ai_energy ARTICUNO_LV37,  4, +2
+	ai_energy JOLTEON_LV24,   3, +0
+	ai_energy ZAPDOS_LV68,    4, +2
+	ai_energy KANGASKHAN,     3, +0
+	ai_energy EEVEE,          1, -2
+	ai_energy DRATINI,        2, +0
+	ai_energy DRAGONAIR,      4, +1
+	ai_energy DRAGONITE_LV41, 4, +1
 	db $00
 
 .list_prize
@@ -78,7 +79,7 @@ AIActionTable_LegendaryRonald:
 	db ARTICUNO_LV37
 	db ZAPDOS_LV68
 	db DRAGONITE_LV41
-	db GAMBLER
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers
@@ -86,7 +87,7 @@ AIActionTable_LegendaryRonald:
 	store_list_pointer wAICardListArenaPriority, .list_arena
 	store_list_pointer wAICardListBenchPriority, .list_bench
 	store_list_pointer wAICardListPlayFromHandPriority, .list_play_hand
-	; missing store_list_pointer wAICardListRetreatBonus, .list_retreat
+	store_list_pointer wAICardListRetreatBonus, .list_retreat
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret
 

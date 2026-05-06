@@ -43,32 +43,33 @@ AIActionTable_LegendaryDragonite:
 	db CHARMANDER
 	db MAGIKARP
 	db DRATINI
-	db LAPRAS
 	db KANGASKHAN
+	db LAPRAS
 	db $00
 
 .list_retreat
-	ai_retreat CHARMANDER, -1
+	ai_retreat CHARMANDER, -2
 	ai_retreat MAGIKARP,   -5
+	ai_retreat DRATINI,    -3
 	db $00
 
 .list_energy
-	ai_energy CHARMANDER,     3, +1
+	ai_energy CHARMANDER,     3, +0
 	ai_energy CHARMELEON,     4, +1
-	ai_energy CHARIZARD,      5, +0
-	ai_energy MAGIKARP,       3, +1
-	ai_energy GYARADOS,       4, -1
+	ai_energy CHARIZARD,      5, +1
+	ai_energy MAGIKARP,       3, +0
+	ai_energy GYARADOS,       4, +1
 	ai_energy DRATINI,        2, +0
 	ai_energy DRAGONAIR,      4, +0
-	ai_energy DRAGONITE_LV41, 3, -1
-	ai_energy KANGASKHAN,     2, -2
+	ai_energy DRAGONITE_LV41, 4, +1
+	ai_energy KANGASKHAN,     3, +0
 	ai_energy LAPRAS,         3, +0
 	db $00
 
 .list_prize
-	db GAMBLER
+	db CHARIZARD
 	db DRAGONITE_LV41
-	db KANGASKHAN
+	db PROFESSOR_OAK
 	db $00
 
 .store_list_pointers
@@ -76,7 +77,7 @@ AIActionTable_LegendaryDragonite:
 	store_list_pointer wAICardListArenaPriority, .list_arena
 	store_list_pointer wAICardListBenchPriority, .list_bench
 	store_list_pointer wAICardListPlayFromHandPriority, .list_bench
-	; missing store_list_pointer wAICardListRetreatBonus, .list_retreat
+	store_list_pointer wAICardListRetreatBonus, .list_retreat
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret
 
