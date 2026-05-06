@@ -5,6 +5,9 @@ on:
     branches: [ master ]
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -49,17 +52,22 @@ jobs:
             return 1
           fi
 
-      - name: Upload ROM artifact
-        if: ${{ github.repository_owner != 'pret' }}
-        uses: actions/upload-artifact@v4
+      - name: Publish release
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository_owner != 'pret' }}
+        uses: softprops/action-gh-release@v2
         with:
-          name: poketcg-${{ github.sha }}
-          path: |
+          tag_name: build-${{ github.run_number }}
+          name: Build #${{ github.run_number }}
+          body: |
+            Automated ROM hack build from master.
+
+            Commit: ${{ github.sha }}
+            Message: ${{ github.event.head_commit.message }}
+          files: |
             poketcg.gbc
             poketcg.sym
             poketcg.map
-          if-no-files-found: error
-          retention-days: 30
+          fail_on_unmatched_files: true
       - name: Checkout symbols
         if: ${{ github.event_name == 'push' && github.repository_owner == 'pret' }}
         uses: actions/checkout@master
