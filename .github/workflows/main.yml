@@ -40,7 +40,9 @@ jobs:
       - name: Make
         if: ${{ github.repository_owner != 'pret' }}
         run: |
-          make -j$(nproc)
+          # Build the ROM without the SHA1 'compare' step, since this is
+          # a ROM hack and the binary is intentionally different from vanilla.
+          make poketcg.gbc -j$(nproc)
           if ! git diff-index --quiet HEAD --; then
             echo 'Uncommitted changes detected:'
             git diff-index HEAD --
