@@ -5844,7 +5844,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	ld b, PIKACHU_LV12
 	ld a, RAICHU_LV40
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
-	jr c, .find_duplicates
+	jp c, .find_duplicates
 	ld a, PIKACHU_LV14
 	ld b, RAICHU_LV40
 	call LookForCardIDInDeck_GivenCardIDInHand
