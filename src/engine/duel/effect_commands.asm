@@ -1857,3 +1857,39 @@ HalveDamageEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LightScreenEffect
 	db  $00
 
+; --- Neo additive batch 8 EffectCommands ---
+
+; Pkmn Power: attach water energy as often as you want (Rain Dance)
+RainDanceEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, RainDanceEffect
+	db  $00
+
+; Pkmn Power: move damage counters between Pokemon (Damage Swap)
+DamageSwapEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, DamageSwap_CheckDamage
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DamageSwap_SelectAndSwapEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DamageSwap_SwapEffect
+	db  $00
+
+; Heads = +10 damage and confusion (Nidorina Double Kick pattern)
+MayDo10MoreAndConfuseEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, NidorinaDoubleKick_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, NidorinaDoubleKick_AIEffect
+	db  $00
+
+; 10 damage to all your benched (Earthquake pattern)
+Do10ToOwnBenchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EarthquakeEffect
+	db  $00
+
+; Flip 3 coins, 30 per heads (Jolteon Double Kick pattern)
+CF30X3EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, JolteonDoubleKick_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, JolteonDoubleKick_AIEffect
+	db  $00
+
+; Heal half the damage dealt (Mega Drain / Absorb pattern)
+HealHalfDamageEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, AbsorbEffect
+	db  $00
+

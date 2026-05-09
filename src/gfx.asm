@@ -2372,3 +2372,27 @@ LedianCardGfx::
 MantineCardGfx::
 	INCBIN "gfx/cards/mantine.2bpp"
 	INCBIN "gfx/cards/mantine.pal"
+
+PolitoedCardGfx::
+	INCBIN "gfx/cards/politoed.2bpp"
+	INCBIN "gfx/cards/politoed.pal"
+
+SlowkingCardGfx::
+	INCBIN "gfx/cards/slowking.2bpp"
+	INCBIN "gfx/cards/slowking.pal"
+
+WooperCardGfx::
+	INCBIN "gfx/cards/wooper.2bpp"
+	INCBIN "gfx/cards/wooper.pal"
+
+QuagsireCardGfx::
+	INCBIN "gfx/cards/quagsire.2bpp"
+	INCBIN "gfx/cards/quagsire.pal"
+
+HitmontopCardGfx::
+	INCBIN "gfx/cards/hitmontop.2bpp"
+	INCBIN "gfx/cards/hitmontop.pal"
+
+BellossomCardGfx::
+	INCBIN "gfx/cards/bellossom.2bpp"
+	INCBIN "gfx/cards/bellossom.pal"

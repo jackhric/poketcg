@@ -3133,3 +3133,25 @@ TextOffsets::
 	textpointer MantineName                                        ; 0x0c39
 	textpointer KiteName                                           ; 0x0c3a
 	textpointer MantineDescription                                 ; 0x0c3b
+	textpointer PolitoedName                                       ; 0x0c3c
+	textpointer FrogName                                           ; 0x0c3d
+	textpointer PolitoedDescription                                ; 0x0c3e
+	textpointer SlowkingName                                       ; 0x0c3f
+	textpointer CFHPlus10AndConfuseDesc                            ; 0x0c40
+	textpointer RoyalName                                          ; 0x0c41
+	textpointer SlowkingDescription                                ; 0x0c42
+	textpointer WooperName                                         ; 0x0c43
+	textpointer WaterFishName                                      ; 0x0c44
+	textpointer WooperDescription                                  ; 0x0c45
+	textpointer QuagsireName                                       ; 0x0c46
+	textpointer Do10ToOwnBenchDesc                                 ; 0x0c47
+	textpointer QuagsireDescription                                ; 0x0c48
+	textpointer HitmontopName                                      ; 0x0c49
+	textpointer TripleKickName                                     ; 0x0c4a
+	textpointer TripleAttackX30Description                         ; 0x0c4b
+	textpointer HandstandName                                      ; 0x0c4c
+	textpointer HitmontopDescription                               ; 0x0c4d
+	textpointer BellossomName                                      ; 0x0c4e
+	textpointer HealHalfDamageDesc                                 ; 0x0c4f
+	textpointer FlowerDanceName                                    ; 0x0c50
+	textpointer BellossomDescription                               ; 0x0c51

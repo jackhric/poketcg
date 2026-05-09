@@ -230,4 +230,10 @@
 	const LEDYBA
 	const LEDIAN
 	const MANTINE
+	const POLITOED
+	const SLOWKING
+	const WOOPER
+	const QUAGSIRE
+	const HITMONTOP
+	const BELLOSSOM
 DEF NUM_CARDS EQU const_value - 1

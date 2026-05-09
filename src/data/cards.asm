@@ -235,6 +235,12 @@ CardPointers::
 	dw LedybaCard
 	dw LedianCard
 	dw MantineCard
+	dw PolitoedCard
+	dw SlowkingCard
+	dw WooperCard
+	dw QuagsireCard
+	dw HitmontopCard
+	dw BellossomCard
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -10380,4 +10386,310 @@ MantineCard:
 	dw 485 * 10 ; weight
 	tx MantineDescription ; description
 	db 21
+
+PolitoedCard:
+	db TYPE_PKMN_WATER ; type
+	gfx PolitoedCardGfx ; gfx
+	tx PolitoedName ; name
+	db STAR ; rarity
+	db EVOLUTION | NONE ; sets
+	db POLITOED
+	db 100 ; hp
+	db STAGE2 ; stage
+	tx PoliwhirlName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx RainDanceName ; name
+	tx RainDanceDescription ; description
+	tx RainDanceDescriptionCont ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw RainDanceEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+
+	; attack 2
+	energy WATER, 3 ; energies
+	tx SurfName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_WATER_JETS ; animation
+
+	db 2 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_FIRE ; resistance
+	tx FrogName ; category
+	db 186 ; Pokedex number
+	db 0
+	db 50 ; level
+	db 3, 7 ; length
+	dw 74 * 10 ; weight
+	tx PolitoedDescription ; description
+	db 0
+
+SlowkingCard:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx SlowkingCardGfx ; gfx
+	tx SlowkingName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	db SLOWKING
+	db 90 ; hp
+	db STAGE1 ; stage
+	tx SlowpokeName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx DamageSwapName ; name
+	tx DamageSwapDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw DamageSwapEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+
+	; attack 2
+	energy PSYCHIC, 2, COLORLESS, 1 ; energies
+	tx PsyshockName ; name
+	tx CFHPlus10AndConfuseDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw MayDo10MoreAndConfuseEffectCommands ; effect commands
+	db INFLICT_CONFUSION ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 2
+	db ATK_ANIM_PSYCHIC_HIT ; animation
+
+	db 3 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
+	tx RoyalName ; category
+	db 199 ; Pokedex number
+	db 0
+	db 45 ; level
+	db 6, 7 ; length
+	dw 175 * 10 ; weight
+	tx SlowkingDescription ; description
+	db 19
+
+WooperCard:
+	db TYPE_PKMN_WATER ; type
+	gfx WooperCardGfx ; gfx
+	tx WooperName ; name
+	db CIRCLE ; rarity
+	db MYSTERY | NONE ; sets
+	db WOOPER
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx SandAttackName ; name
+	tx OpponentAttackMayDoNothingDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SandshrewSandAttackEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_DARK_GAS ; animation
+
+	; attack 2
+	energy COLORLESS, 2 ; energies
+	tx HeadbuttName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db NONE ; resistance
+	tx WaterFishName ; category
+	db 194 ; Pokedex number
+	db 0
+	db 15 ; level
+	db 1, 4 ; length
+	dw 18 * 10 ; weight
+	tx WooperDescription ; description
+	db 19
+
+QuagsireCard:
+	db TYPE_PKMN_WATER ; type
+	gfx QuagsireCardGfx ; gfx
+	tx QuagsireName ; name
+	db DIAMOND ; rarity
+	db MYSTERY | NONE ; sets
+	db QUAGSIRE
+	db 80 ; hp
+	db STAGE1 ; stage
+	tx WooperName ; pre-evo name
+
+	; attack 1
+	energy WATER, 1, COLORLESS, 1 ; energies
+	tx SurfName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_WATER_JETS ; animation
+
+	; attack 2
+	energy FIGHTING, 2, COLORLESS, 1 ; energies
+	tx EarthquakeName ; name
+	tx Do10ToOwnBenchDesc ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Do10ToOwnBenchEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_LIGHTNING ; resistance
+	tx WaterFishName ; category
+	db 195 ; Pokedex number
+	db 0
+	db 33 ; level
+	db 4, 7 ; length
+	dw 165 * 10 ; weight
+	tx QuagsireDescription ; description
+	db 0
+
+HitmontopCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx HitmontopCardGfx ; gfx
+	tx HitmontopName ; name
+	db STAR ; rarity
+	db LABORATORY | NONE ; sets
+	db HITMONTOP
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx CurlUpName ; name
+	tx PreventDamageButNotEffectsDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw MayPreventDamageOnlyEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	; attack 2
+	energy FIGHTING, 3 ; energies
+	tx TripleKickName ; name
+	tx TripleAttackX30Description ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_X ; category
+	dw CF30X3EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
+	tx HandstandName ; category
+	db 237 ; Pokedex number
+	db 0
+	db 33 ; level
+	db 4, 7 ; length
+	dw 106 * 10 ; weight
+	tx HitmontopDescription ; description
+	db 21
+
+BellossomCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx BellossomCardGfx ; gfx
+	tx BellossomName ; name
+	db STAR ; rarity
+	db MYSTERY | NONE ; sets
+	db BELLOSSOM
+	db 90 ; hp
+	db STAGE2 ; stage
+	tx GloomName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 2 ; energies
+	tx MegaDrainName ; name
+	tx HealHalfDamageDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw HealHalfDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db NONE ; flags 3
+	db 2
+	db ATK_ANIM_DRAIN ; animation
+
+	; attack 2
+	energy GRASS, 2, COLORLESS, 1 ; energies
+	tx FlowerDanceName ; name
+	tx Do10MorePerYourBenchedDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw Do10MorePerSelfBenchEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PETAL_DANCE ; animation
+
+	db 2 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_WATER ; resistance
+	tx FlowerName ; category
+	db 182 ; Pokedex number
+	db 0
+	db 35 ; level
+	db 1, 4 ; length
+	dw 12 * 10 ; weight
+	tx BellossomDescription ; description
+	db 16
 

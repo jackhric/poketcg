@@ -912,3 +912,117 @@ MantineDescription:
 	line "leisurely cruise the open seas."
 	done
 
+; --- Neo additive batch 8 ---
+
+PolitoedName:
+	text "Politoed"
+	done
+
+FrogName:
+	text "Frog"
+	done
+
+PolitoedDescription:
+	text "When several of these Pokémon get"
+	line "together, they all sing in different"
+	line "pitches, sounding like a chorus."
+	done
+
+SlowkingName:
+	text "Slowking"
+	done
+
+CFHPlus10AndConfuseDesc:
+	text "Flip a coin. If heads, this attack"
+	line "does 20 damage plus 10 more damage,"
+	line "and the Defending Pokémon is now"
+	line "Confused."
+	done
+
+RoyalName:
+	text "Royal"
+	done
+
+SlowkingDescription:
+	text "It carries out research night and"
+	line "day. As a result, it can solve any"
+	line "problem in the world."
+	done
+
+WooperName:
+	text "Wooper"
+	done
+
+WaterFishName:
+	text "Water Fish"
+	done
+
+WooperDescription:
+	text "Wooper usually live in water, but"
+	line "they come out onto land in search"
+	line "of food."
+	done
+
+QuagsireName:
+	text "Quagsire"
+	done
+
+Do10ToOwnBenchDesc:
+	text "Quagsire does 10 damage to each"
+	line "of your own Benched Pokémon."
+	line "(Don't apply Weakness and"
+	line "Resistance.)"
+	done
+
+QuagsireDescription:
+	text "Its slow movement helps it ambush"
+	line "passing prey. Even bumping its head"
+	line "doesn't seem to bother it."
+	done
+
+HitmontopName:
+	text "Hitmontop"
+	done
+
+TripleKickName:
+	text "Triple Kick"
+	done
+
+TripleAttackX30Description:
+	text "Flip 3 coins. This attack does 30"
+	line "damage times the number of heads."
+	done
+
+HandstandName:
+	text "Handstand"
+	done
+
+HitmontopDescription:
+	text "Walking on its hands lets it tap"
+	line "into hidden powers. It can spin"
+	line "incredibly fast on its head."
+	done
+
+BellossomName:
+	text "Bellossom"
+	done
+
+HealHalfDamageDesc:
+	text "Remove a number of damage counters"
+	line "from Bellossom equal to half the"
+	line "damage done to the Defending Pokémon"
+	line "(after applying Weakness and"
+	line "Resistance) (rounded up to the"
+	line "nearest 10)."
+	done
+
+FlowerDanceName:
+	text "Flower Dance"
+	done
+
+BellossomDescription:
+	text "When heavy rains pass and the sun"
+	line "appears, it gathers with others to"
+	line "joyously break out into dance."
+	done
+
