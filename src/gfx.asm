@@ -2421,6 +2421,8 @@ SudowoodoCardGfx::
 	INCBIN "gfx/cards/sudowoodo.2bpp"
 	INCBIN "gfx/cards/sudowoodo.pal"
 
+SECTION "Card Gfx 13", ROMX
+
 LarvitarCardGfx::
 	INCBIN "gfx/cards/larvitar.2bpp"
 	INCBIN "gfx/cards/larvitar.pal"
