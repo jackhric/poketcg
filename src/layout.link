@@ -81,6 +81,8 @@ ROMX $0b
 ROMX $0c
 	"Decks"
 	"Cards"
+ROMX $0a
+	"Text Offsets"
 ROMX $0d
 	"Text 1"
 ROMX $0e
