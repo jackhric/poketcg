@@ -1893,3 +1893,39 @@ HealHalfDamageEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, AbsorbEffect
 	db  $00
 
+; --- Neo additive batch 9 EffectCommands ---
+
+; 20 damage to a single benched opp (Stretch Kick pattern)
+Do20ToOppBenchOnlyEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, StretchKick_CheckBench
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PikachuLv16GrowlEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StretchKick_PlayerSelectEffect
+	db  $00
+
+; Look at top 3 of opp deck and rearrange (Prophecy pattern)
+ProphecyEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Prophecy_CheckDeck
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Prophecy_ReorderDeckEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Prophecy_PlayerSelectEffect
+	db  $00
+
+; Search deck for a basic energy and attach it (Energy Spike pattern)
+SearchAndAttachEnergyEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EnergySpike_DeckCheck
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergySpike_AttachEnergyEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergySpike_PlayerSelectEffect
+	db  $00
+
+; Flip 9 coins, 10 per heads (Dancing Embers pattern)
+CF10X9EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DancingEmbers_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, DancingEmbers_AIEffect
+	db  $00
+
+; Damage + 10 to 1 benched opp (Gengar Dark Mind pattern)
+DamageAndDo10ToABenchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GengarDarkMind_DamageBenchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, GengarDarkMind_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, GengarDarkMind_AISelectEffect
+	db  $00
+

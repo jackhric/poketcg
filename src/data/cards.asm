@@ -241,6 +241,12 @@ CardPointers::
 	dw QuagsireCard
 	dw HitmontopCard
 	dw BellossomCard
+	dw NatuCard
+	dw XatuCard
+	dw SunkernCard
+	dw SunfloraCard
+	dw ScizorCard
+	dw Chinchou1Card
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -10692,4 +10698,310 @@ BellossomCard:
 	dw 12 * 10 ; weight
 	tx BellossomDescription ; description
 	db 16
+
+NatuCard:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx NatuCardGfx ; gfx
+	tx NatuName ; name
+	db CIRCLE ; rarity
+	db MYSTERY | NONE ; sets
+	db NATU
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx PeckName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy PSYCHIC, 2 ; energies
+	tx PsywaveName ; name
+	tx Do20ToABenchDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw Do20ToOppBenchOnlyEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 3
+	db ATK_ANIM_NONE ; animation
+
+	db 0 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db WR_FIGHTING ; resistance
+	tx LittleBirdName ; category
+	db 177 ; Pokedex number
+	db 0
+	db 23 ; level
+	db 0, 8 ; length
+	dw 4 * 10 ; weight
+	tx NatuDescription ; description
+	db 16
+
+XatuCard:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx XatuCardGfx ; gfx
+	tx XatuName ; name
+	db DIAMOND ; rarity
+	db MYSTERY | NONE ; sets
+	db XATU
+	db 90 ; hp
+	db STAGE1 ; stage
+	tx NatuName ; pre-evo name
+
+	; attack 1
+	energy PSYCHIC, 1 ; energies
+	tx ProphecyName ; name
+	tx ProphecyDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw ProphecyEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_5 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy PSYCHIC, 2, COLORLESS, 1 ; energies
+	tx ConfuseRayName ; name
+	tx MayInflictConfusionDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictConfusionEffectCommands ; effect commands
+	db INFLICT_CONFUSION ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_CONFUSE_RAY ; animation
+
+	db 1 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db WR_FIGHTING ; resistance
+	tx MysticName ; category
+	db 178 ; Pokedex number
+	db 0
+	db 39 ; level
+	db 4, 11 ; length
+	dw 33 * 10 ; weight
+	tx XatuDescription ; description
+	db 0
+
+SunkernCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx SunkernCardGfx ; gfx
+	tx SunkernName ; name
+	db CIRCLE ; rarity
+	db EVOLUTION | NONE ; sets
+	db SUNKERN
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy GRASS, 2 ; energies
+	tx AbsorbName ; name
+	tx HealHalfDamageDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw HealHalfDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db NONE ; flags 3
+	db 2
+	db ATK_ANIM_DRAIN ; animation
+
+	; attack 2
+	energy 0 ; energies
+	dw NONE ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	db 1 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx SeedName ; category
+	db 191 ; Pokedex number
+	db 0
+	db 6 ; level
+	db 1, 0 ; length
+	dw 4 * 10 ; weight
+	tx SunkernDescription ; description
+	db 16
+
+SunfloraCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx SunfloraCardGfx ; gfx
+	tx SunfloraName ; name
+	db DIAMOND ; rarity
+	db EVOLUTION | NONE ; sets
+	db SUNFLORA
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx SunkernName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1, COLORLESS, 1 ; energies
+	tx EnergyGrowthName ; name
+	tx SearchEnergyAndAttachDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw SearchAndAttachEnergyEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy GRASS, 3 ; energies
+	tx SolarBeamName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BEAM ; animation
+
+	db 1 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx SunName ; category
+	db 192 ; Pokedex number
+	db 0
+	db 22 ; level
+	db 2, 7 ; length
+	dw 19 * 10 ; weight
+	tx SunfloraDescription ; description
+	db 16
+
+ScizorCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx ScizorCardGfx ; gfx
+	tx ScizorName ; name
+	db STAR ; rarity
+	db EVOLUTION | NONE ; sets
+	db SCIZOR
+	db 80 ; hp
+	db STAGE1 ; stage
+	tx ScytherName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1, COLORLESS, 1 ; energies
+	tx SlashName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SLASH ; animation
+
+	; attack 2
+	energy GRASS, 2, COLORLESS, 1 ; energies
+	tx FuryCutterName ; name
+	tx CF10X9Desc ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_X ; category
+	dw CF10X9EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_MULTIPLE_SLASH ; animation
+
+	db 1 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_GRASS ; resistance
+	tx PincerName ; category
+	db 212 ; Pokedex number
+	db 0
+	db 33 ; level
+	db 5, 11 ; length
+	dw 260 * 10 ; weight
+	tx ScizorDescription ; description
+	db 0
+
+Chinchou1Card:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx Chinchou1CardGfx ; gfx
+	tx ChinchouName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	db CHINCHOU1
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy LIGHTNING, 1 ; energies
+	tx ThundershockName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_THUNDERSHOCK ; animation
+
+	; attack 2
+	energy LIGHTNING, 1, COLORLESS, 1 ; energies
+	tx SparkName ; name
+	tx Do10To1BenchDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw DamageAndDo10ToABenchEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 10
+	db ATK_ANIM_THUNDER_WHOLE_SCREEN ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx AnglerName ; category
+	db 170 ; Pokedex number
+	db 0
+	db 25 ; level
+	db 1, 8 ; length
+	dw 26 * 10 ; weight
+	tx Chinchou1Description ; description
+	db 0
 

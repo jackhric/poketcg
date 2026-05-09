@@ -1026,3 +1026,103 @@ BellossomDescription:
 	line "joyously break out into dance."
 	done
 
+; --- Neo additive batch 9 ---
+
+NatuName:
+	text "Natu"
+	done
+
+LittleBirdName:
+	text "Little Bird"
+	done
+
+NatuDescription:
+	text "It is extremely good at climbing"
+	line "tree trunks and likes to eat the"
+	line "new sprouts on the trees."
+	done
+
+XatuName:
+	text "Xatu"
+	done
+
+MysticName:
+	text "Mystic"
+	done
+
+XatuDescription:
+	text "It stays motionless with its eyes"
+	line "closed. In this state, it is said"
+	line "to be assembling thoughts."
+	done
+
+SunkernName:
+	text "Sunkern"
+	done
+
+SunkernDescription:
+	text "It is said that those who eat one"
+	line "Sunkern are blessed with a long"
+	line "life."
+	done
+
+SunfloraName:
+	text "Sunflora"
+	done
+
+EnergyGrowthName:
+	text "Energy Growth"
+	done
+
+SearchEnergyAndAttachDesc:
+	text "Search your deck for a basic Energy"
+	line "card and attach it to Sunflora."
+	line "Shuffle your deck afterward."
+	done
+
+SunfloraDescription:
+	text "It absorbs sunlight to grow. It"
+	line "stops moving and starts to sleep"
+	line "at the first sign of sundown."
+	done
+
+ScizorName:
+	text "Scizor"
+	done
+
+FuryCutterName:
+	text "Fury Cutter"
+	done
+
+CF10X9Desc:
+	text "Flip 9 coins. This attack does 10"
+	line "damage times the number of heads."
+	done
+
+ScizorDescription:
+	text "Its pincers, which contain steel,"
+	line "can crush any hard object it gets"
+	line "ahold of into bits."
+	done
+
+ChinchouName:
+	text "Chinchou"
+	done
+
+Do10To1BenchDesc:
+	text "Choose 1 of your opponent's Benched"
+	line "Pokémon and do 10 damage to it."
+	line "(Don't apply Weakness and"
+	line "Resistance.)"
+	done
+
+AnglerName:
+	text "Angler"
+	done
+
+Chinchou1Description:
+	text "It shoots positive and negative"
+	line "electricity between the tips of"
+	line "its two antennas to zap its prey."
+	done
+

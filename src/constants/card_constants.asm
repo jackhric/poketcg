@@ -236,4 +236,10 @@
 	const QUAGSIRE
 	const HITMONTOP
 	const BELLOSSOM
+	const NATU
+	const XATU
+	const SUNKERN
+	const SUNFLORA
+	const SCIZOR
+	const CHINCHOU1
 DEF NUM_CARDS EQU const_value - 1

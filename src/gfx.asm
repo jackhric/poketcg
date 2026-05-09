@@ -2396,3 +2396,27 @@ HitmontopCardGfx::
 BellossomCardGfx::
 	INCBIN "gfx/cards/bellossom.2bpp"
 	INCBIN "gfx/cards/bellossom.pal"
+
+NatuCardGfx::
+	INCBIN "gfx/cards/natu.2bpp"
+	INCBIN "gfx/cards/natu.pal"
+
+XatuCardGfx::
+	INCBIN "gfx/cards/xatu.2bpp"
+	INCBIN "gfx/cards/xatu.pal"
+
+SunkernCardGfx::
+	INCBIN "gfx/cards/sunkern.2bpp"
+	INCBIN "gfx/cards/sunkern.pal"
+
+SunfloraCardGfx::
+	INCBIN "gfx/cards/sunflora.2bpp"
+	INCBIN "gfx/cards/sunflora.pal"
+
+ScizorCardGfx::
+	INCBIN "gfx/cards/scizor.2bpp"
+	INCBIN "gfx/cards/scizor.pal"
+
+Chinchou1CardGfx::
+	INCBIN "gfx/cards/chinchou1.2bpp"
+	INCBIN "gfx/cards/chinchou1.pal"

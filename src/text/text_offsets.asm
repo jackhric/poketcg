@@ -3155,3 +3155,23 @@ TextOffsets::
 	textpointer HealHalfDamageDesc                                 ; 0x0c4f
 	textpointer FlowerDanceName                                    ; 0x0c50
 	textpointer BellossomDescription                               ; 0x0c51
+	textpointer NatuName                                           ; 0x0c52
+	textpointer LittleBirdName                                     ; 0x0c53
+	textpointer NatuDescription                                    ; 0x0c54
+	textpointer XatuName                                           ; 0x0c55
+	textpointer MysticName                                         ; 0x0c56
+	textpointer XatuDescription                                    ; 0x0c57
+	textpointer SunkernName                                        ; 0x0c58
+	textpointer SunkernDescription                                 ; 0x0c59
+	textpointer SunfloraName                                       ; 0x0c5a
+	textpointer EnergyGrowthName                                   ; 0x0c5b
+	textpointer SearchEnergyAndAttachDesc                          ; 0x0c5c
+	textpointer SunfloraDescription                                ; 0x0c5d
+	textpointer ScizorName                                         ; 0x0c5e
+	textpointer FuryCutterName                                     ; 0x0c5f
+	textpointer CF10X9Desc                                         ; 0x0c60
+	textpointer ScizorDescription                                  ; 0x0c61
+	textpointer ChinchouName                                       ; 0x0c62
+	textpointer Do10To1BenchDesc                                   ; 0x0c63
+	textpointer AnglerName                                         ; 0x0c64
+	textpointer Chinchou1Description                               ; 0x0c65
