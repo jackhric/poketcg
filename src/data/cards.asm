@@ -248,6 +248,12 @@ CardPointers::
 	dw ShuckleCard
 	dw Phanpy1Card
 	dw SudowoodoCard
+	dw LarvitarCard
+	dw Mareep1Card
+	dw Houndour1Card
+	dw Marill1Card
+	dw HoppipCard
+	dw SlugmaCard
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -11055,4 +11061,310 @@ SudowoodoCard:
 	db 3, 11 ; length
 	dw 84 * 10 ; weight
 	tx SudowoodoDescription ; description
+	db 0
+
+LarvitarCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx LarvitarCardGfx ; gfx
+	tx LarvitarName ; name
+	db CIRCLE ; rarity
+	db EVOLUTION | NONE ; sets
+	db LARVITAR
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx LeerName ; name
+	tx LeerDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw CFHOppCantAttackEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	; attack 2
+	energy FIGHTING, 1, COLORLESS, 1 ; energies
+	tx RockThrowName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_ROCK_THROW ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_LIGHTNING ; resistance
+	tx RockSkinName ; category
+	db 246 ; Pokedex number
+	db 0
+	db 19 ; level
+	db 2, 0 ; length
+	dw 158 * 10 ; weight
+	tx LarvitarDescription ; description
+	db 16
+
+Mareep1Card:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx Mareep1CardGfx ; gfx
+	tx MareepName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db MAREEP1
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx GrowlName ; name
+	tx ReduceDamageBy10Desc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ReduceDamageBy10EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 10
+	db ATK_ANIM_SUPERSONIC ; animation
+
+	; attack 2
+	energy LIGHTNING, 2 ; energies
+	tx ThundershockName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_THUNDERSHOCK ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx WoolName ; category
+	db 179 ; Pokedex number
+	db 0
+	db 14 ; level
+	db 2, 0 ; length
+	dw 17 * 10 ; weight
+	tx Mareep1Description ; description
+	db 16
+
+Houndour1Card:
+	db TYPE_PKMN_FIRE ; type
+	gfx Houndour1CardGfx ; gfx
+	tx HoundourName ; name
+	db CIRCLE ; rarity
+	db EVOLUTION | NONE ; sets
+	db HOUNDOUR1
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy FIRE, 1 ; energies
+	tx SmogName ; name
+	tx MayInflictPoisonDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictPoisonEffectCommands ; effect commands
+	db INFLICT_POISON ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SMOG ; animation
+
+	; attack 2
+	energy FIRE, 1, COLORLESS, 1 ; energies
+	tx EmberName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SMALL_FLAME ; animation
+
+	db 1 ; retreat cost
+	db WR_WATER ; weakness
+	db WR_PSYCHIC ; resistance
+	tx DarkName ; category
+	db 228 ; Pokedex number
+	db 0
+	db 16 ; level
+	db 2, 0 ; length
+	dw 23 * 10 ; weight
+	tx Houndour1Description ; description
+	db 0
+
+Marill1Card:
+	db TYPE_PKMN_WATER ; type
+	gfx Marill1CardGfx ; gfx
+	tx MarillName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db MARILL1
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx CurlUpName ; name
+	tx PreventDamageButNotEffectsDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw MayPreventDamageOnlyEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	; attack 2
+	energy WATER, 2 ; energies
+	tx BubbleName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BUBBLES ; animation
+
+	db 1 ; retreat cost
+	db WR_LIGHTNING ; weakness
+	db NONE ; resistance
+	tx AquamouseName ; category
+	db 183 ; Pokedex number
+	db 0
+	db 13 ; level
+	db 1, 4 ; length
+	dw 18 * 10 ; weight
+	tx Marill1Description ; description
+	db 19
+
+HoppipCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx HoppipCardGfx ; gfx
+	tx HoppipName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	db HOPPIP
+	db 30 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx TackleName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy 0 ; energies
+	dw NONE ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	db 0 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx CottonweedName ; category
+	db 187 ; Pokedex number
+	db 0
+	db 5 ; level
+	db 1, 4 ; length
+	dw 1 * 10 ; weight
+	tx HoppipDescription ; description
+	db 0
+
+SlugmaCard:
+	db TYPE_PKMN_FIRE ; type
+	gfx SlugmaCardGfx ; gfx
+	tx SlugmaName ; name
+	db CIRCLE ; rarity
+	db EVOLUTION | NONE ; sets
+	db SLUGMA
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy FIRE, 2 ; energies
+	tx EmberName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SMALL_FLAME ; animation
+
+	; attack 2
+	energy 0 ; energies
+	dw NONE ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	db 2 ; retreat cost
+	db WR_WATER ; weakness
+	db NONE ; resistance
+	tx LavaName ; category
+	db 218 ; Pokedex number
+	db 0
+	db 15 ; level
+	db 2, 4 ; length
+	dw 77 * 10 ; weight
+	tx SlugmaDescription ; description
 	db 0

@@ -2420,3 +2420,27 @@ Phanpy1CardGfx::
 SudowoodoCardGfx::
 	INCBIN "gfx/cards/sudowoodo.2bpp"
 	INCBIN "gfx/cards/sudowoodo.pal"
+
+LarvitarCardGfx::
+	INCBIN "gfx/cards/larvitar.2bpp"
+	INCBIN "gfx/cards/larvitar.pal"
+
+Mareep1CardGfx::
+	INCBIN "gfx/cards/mareep1.2bpp"
+	INCBIN "gfx/cards/mareep1.pal"
+
+Houndour1CardGfx::
+	INCBIN "gfx/cards/houndour1.2bpp"
+	INCBIN "gfx/cards/houndour1.pal"
+
+Marill1CardGfx::
+	INCBIN "gfx/cards/marill1.2bpp"
+	INCBIN "gfx/cards/marill1.pal"
+
+HoppipCardGfx::
+	INCBIN "gfx/cards/hoppip.2bpp"
+	INCBIN "gfx/cards/hoppip.pal"
+
+SlugmaCardGfx::
+	INCBIN "gfx/cards/slugma.2bpp"
+	INCBIN "gfx/cards/slugma.pal"

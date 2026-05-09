@@ -515,3 +515,101 @@ SudowoodoDescription:
 	line "a tree, its body is more similar to"
 	line "a Rock-type than a plant."
 	done
+
+; --- Neo additive batch 4 ---
+
+LarvitarName:
+	text "Larvitar"
+	done
+
+RockSkinName:
+	text "Rock Skin"
+	done
+
+LarvitarDescription:
+	text "Born deep underground, it must eat"
+	line "its way through the soil above to"
+	line "reach the surface."
+	done
+
+MareepName:
+	text "Mareep"
+	done
+
+ReduceDamageBy10Desc:
+	text "If an attack does damage to this"
+	line "Pokémon during your opponent's next"
+	line "turn (after applying Weakness and"
+	line "Resistance), that attack does 10"
+	line "less damage."
+	done
+
+WoolName:
+	text "Wool"
+	done
+
+Mareep1Description:
+	text "Its soft, fluffy wool builds up"
+	line "static electricity. Touching it"
+	line "after a rub gives a sharp jolt."
+	done
+
+HoundourName:
+	text "Houndour"
+	done
+
+DarkName:
+	text "Dark"
+	done
+
+Houndour1Description:
+	text "It uses different kinds of cries"
+	line "for communicating with others of"
+	line "its kind and for pursuing prey."
+	done
+
+MarillName:
+	text "Marill"
+	done
+
+CurlUpName:
+	text "Curl Up"
+	done
+
+AquamouseName:
+	text "Aquamouse"
+	done
+
+Marill1Description:
+	text "The fur on its body naturally"
+	line "repels water. It can stay dry, even"
+	line "when it plays in the water."
+	done
+
+HoppipName:
+	text "Hoppip"
+	done
+
+CottonweedName:
+	text "Cottonweed"
+	done
+
+HoppipDescription:
+	text "Its body is so light, it must grip"
+	line "the ground firmly with its feet to"
+	line "keep from blowing away."
+	done
+
+SlugmaName:
+	text "Slugma"
+	done
+
+LavaName:
+	text "Lava"
+	done
+
+SlugmaDescription:
+	text "Its body is hot, with a temperature"
+	line "of 18,000 degrees Fahrenheit. It"
+	line "lives in volcanic areas."
+	done

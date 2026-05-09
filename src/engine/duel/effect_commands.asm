@@ -1741,3 +1741,15 @@ Do10XPerSelfDamageEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MagikarpFlail_HPCheck
 	dbw EFFECTCMDTYPE_AI, MagikarpFlail_AIEffect
 	db  $00
+
+; --- Neo additive batch 4 EffectCommands ---
+
+; Heads = opp can't attack next turn (Leer pattern)
+CFHOppCantAttackEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LeerEffect
+	db  $00
+
+; Reduce incoming damage by 10 next turn (vanilla Pikachu Alt Lv16 Growl)
+ReduceDamageBy10EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PikachuAltLv16GrowlEffect
+	db  $00

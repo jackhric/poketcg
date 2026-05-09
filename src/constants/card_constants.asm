@@ -243,4 +243,10 @@
 	const SHUCKLE                     ; $f2
 	const PHANPY1                     ; $f3
 	const SUDOWOODO                   ; $f4
+	const LARVITAR                    ; $f5
+	const MAREEP1                     ; $f6
+	const HOUNDOUR1                   ; $f7
+	const MARILL1                     ; $f8
+	const HOPPIP                      ; $f9
+	const SLUGMA                      ; $fa
 DEF NUM_CARDS EQU const_value - 1

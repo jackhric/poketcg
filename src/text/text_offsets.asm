@@ -3058,3 +3058,23 @@ TextOffsets::
 	textpointer Do10XPerSelfDamageDesc                             ; 0x0bee
 	textpointer ImitationName                                      ; 0x0bef
 	textpointer SudowoodoDescription                               ; 0x0bf0
+	textpointer LarvitarName                                       ; 0x0bf1
+	textpointer RockSkinName                                       ; 0x0bf2
+	textpointer LarvitarDescription                                ; 0x0bf3
+	textpointer MareepName                                         ; 0x0bf4
+	textpointer ReduceDamageBy10Desc                               ; 0x0bf5
+	textpointer WoolName                                           ; 0x0bf6
+	textpointer Mareep1Description                                 ; 0x0bf7
+	textpointer HoundourName                                       ; 0x0bf8
+	textpointer DarkName                                           ; 0x0bf9
+	textpointer Houndour1Description                               ; 0x0bfa
+	textpointer MarillName                                         ; 0x0bfb
+	textpointer CurlUpName                                         ; 0x0bfc
+	textpointer AquamouseName                                      ; 0x0bfd
+	textpointer Marill1Description                                 ; 0x0bfe
+	textpointer HoppipName                                         ; 0x0bff
+	textpointer CottonweedName                                     ; 0x0c00
+	textpointer HoppipDescription                                  ; 0x0c01
+	textpointer SlugmaName                                         ; 0x0c02
+	textpointer LavaName                                           ; 0x0c03
+	textpointer SlugmaDescription                                  ; 0x0c04
