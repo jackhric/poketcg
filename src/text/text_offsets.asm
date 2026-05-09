@@ -3037,3 +3037,24 @@ TextOffsets::
 	textpointer DontApplyWRDesc                                    ; 0x0bd9
 	textpointer ClearWingName                                      ; 0x0bda
 	textpointer YanmaDescription                                   ; 0x0bdb
+	textpointer PinecoName                                         ; 0x0bdc
+	textpointer Do10toAllBenchand40ToSelfDesc                      ; 0x0bdd
+	textpointer BagwormName                                        ; 0x0bde
+	textpointer PinecoDescription                                  ; 0x0bdf
+	textpointer SneaselName                                        ; 0x0be0
+	textpointer BeatUpName                                         ; 0x0be1
+	textpointer Do10MorePerYourBenchedDesc                         ; 0x0be2
+	textpointer SharpClawName                                      ; 0x0be3
+	textpointer SneaselDescription                                 ; 0x0be4
+	textpointer ShuckleName                                        ; 0x0be5
+	textpointer PreventDamageButNotEffectsDesc                     ; 0x0be6
+	textpointer MoldName                                           ; 0x0be7
+	textpointer ShuckleDescription                                 ; 0x0be8
+	textpointer PhanpyName                                         ; 0x0be9
+	textpointer ReduceBy20Descr                                    ; 0x0bea
+	textpointer LongNoseName                                       ; 0x0beb
+	textpointer Phanpy1Description                                 ; 0x0bec
+	textpointer SudowoodoName                                      ; 0x0bed
+	textpointer Do10XPerSelfDamageDesc                             ; 0x0bee
+	textpointer ImitationName                                      ; 0x0bef
+	textpointer SudowoodoDescription                               ; 0x0bf0

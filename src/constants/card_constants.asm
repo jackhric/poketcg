@@ -238,4 +238,9 @@
 	const SNUBBULL                    ; $ed
 	const SPINARAK                    ; $ee
 	const YANMA                       ; $ef
+	const PINECO                      ; $f0
+	const SNEASEL                     ; $f1
+	const SHUCKLE                     ; $f2
+	const PHANPY1                     ; $f3
+	const SUDOWOODO                   ; $f4
 DEF NUM_CARDS EQU const_value - 1

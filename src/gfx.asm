@@ -2400,3 +2400,23 @@ SpinarakCardGfx::
 YanmaCardGfx::
 	INCBIN "gfx/cards/yanma.2bpp"
 	INCBIN "gfx/cards/yanma.pal"
+
+PinecoCardGfx::
+	INCBIN "gfx/cards/pineco.2bpp"
+	INCBIN "gfx/cards/pineco.pal"
+
+SneaselCardGfx::
+	INCBIN "gfx/cards/sneasel.2bpp"
+	INCBIN "gfx/cards/sneasel.pal"
+
+ShuckleCardGfx::
+	INCBIN "gfx/cards/shuckle.2bpp"
+	INCBIN "gfx/cards/shuckle.pal"
+
+Phanpy1CardGfx::
+	INCBIN "gfx/cards/phanpy1.2bpp"
+	INCBIN "gfx/cards/phanpy1.pal"
+
+SudowoodoCardGfx::
+	INCBIN "gfx/cards/sudowoodo.2bpp"
+	INCBIN "gfx/cards/sudowoodo.pal"

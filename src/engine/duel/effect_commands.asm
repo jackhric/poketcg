@@ -1706,3 +1706,38 @@ DontApplyWREffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MagnetonSonicboom_NullEffect
 	dbw EFFECTCMDTYPE_AI, MagnetonSonicboom_UnaffectedByColorEffect
 	db  $00
+
+; --- Neo additive batch 3 EffectCommands ---
+
+; Selfdestruct variant: 10 to all benched, 40 to self
+Do10ToAllBenchAnd40ToSelfEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GolemSelfdestructEffect
+	db  $00
+
+; Flip 3 coins, deal 10 per heads
+CF10X3EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, NidoranFFurySwipes_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, NidoranFFurySwipes_AIEffect
+	db  $00
+
+; +10 damage per benched Pokemon (Wigglytuff Do The Wave pattern)
+Do10MorePerSelfBenchEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DoTheWaveEffect
+	dbw EFFECTCMDTYPE_AI, DoTheWaveEffect
+	db  $00
+
+; Heads = prevent damage next turn (but not effects). Metapod's Stiffen.
+MayPreventDamageOnlyEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MetapodStiffenEffect
+	db  $00
+
+; Reduce damage by 20 next turn (Phanpy Snivel pattern)
+ReduceDamageBy20EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SnivelEffect
+	db  $00
+
+; Damage scales with own damage counters (Magikarp Flail pattern)
+Do10XPerSelfDamageEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MagikarpFlail_HPCheck
+	dbw EFFECTCMDTYPE_AI, MagikarpFlail_AIEffect
+	db  $00

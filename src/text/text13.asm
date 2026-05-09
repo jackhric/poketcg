@@ -408,3 +408,110 @@ YanmaDescription:
 	line "moving its big eyes, helping it"
 	line "spot attackers and prey quickly."
 	done
+
+; --- Neo additive batch 3 ---
+
+PinecoName:
+	text "Pineco"
+	done
+
+Do10toAllBenchand40ToSelfDesc:
+	text "Pineco does 40 damage to itself,"
+	line "and 10 damage to each Benched"
+	line "Pokémon (yours and your opponent's)."
+	done
+
+BagwormName:
+	text "Bagworm"
+	done
+
+PinecoDescription:
+	text "Lured by the warmth, parasitic bugs"
+	line "live inside its shell. The Pokémon"
+	line "shares its food with the bugs."
+	done
+
+SneaselName:
+	text "Sneasel"
+	done
+
+BeatUpName:
+	text "Beat Up"
+	done
+
+Do10MorePerYourBenchedDesc:
+	text "Does 10 damage plus 10 more damage"
+	line "for each of your Benched Pokémon."
+	done
+
+SharpClawName:
+	text "Sharp Claw"
+	done
+
+SneaselDescription:
+	text "It feeds on Pidgey eggs stolen"
+	line "from nests. Its sharply hooked claws"
+	line "rip vulnerably soft prey apart."
+	done
+
+ShuckleName:
+	text "Shuckle"
+	done
+
+PreventDamageButNotEffectsDesc:
+	text "During your opponent's next turn,"
+	line "prevent all damage done to Shuckle."
+	line "(Effects of attacks are not"
+	line "prevented.)"
+	done
+
+MoldName:
+	text "Mold"
+	done
+
+ShuckleDescription:
+	text "It stores berries inside its shell."
+	line "Over time, the berries undergo a"
+	line "process that turns them into juice."
+	done
+
+PhanpyName:
+	text "Phanpy"
+	done
+
+ReduceBy20Descr:
+	text "If an attack does damage to Phanpy"
+	line "during your opponent's next turn,"
+	line "any damage done to Phanpy is reduced"
+	line "by 20 (after applying Weakness and"
+	line "Resistance)."
+	done
+
+LongNoseName:
+	text "Long Nose"
+	done
+
+Phanpy1Description:
+	text "It is small but powerful enough to"
+	line "easily carry an adult human on its"
+	line "back. It is also very tough."
+	done
+
+SudowoodoName:
+	text "Sudowoodo"
+	done
+
+Do10XPerSelfDamageDesc:
+	text "Does 10 damage times the number of"
+	line "damage counters on Sudowoodo."
+	done
+
+ImitationName:
+	text "Imitation"
+	done
+
+SudowoodoDescription:
+	text "Although it always pretends to be"
+	line "a tree, its body is more similar to"
+	line "a Rock-type than a plant."
+	done

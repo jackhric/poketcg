@@ -243,6 +243,11 @@ CardPointers::
 	dw SnubbullCard
 	dw SpinarakCard
 	dw YanmaCard
+	dw PinecoCard
+	dw SneaselCard
+	dw ShuckleCard
+	dw Phanpy1Card
+	dw SudowoodoCard
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -10795,4 +10800,259 @@ YanmaCard:
 	db 3, 11 ; length
 	dw 84 * 10 ; weight
 	tx YanmaDescription ; description
+	db 0
+
+PinecoCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx PinecoCardGfx ; gfx
+	tx PinecoName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	db PINECO
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx TackleName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy GRASS, 1, COLORLESS, 1 ; energies
+	tx SelfdestructName ; name
+	tx Do10toAllBenchand40ToSelfDesc ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Do10ToAllBenchAnd40ToSelfEffectCommands ; effect commands
+	db HIGH_RECOIL ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 60
+	db ATK_ANIM_BIG_SELFDESTRUCTION ; animation
+
+	db 2 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx BagwormName ; category
+	db 204 ; Pokedex number
+	db 0
+	db 8 ; level
+	db 2, 0 ; length
+	dw 16 * 10 ; weight
+	tx PinecoDescription ; description
+	db 16
+
+SneaselCard:
+	db TYPE_PKMN_WATER ; type
+	gfx SneaselCardGfx ; gfx
+	tx SneaselName ; name
+	db STAR ; rarity
+	db LABORATORY | NONE ; sets
+	db SNEASEL
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx FurySwipesName ; name
+	tx TripleAttackX10Description ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_X ; category
+	dw CF10X3EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_MULTIPLE_SLASH ; animation
+
+	; attack 2
+	energy WATER, 2, COLORLESS, 1 ; energies
+	tx BeatUpName ; name
+	tx Do10MorePerYourBenchedDesc ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw Do10MorePerSelfBenchEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_PSYCHIC ; resistance
+	tx SharpClawName ; category
+	db 215 ; Pokedex number
+	db 0
+	db 37 ; level
+	db 2, 11 ; length
+	dw 62 * 10 ; weight
+	tx SneaselDescription ; description
+	db 0
+
+ShuckleCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx ShuckleCardGfx ; gfx
+	tx ShuckleName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	db SHUCKLE
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx WithdrawName ; name
+	tx PreventDamageButNotEffectsDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw MayPreventDamageOnlyEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	; attack 2
+	energy FIGHTING, 2 ; energies
+	tx WrapName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_WATER ; weakness
+	db NONE ; resistance
+	tx MoldName ; category
+	db 213 ; Pokedex number
+	db 0
+	db 17 ; level
+	db 2, 0 ; length
+	dw 45 * 10 ; weight
+	tx ShuckleDescription ; description
+	db 0
+
+Phanpy1Card:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx Phanpy1CardGfx ; gfx
+	tx PhanpyName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db PHANPY1
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx SnivelName ; name
+	tx ReduceBy20Descr ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ReduceDamageBy20EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 10
+	db ATK_ANIM_CRY ; animation
+
+	; attack 2
+	energy FIGHTING, 1, COLORLESS, 1 ; energies
+	tx RamName ; name
+	tx SwitchAfterDamageDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SwitchOppAfterDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db SWITCH_OPPONENT_POKEMON ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_LIGHTNING ; resistance
+	tx LongNoseName ; category
+	db 231 ; Pokedex number
+	db 0
+	db 9 ; level
+	db 1, 8 ; length
+	dw 74 * 10 ; weight
+	tx Phanpy1Description ; description
+	db 0
+
+SudowoodoCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx SudowoodoCardGfx ; gfx
+	tx SudowoodoName ; name
+	db DIAMOND ; rarity
+	db MYSTERY | NONE ; sets
+	db SUDOWOODO
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy FIGHTING, 1 ; energies
+	tx FlailName ; name
+	tx Do10XPerSelfDamageDesc ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_X ; category
+	dw Do10XPerSelfDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db 0
+	db ATK_ANIM_BIG_HIT ; animation
+
+	; attack 2
+	energy FIGHTING, 1, COLORLESS, 1 ; energies
+	tx RockThrowName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_ROCK_THROW ; animation
+
+	db 3 ; retreat cost
+	db WR_WATER ; weakness
+	db NONE ; resistance
+	tx ImitationName ; category
+	db 185 ; Pokedex number
+	db 0
+	db 20 ; level
+	db 3, 11 ; length
+	dw 84 * 10 ; weight
+	tx SudowoodoDescription ; description
 	db 0
