@@ -1661,3 +1661,48 @@ MayDo10Plus20EffectCommands:
 ReduceDamageBy10AfterDamageEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExpandEffect
 	db  $00
+
+; --- Neo additive batch 2 EffectCommands (all wrap existing functions) ---
+
+; Heads = +10 damage (base 20, Tauros Stomp pattern)
+MayDo20Plus10EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TaurosStomp_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, TaurosStomp_AIEffect
+	db  $00
+
+; Flip 2 coins, deal 30 per heads (Dragonite Slam pattern)
+CF30X2EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DragoniteLv41Slam_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, DragoniteLv41Slam_AIEffect
+	db  $00
+
+; Copy opponent's last attack (Pidgeotto Mirror Move pattern)
+CounterLastAttackEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, PidgeottoMirrorMove_InitialEffect1
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, PidgeottoMirrorMove_InitialEffect2
+	db  $00
+
+; Damage then switch defending Pokemon (Pidgey Whirlwind pattern)
+SwitchOppAfterDamageEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PidgeyWhirlwind_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, PidgeyWhirlwind_SelectEffect
+	dbw EFFECTCMDTYPE_AI_SWITCH_DEFENDING_PKMN, PidgeyWhirlwind_SelectEffect
+	db  $00
+
+; Heads = poison defending (50% chance)
+MayInflictPoisonEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Poison50PercentEffect
+	dbw EFFECTCMDTYPE_AI, WeepinbellPoisonPowder_AIEffect
+	db  $00
+
+; Heads = full immunity next turn (Fearow Agility pattern)
+MayGetImmunityEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FearowAgilityEffect
+	db  $00
+
+; Damage ignores weakness/resistance (Magneton Sonicboom pattern)
+DontApplyWREffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MagnetonSonicboom_UnaffectedByColorEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MagnetonSonicboom_NullEffect
+	dbw EFFECTCMDTYPE_AI, MagnetonSonicboom_UnaffectedByColorEffect
+	db  $00

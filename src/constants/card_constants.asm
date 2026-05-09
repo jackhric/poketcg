@@ -233,4 +233,9 @@
 	const DUNSPARCE                   ; $e8
 	const STANTLER                    ; $e9
 	const SKARMORY                    ; $ea
+	const FURRET                      ; $eb
+	const WOBBUFFET                   ; $ec
+	const SNUBBULL                    ; $ed
+	const SPINARAK                    ; $ee
+	const YANMA                       ; $ef
 DEF NUM_CARDS EQU const_value - 1

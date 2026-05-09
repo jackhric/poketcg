@@ -3015,3 +3015,25 @@ TextOffsets::
 	textpointer ArmorBirdName                                      ; 0x0bc3
 	textpointer SkarmoryDescription                                ; 0x0bc4
 	textpointer MayDraw1CardDesc                                   ; 0x0bc5
+	textpointer FurretName                                         ; 0x0bc6
+	textpointer LongBodyName                                       ; 0x0bc7
+	textpointer MayDo20Plus10Description                           ; 0x0bc8
+	textpointer FurretDescription                                  ; 0x0bc9
+	textpointer WobbuffetName                                      ; 0x0bca
+	textpointer BopName                                            ; 0x0bcb
+	textpointer CounterName                                        ; 0x0bcc
+	textpointer CounterDesc                                        ; 0x0bcd
+	textpointer PatientName                                        ; 0x0bce
+	textpointer WobbuffetDescription                               ; 0x0bcf
+	textpointer SnubbullName                                       ; 0x0bd0
+	textpointer RoarName                                           ; 0x0bd1
+	textpointer SwitchAfterDamageDesc                              ; 0x0bd2
+	textpointer SnubbullDescription                                ; 0x0bd3
+	textpointer SpinarakName                                       ; 0x0bd4
+	textpointer StringSpitName                                     ; 0x0bd5
+	textpointer SpinarakDescription                                ; 0x0bd6
+	textpointer YanmaName                                          ; 0x0bd7
+	textpointer MayGetImmunityDesc                                 ; 0x0bd8
+	textpointer DontApplyWRDesc                                    ; 0x0bd9
+	textpointer ClearWingName                                      ; 0x0bda
+	textpointer YanmaDescription                                   ; 0x0bdb

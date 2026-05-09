@@ -298,3 +298,113 @@ SkarmoryDescription:
 MayDraw1CardDesc:
 	text "Flip a coin. If Heads, draw 1 card."
 	done
+
+; --- Neo additive batch 2 ---
+
+FurretName:
+	text "Furret"
+	done
+
+LongBodyName:
+	text "Long Body"
+	done
+
+MayDo20Plus10Description:
+	text "Flip a coin. If Heads, this attack"
+	line "does 20 damage plus 10 more damage."
+	done
+
+FurretDescription:
+	text "It makes its nest in a small hidden"
+	line "hole in a tree or the ground. Inside"
+	line "the den, it can curl up tightly."
+	done
+
+WobbuffetName:
+	text "Wobbuffet"
+	done
+
+BopName:
+	text "Bop"
+	done
+
+CounterName:
+	text "Counter"
+	done
+
+CounterDesc:
+	text "If your opponent attacks Wobbuffet"
+	line "next turn, any damage done to"
+	line "Wobbuffet is doubled and the same"
+	line "attack does no damage to Wobbuffet."
+	done
+
+PatientName:
+	text "Patient"
+	done
+
+WobbuffetDescription:
+	text "It hates light and shock. If attacked,"
+	line "it inflates its body to build up its"
+	line "counterstrike."
+	done
+
+SnubbullName:
+	text "Snubbull"
+	done
+
+RoarName:
+	text "Roar"
+	done
+
+SwitchAfterDamageDesc:
+	text "Your opponent switches the Defending"
+	line "Pokémon with one of his or her"
+	line "Benched Pokémon."
+	done
+
+SnubbullDescription:
+	text "By baring its fangs and making a"
+	line "scary face, it sends smaller"
+	line "Pokémon scurrying in terror."
+	done
+
+SpinarakName:
+	text "Spinarak"
+	done
+
+StringSpitName:
+	text "String Spit"
+	done
+
+SpinarakDescription:
+	text "If prey become ensnared in the"
+	line "white silk net it spins, the prey"
+	line "cannot escape."
+	done
+
+YanmaName:
+	text "Yanma"
+	done
+
+MayGetImmunityDesc:
+	text "Flip a coin. If heads, during your"
+	line "opponent's next turn, prevent all"
+	line "effects of attacks, including"
+	line "damage, done to this Pokémon."
+	done
+
+DontApplyWRDesc:
+	text "Don't apply Weakness and Resistance"
+	line "for this attack."
+	done
+
+ClearWingName:
+	text "Clear Wing"
+	done
+
+YanmaDescription:
+	text "It can see in all directions without"
+	line "moving its big eyes, helping it"
+	line "spot attackers and prey quickly."
+	done

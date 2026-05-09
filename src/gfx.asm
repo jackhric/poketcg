@@ -2380,3 +2380,23 @@ StantlerCardGfx::
 SkarmoryCardGfx::
 	INCBIN "gfx/cards/skarmory.2bpp"
 	INCBIN "gfx/cards/skarmory.pal"
+
+FurretCardGfx::
+	INCBIN "gfx/cards/furret.2bpp"
+	INCBIN "gfx/cards/furret.pal"
+
+WobbuffetCardGfx::
+	INCBIN "gfx/cards/wobbuffet.2bpp"
+	INCBIN "gfx/cards/wobbuffet.pal"
+
+SnubbullCardGfx::
+	INCBIN "gfx/cards/snubbull.2bpp"
+	INCBIN "gfx/cards/snubbull.pal"
+
+SpinarakCardGfx::
+	INCBIN "gfx/cards/spinarak.2bpp"
+	INCBIN "gfx/cards/spinarak.pal"
+
+YanmaCardGfx::
+	INCBIN "gfx/cards/yanma.2bpp"
+	INCBIN "gfx/cards/yanma.pal"

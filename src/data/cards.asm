@@ -238,6 +238,11 @@ CardPointers::
 	dw DunsparceCard
 	dw StantlerCard
 	dw SkarmoryCard
+	dw FurretCard
+	dw WobbuffetCard
+	dw SnubbullCard
+	dw SpinarakCard
+	dw YanmaCard
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -10536,3 +10541,258 @@ SkarmoryCard:
 	dw 111 * 10 ; weight
 	tx SkarmoryDescription ; description
 	db 3
+
+FurretCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx FurretCardGfx ; gfx
+	tx FurretName ; name
+	db DIAMOND ; rarity
+	db COLOSSEUM | NONE ; sets
+	db FURRET
+	db 60 ; hp
+	db STAGE1 ; stage
+	tx SentretName ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx QuickAttackName ; name
+	tx MayDo20Plus10Description ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw MayDo20Plus10EffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 1
+	db ATK_ANIM_QUICK_ATTACK ; animation
+
+	; attack 2
+	energy COLORLESS, 3 ; energies
+	tx SlamName ; name
+	tx DoubleAttackX30Description ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_X ; category
+	dw CF30X2EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 0 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_PSYCHIC ; resistance
+	tx LongBodyName ; category
+	db 162 ; Pokedex number
+	db 0
+	db 30 ; level
+	db 5, 11 ; length
+	dw 71 * 10 ; weight
+	tx FurretDescription ; description
+	db 0
+
+WobbuffetCard:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx WobbuffetCardGfx ; gfx
+	tx WobbuffetName ; name
+	db DIAMOND ; rarity
+	db LABORATORY | NONE ; sets
+	db WOBBUFFET
+	db 90 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx BopName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy PSYCHIC, 1 ; energies
+	tx CounterName ; name
+	tx CounterDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw CounterLastAttackEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_MIRROR_MOVE ; animation
+
+	db 3 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
+	tx PatientName ; category
+	db 202 ; Pokedex number
+	db 0
+	db 30 ; level
+	db 4, 3 ; length
+	dw 62 * 10 ; weight
+	tx WobbuffetDescription ; description
+	db 19
+
+SnubbullCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx SnubbullCardGfx ; gfx
+	tx SnubbullName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db SNUBBULL
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx RoarName ; name
+	tx SwitchAfterDamageDesc ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SwitchOppAfterDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db SWITCH_OPPONENT_POKEMON ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_WHIRLWIND ; animation
+
+	; attack 2
+	energy COLORLESS, 2 ; energies
+	tx LickName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GOO ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx FairyName ; category
+	db 209 ; Pokedex number
+	db 0
+	db 14 ; level
+	db 2, 0 ; length
+	dw 17 * 10 ; weight
+	tx SnubbullDescription ; description
+	db 16
+
+SpinarakCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx SpinarakCardGfx ; gfx
+	tx SpinarakName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	db SPINARAK
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx PoisonStingName ; name
+	tx MayInflictPoisonDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictPoisonEffectCommands ; effect commands
+	db INFLICT_POISON ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NEEDLES ; animation
+
+	; attack 2
+	energy GRASS, 1 ; energies
+	tx StringShotName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_STRING_SHOT ; animation
+
+	db 1 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx StringSpitName ; category
+	db 167 ; Pokedex number
+	db 0
+	db 10 ; level
+	db 1, 8 ; length
+	dw 18 * 10 ; weight
+	tx SpinarakDescription ; description
+	db 16
+
+YanmaCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx YanmaCardGfx ; gfx
+	tx YanmaName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	db YANMA
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 2 ; energies
+	tx AgilityName ; name
+	tx MayGetImmunityDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayGetImmunityEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_QUICK_ATTACK ; animation
+
+	; attack 2
+	energy GRASS, 1, COLORLESS, 2 ; energies
+	tx SonicboomName ; name
+	tx DontApplyWRDesc ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw DontApplyWREffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SONICBOOM ; animation
+
+	db 0 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_FIGHTING ; resistance
+	tx ClearWingName ; category
+	db 193 ; Pokedex number
+	db 0
+	db 29 ; level
+	db 3, 11 ; length
+	dw 84 * 10 ; weight
+	tx YanmaDescription ; description
+	db 0
