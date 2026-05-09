@@ -788,3 +788,127 @@ Espeon1Description:
 	line "predict the next day's weather."
 	done
 
+; --- Neo additive batch 7 ---
+
+GranbullName:
+	text "Granbull"
+	done
+
+Do10PerSelfDamageThenMayConfuse:
+	text "Does 30 damage plus 10 more damage"
+	line "for each damage counter on Granbull."
+	line "Flip a coin. If tails, Granbull is"
+	line "now Confused."
+	done
+
+GranbullDescription:
+	text "It has a particularly well-developed"
+	line "lower jaw. The huge fangs are heavy,"
+	line "causing it to tilt its head."
+	done
+
+DonphanName:
+	text "Donphan"
+	done
+
+IfNoKOThenReturntoHandDesc:
+	text "If the Defending Pokémon isn't"
+	line "Knocked Out by this attack, your"
+	line "opponent returns it and all cards"
+	line "attached to it to his or her hand."
+	done
+
+GreatTuskName:
+	text "Great Tusk"
+	done
+
+Donphan2Description:
+	text "If it rolls into an enemy with its"
+	line "tough body, it can inflict some"
+	line "serious damage with its tusks."
+	done
+
+ForretressName:
+	text "Forretress"
+	done
+
+IroncladName:
+	text "Ironclad"
+	done
+
+IroncladDesc:
+	text "Whenever an attack does damage to"
+	line "Forretress (after applying Weakness"
+	line "and Resistance), the Attacking"
+	line "Pokémon takes 10 damage. (Don't"
+	line "apply Weakness and Resistance to"
+	line "this damage.)"
+	done
+
+IroncladDescCont:
+	text ""
+	done
+
+ForretressDescription:
+	text "Usually found hanging on a tree,"
+	line "it shoots out the steel-hard shell"
+	line "fragments at any approaching foe."
+	done
+
+LedybaName:
+	text "Ledyba"
+	done
+
+QuadrupleAttackX10Description:
+	text "Flip 4 coins. This attack does 10"
+	line "damage times the number of heads."
+	done
+
+FiveStarName:
+	text "Five Star"
+	done
+
+LedybaDescription:
+	text "It is timid, and clusters together"
+	line "with others. Its rear emits a sweet"
+	line "and pungent fluid that calls allies."
+	done
+
+LedianName:
+	text "Ledian"
+	done
+
+OppHalfDamageDesc:
+	text "Whenever an attack (including"
+	line "Ledian's) does damage to Ledian"
+	line "(after applying Weakness and"
+	line "Resistance), that attack does"
+	line "half the damage to Ledian"
+	done
+
+OppHalfDamageDescCont:
+	text "(rounded down to the nearest 10)."
+	line "(Any other effects of attacks"
+	line "still happen.)"
+	done
+
+LedianDescription:
+	text "It is said that in lands with"
+	line "clean air, where stars fill the"
+	line "sky, there are many Ledian."
+	done
+
+MantineName:
+	text "Mantine"
+	done
+
+KiteName:
+	text "Kite"
+	done
+
+MantineDescription:
+	text "It swims along with Remoraid"
+	line "attached to its body. They"
+	line "leisurely cruise the open seas."
+	done
+

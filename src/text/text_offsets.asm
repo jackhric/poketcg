@@ -3110,3 +3110,26 @@ TextOffsets::
 	textpointer Do10MorePerOppEenergyDesc                          ; 0x0c22
 	textpointer SunName                                            ; 0x0c23
 	textpointer Espeon1Description                                 ; 0x0c24
+	textpointer GranbullName                                       ; 0x0c25
+	textpointer Do10PerSelfDamageThenMayConfuse                    ; 0x0c26
+	textpointer GranbullDescription                                ; 0x0c27
+	textpointer DonphanName                                        ; 0x0c28
+	textpointer IfNoKOThenReturntoHandDesc                         ; 0x0c29
+	textpointer GreatTuskName                                      ; 0x0c2a
+	textpointer Donphan2Description                                ; 0x0c2b
+	textpointer ForretressName                                     ; 0x0c2c
+	textpointer IroncladName                                       ; 0x0c2d
+	textpointer IroncladDesc                                       ; 0x0c2e
+	textpointer IroncladDescCont                                   ; 0x0c2f
+	textpointer ForretressDescription                              ; 0x0c30
+	textpointer LedybaName                                         ; 0x0c31
+	textpointer QuadrupleAttackX10Description                      ; 0x0c32
+	textpointer FiveStarName                                       ; 0x0c33
+	textpointer LedybaDescription                                  ; 0x0c34
+	textpointer LedianName                                         ; 0x0c35
+	textpointer OppHalfDamageDesc                                  ; 0x0c36
+	textpointer OppHalfDamageDescCont                              ; 0x0c37
+	textpointer LedianDescription                                  ; 0x0c38
+	textpointer MantineName                                        ; 0x0c39
+	textpointer KiteName                                           ; 0x0c3a
+	textpointer MantineDescription                                 ; 0x0c3b

@@ -229,6 +229,12 @@ CardPointers::
 	dw TyranitarCard
 	dw SteelixCard
 	dw Espeon1Card
+	dw GranbullCard
+	dw Donphan2Card
+	dw ForretressCard
+	dw LedybaCard
+	dw LedianCard
+	dw MantineCard
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -10068,4 +10074,310 @@ Espeon1Card:
 	dw 58 * 10 ; weight
 	tx Espeon1Description ; description
 	db 19
+
+GranbullCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx GranbullCardGfx ; gfx
+	tx GranbullName ; name
+	db DIAMOND ; rarity
+	db COLOSSEUM | NONE ; sets
+	db GRANBULL
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx SnubbullName ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 2 ; energies
+	tx RoarName ; name
+	tx SwitchAfterDamageDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SwitchOppAfterDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db SWITCH_OPPONENT_POKEMON ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_WHIRLWIND ; animation
+
+	; attack 2
+	energy COLORLESS, 3 ; energies
+	tx RampageName ; name
+	tx Do10PerSelfDamageThenMayConfuse ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw Do10PerSelfDamageThenMayConfuseEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db 0
+	db ATK_ANIM_RAMPAGE ; animation
+
+	db 2 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_PSYCHIC ; resistance
+	tx FairyName ; category
+	db 210 ; Pokedex number
+	db 0
+	db 40 ; level
+	db 4, 7 ; length
+	dw 26 * 10 ; weight
+	tx GranbullDescription ; description
+	db 0
+
+Donphan2Card:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx Donphan2CardGfx ; gfx
+	tx DonphanName ; name
+	db STAR ; rarity
+	db LABORATORY | NONE ; sets
+	db DONPHAN2
+	db 80 ; hp
+	db STAGE1 ; stage
+	tx PhanpyName ; pre-evo name
+
+	; attack 1
+	energy FIGHTING, 2, COLORLESS, 1 ; energies
+	tx ThrashName ; name
+	tx IfNoKOThenReturntoHandDesc ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw IfNoKOReturnToHandEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_7 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_MULTIPLE_SLASH ; animation
+
+	; attack 2
+	energy FIGHTING, 4 ; energies
+	tx GreatTuskName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 60 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BIG_HIT ; animation
+
+	db 3 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_LIGHTNING ; resistance
+	tx ArmorName ; category
+	db 232 ; Pokedex number
+	db 0
+	db 41 ; level
+	db 3, 7 ; length
+	dw 264 * 10 ; weight
+	tx Donphan2Description ; description
+	db 19
+
+ForretressCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx ForretressCardGfx ; gfx
+	tx ForretressName ; name
+	db DIAMOND ; rarity
+	db LABORATORY | NONE ; sets
+	db FORRETRESS
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx PinecoName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx IroncladName ; name
+	tx IroncladDesc ; description
+	tx IroncladDescCont ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw IroncladEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+
+	; attack 2
+	energy GRASS, 2 ; energies
+	tx PinMissileName ; name
+	tx TripleAttackX20Description ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_X ; category
+	dw CF20X3EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_MULTIPLE_SLASH ; animation
+
+	db 3 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx BagwormName ; category
+	db 205 ; Pokedex number
+	db 0
+	db 38 ; level
+	db 3, 11 ; length
+	dw 277 * 10 ; weight
+	tx ForretressDescription ; description
+	db 0
+
+LedybaCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx LedybaCardGfx ; gfx
+	tx LedybaName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db LEDYBA
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx SupersonicName ; name
+	tx MayInflictConfusionDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictConfusionEffectCommands ; effect commands
+	db INFLICT_CONFUSION ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SUPERSONIC ; animation
+
+	; attack 2
+	energy GRASS, 2 ; energies
+	tx CometPunchName ; name
+	tx QuadrupleAttackX10Description ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_X ; category
+	dw CF10X4EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PUNCH ; animation
+
+	db 0 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_FIGHTING ; resistance
+	tx FiveStarName ; category
+	db 165 ; Pokedex number
+	db 0
+	db 8 ; level
+	db 3, 0 ; length
+	dw 23 * 10 ; weight
+	tx LedybaDescription ; description
+	db 0
+
+LedianCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx LedianCardGfx ; gfx
+	tx LedianName ; name
+	db DIAMOND ; rarity
+	db COLOSSEUM | NONE ; sets
+	db LEDIAN
+	db 60 ; hp
+	db STAGE1 ; stage
+	tx LedybaName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx LightScreenName ; name
+	tx OppHalfDamageDesc ; description
+	tx OppHalfDamageDescCont ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw HalveDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BARRIER ; animation
+
+	; attack 2
+	energy GRASS, 2, COLORLESS, 1 ; energies
+	tx CometPunchName ; name
+	tx QuadrupleAttackX20Description ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_X ; category
+	dw CF20X4EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PUNCH ; animation
+
+	db 0 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_FIGHTING ; resistance
+	tx FiveStarName ; category
+	db 166 ; Pokedex number
+	db 0
+	db 27 ; level
+	db 4, 7 ; length
+	dw 78 * 10 ; weight
+	tx LedianDescription ; description
+	db 19
+
+MantineCard:
+	db TYPE_PKMN_WATER ; type
+	gfx MantineCardGfx ; gfx
+	tx MantineName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	db MANTINE
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy WATER, 1 ; energies
+	tx BubbleName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BUBBLES ; animation
+
+	; attack 2
+	energy WATER, 2 ; energies
+	tx AgilityName ; name
+	tx MayGetImmunityDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayGetImmunityEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_QUICK_ATTACK ; animation
+
+	db 1 ; retreat cost
+	db WR_LIGHTNING ; weakness
+	db WR_FIGHTING ; resistance
+	tx KiteName ; category
+	db 226 ; Pokedex number
+	db 0
+	db 20 ; level
+	db 6, 11 ; length
+	dw 485 * 10 ; weight
+	tx MantineDescription ; description
+	db 21
 

@@ -224,4 +224,10 @@
 	const TYRANITAR
 	const STEELIX
 	const ESPEON1
+	const GRANBULL
+	const DONPHAN2
+	const FORRETRESS
+	const LEDYBA
+	const LEDIAN
+	const MANTINE
 DEF NUM_CARDS EQU const_value - 1

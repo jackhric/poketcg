@@ -2346,3 +2346,29 @@ SteelixCardGfx::
 Espeon1CardGfx::
 	INCBIN "gfx/cards/espeon1.2bpp"
 	INCBIN "gfx/cards/espeon1.pal"
+
+SECTION "Card Gfx 14", ROMX
+
+GranbullCardGfx::
+	INCBIN "gfx/cards/granbull.2bpp"
+	INCBIN "gfx/cards/granbull.pal"
+
+Donphan2CardGfx::
+	INCBIN "gfx/cards/donphan2.2bpp"
+	INCBIN "gfx/cards/donphan2.pal"
+
+ForretressCardGfx::
+	INCBIN "gfx/cards/forretress.2bpp"
+	INCBIN "gfx/cards/forretress.pal"
+
+LedybaCardGfx::
+	INCBIN "gfx/cards/ledyba.2bpp"
+	INCBIN "gfx/cards/ledyba.pal"
+
+LedianCardGfx::
+	INCBIN "gfx/cards/ledian.2bpp"
+	INCBIN "gfx/cards/ledian.pal"
+
+MantineCardGfx::
+	INCBIN "gfx/cards/mantine.2bpp"
+	INCBIN "gfx/cards/mantine.pal"

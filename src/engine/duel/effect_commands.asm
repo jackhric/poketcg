@@ -1816,3 +1816,44 @@ Do10MorePerOppEnergyEffectCommands:
 	dbw EFFECTCMDTYPE_AI, Psychic_AIEffect
 	db  $00
 
+; --- Neo additive batch 7 EffectCommands ---
+
+; +10 per self damage, tails = self confusion (Rampage pattern)
+Do10PerSelfDamageThenMayConfuseEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Rampage_Confusion50PercentEffect
+	dbw EFFECTCMDTYPE_AI, Rampage_AIEffect
+	db  $00
+
+; If attack didn't KO, return defending Pokemon to hand (Hurricane)
+IfNoKOReturnToHandEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, HurricaneEffect
+	db  $00
+
+; Pkmn Power: damage attacker on attack (Kabuto Armor pattern)
+IroncladEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, KabutoArmorEffect
+	db  $00
+
+; Flip 3 coins, 20 per heads (Sandslash Fury Swipes pattern)
+CF20X3EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SandslashFurySwipes_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, SandslashFurySwipes_AIEffect
+	db  $00
+
+; Flip 4 coins, 10 per heads (uses Acid effect machinery)
+CF10X4EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AcidEffect
+	dbw EFFECTCMDTYPE_AI, GloomPoisonPowder_AIEffect
+	db  $00
+
+; Flip 4 coins, 20 per heads (Comet Punch pattern)
+CF20X4EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, CometPunch_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, CometPunch_AIEffect
+	db  $00
+
+; Halve incoming damage next turn (Light Screen pattern)
+HalveDamageEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LightScreenEffect
+	db  $00
+
