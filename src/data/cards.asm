@@ -247,6 +247,15 @@ CardPointers::
 	dw SunfloraCard
 	dw ScizorCard
 	dw Chinchou1Card
+	dw Togepi1Card
+	dw Togetic1Card
+	dw Lanturn2Card
+	dw MiltankCard
+	dw BlisseyCard
+	dw Chikorita1Card
+	dw Cyndaquil1Card
+	dw Quilava1Card
+	dw Totodile1Card
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -11003,5 +11012,464 @@ Chinchou1Card:
 	db 1, 8 ; length
 	dw 26 * 10 ; weight
 	tx Chinchou1Description ; description
+	db 0
+
+Togepi1Card:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx Togepi1CardGfx ; gfx
+	tx TogepiName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db TOGEPI1
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx SnivelName ; name
+	tx ReduceBy20Descr ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ReduceDamageBy20EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 10
+	db ATK_ANIM_CRY ; animation
+
+	; attack 2
+	energy COLORLESS, 2 ; energies
+	tx TackleName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx SpikeBallName ; category
+	db 175 ; Pokedex number
+	db 0
+	db 12 ; level
+	db 1, 0 ; length
+	dw 3 * 10 ; weight
+	tx Togepi1Description ; description
+	db 3
+
+Togetic1Card:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx Togetic1CardGfx ; gfx
+	tx TogeticName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	db TOGETIC1
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx TogepiName ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx MetronomeName ; name
+	tx CopyOppAttackDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw CopyOppAttackEffectCommands2 ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	; attack 2
+	energy COLORLESS, 3 ; energies
+	tx FlyName ; name
+	tx MayGetImmunityDesc ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayGetImmunityEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_QUICK_ATTACK ; animation
+
+	db 0 ; retreat cost
+	db NONE ; weakness
+	db WR_FIGHTING ; resistance
+	tx HappinessName ; category
+	db 176 ; Pokedex number
+	db 0
+	db 33 ; level
+	db 2, 0 ; length
+	dw 7 * 10 ; weight
+	tx Togetic1Description ; description
+	db 0
+
+Lanturn2Card:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx Lanturn2CardGfx ; gfx
+	tx LanturnName ; name
+	db STAR ; rarity
+	db MYSTERY | NONE ; sets
+	db LANTURN2
+	db 90 ; hp
+	db STAGE1 ; stage
+	tx ChinchouName ; pre-evo name
+
+	; attack 1
+	energy LIGHTNING, 1, COLORLESS, 1 ; energies
+	tx IonStormName ; name
+	tx Do10ToAllOppBenchDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Do10ToAllOppBenchedEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_MAGNETIC_STORM ; animation
+
+	; attack 2
+	energy LIGHTNING, 2, COLORLESS, 1 ; energies
+	tx ThunderName ; name
+	tx MayDo20ToSelfDesc ; description
+	dw NONE ; description (cont)
+	db 60 ; damage
+	db DAMAGE_NORMAL ; category
+	dw CFT20ToSelfEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_THUNDERSHOCK ; animation
+
+	db 2 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx LightName ; category
+	db 172 ; Pokedex number
+	db 0
+	db 43 ; level
+	db 3, 11 ; length
+	dw 39 * 10 ; weight
+	tx Lanturn2Description ; description
+	db 0
+
+MiltankCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx MiltankCardGfx ; gfx
+	tx MiltankName ; name
+	db CIRCLE ; rarity
+	db EVOLUTION | NONE ; sets
+	db MILTANK
+	db 70 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx MilkDrinkName ; name
+	tx Heal2DamageDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw Heal20DamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db NONE ; flags 3
+	db 1
+	db ATK_ANIM_RECOVER ; animation
+
+	; attack 2
+	energy COLORLESS, 3 ; energies
+	tx BodySlamName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BIG_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_PSYCHIC ; resistance
+	tx MilkCowName ; category
+	db 241 ; Pokedex number
+	db 0
+	db 25 ; level
+	db 3, 11 ; length
+	dw 166 * 10 ; weight
+	tx MiltankDescription ; description
+	db 0
+
+BlisseyCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx BlisseyCardGfx ; gfx
+	tx BlisseyName ; name
+	db STAR ; rarity
+	db LABORATORY | NONE ; sets
+	db BLISSEY
+	db 120 ; hp
+	db STAGE1 ; stage
+	tx ChanseyName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx SoftboiledName ; name
+	tx SoftboiledDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw ETBHeal30AllSelfEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HEALING_WIND ; animation
+
+	; attack 2
+	energy COLORLESS, 4 ; energies
+	tx BodySlamName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BIG_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_PSYCHIC ; resistance
+	tx HappinessName ; category
+	db 242 ; Pokedex number
+	db 0
+	db 41 ; level
+	db 4, 11 ; length
+	dw 103 * 10 ; weight
+	tx BlisseyDescription ; description
+	db 0
+
+Chikorita1Card:
+	db TYPE_PKMN_GRASS ; type
+	gfx Chikorita1CardGfx ; gfx
+	tx ChikoritaName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db CHIKORITA1
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx GrowlName ; name
+	tx ReduceDamageBy10Desc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ReduceDamageBy10EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 10
+	db ATK_ANIM_SUPERSONIC ; animation
+
+	; attack 2
+	energy GRASS, 1, COLORLESS, 1 ; energies
+	tx PoisonPowderName ; name
+	tx MayInflictPoisonDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictPoisonEffectCommands ; effect commands
+	db INFLICT_POISON ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_POWDER_EFFECT_CHANCE ; animation
+
+	db 1 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx LeafName ; category
+	db 152 ; Pokedex number
+	db 0
+	db 12 ; level
+	db 2, 11 ; length
+	dw 10 * 14 ; weight
+	tx Chikorita1Description ; description
+	db 16
+
+Cyndaquil1Card:
+	db TYPE_PKMN_FIRE ; type
+	gfx Cyndaquil1CardGfx ; gfx
+	tx CyndaquilName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db CYNDAQUIL1
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy FIRE, 1 ; energies
+	tx BurnName ; name
+	tx Mill1CardIfSuccessDesc ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Mill1OppCardEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SMALL_FLAME ; animation
+
+	; attack 2
+	energy FIRE, 1, COLORLESS, 1 ; energies
+	tx SwiftName ; name
+	tx DontApplyWRDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw DontApplyWREffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_CONFUSE_RAY ; animation
+
+	db 1 ; retreat cost
+	db WR_WATER ; weakness
+	db NONE ; resistance
+	tx FireMouseName ; category
+	db 155 ; Pokedex number
+	db 0
+	db 14 ; level
+	db 1, 8 ; length
+	dw 17 * 10 ; weight
+	tx Cyndaquil1Description ; description
+	db 0
+
+Quilava1Card:
+	db TYPE_PKMN_FIRE ; type
+	gfx Quilava1CardGfx ; gfx
+	tx QuilavaName ; name
+	db DIAMOND ; rarity
+	db COLOSSEUM | NONE ; sets
+	db QUILAVA1
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx CyndaquilName ; pre-evo name
+
+	; attack 1
+	energy FIRE, 2, COLORLESS, 1 ; energies
+	tx FireSpinName ; name
+	tx DamageAndDo10ToABenchDesc ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw DamageAndDo10ToABenchEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 10
+	db ATK_ANIM_FIRE_SPIN ; animation
+
+	; attack 2
+	energy FIRE, 2, COLORLESS, 1 ; energies
+	tx FlamethrowerName ; name
+	tx CharmeleonsFlamethrowerDescription ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Discard1FireEffectCommands ; effect commands
+	db NONE ; flags 1
+	db DISCARD_ENERGY ; flags 2
+	db NONE ; flags 3
+	db 3
+	db ATK_ANIM_BIG_FLAME ; animation
+
+	db 1 ; retreat cost
+	db WR_WATER ; weakness
+	db NONE ; resistance
+	tx VolcanoName ; category
+	db 156 ; Pokedex number
+	db 0
+	db 21 ; level
+	db 2, 11 ; length
+	dw 42 * 10 ; weight
+	tx Quilava1Description ; description
+	db 0
+
+Totodile1Card:
+	db TYPE_PKMN_WATER ; type
+	gfx Totodile1CardGfx ; gfx
+	tx TotodileName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db TOTODILE1
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx BiteName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy WATER, 1, COLORLESS, 1 ; energies
+	tx RageName ; name
+	tx Do10MorePerSelfDamageDesc ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw Do10MorePerSelfDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db NONE ; resistance
+	tx BigJawName ; category
+	db 158 ; Pokedex number
+	db 0
+	db 14 ; level
+	db 2, 0 ; length
+	dw 21 * 10 ; weight
+	tx Totodile1Description ; description
 	db 0
 

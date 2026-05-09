@@ -1929,3 +1929,49 @@ DamageAndDo10ToABenchEffectCommands:
 	dbw EFFECTCMDTYPE_AI_SELECTION, GengarDarkMind_AISelectEffect
 	db  $00
 
+; --- Neo additive batch 10 EffectCommands ---
+
+; Copy opponent's last attack, costs 1 energy (Clefable Metronome pattern)
+CopyOppAttackEffectCommands2:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, ClefableMetronome_CheckAttacks
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, ClefableMetronome_UseAttackEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, ClefableMetronome_AISelectEffect
+	db  $00
+
+; Tails = 20 self damage (Thrash recoil pattern)
+CFT20ToSelfEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Thrash_ModifierEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Thrash_RecoilEffect
+	db  $00
+
+; Heal 20 from self (First Aid / Dodrio Rage pattern)
+Heal20DamageEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DodrioRage_AIEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DodrioRage_DamageBoostEffect
+	db  $00
+
+; Pkmn Power: heal 30 from all your Pokemon on play (Healing Wind)
+ETBHeal30AllSelfEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, HealingWind_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, HealingWind_PlayAreaHealEffect
+	db  $00
+
+; Mill 1 opp deck card if attack dealt damage (Spit Poison AI pattern)
+Mill1OppCardEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, SpitPoison_AIEffect
+	db  $00
+
+; +10 damage per self damage counters (Cubone Rage pattern)
+Do10MorePerSelfDamageEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, CuboneRage_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, CuboneRage_AIEffect
+	db  $00
+
+; Discard 1 fire energy then attack (Charmeleon's Flamethrower pattern)
+Discard1FireEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Ember_CheckEnergy
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Ember_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Ember_DiscardEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Ember_AISelectEffect
+	db  $00
+

@@ -1126,3 +1126,190 @@ Chinchou1Description:
 	line "its two antennas to zap its prey."
 	done
 
+; --- Neo additive batch 10 ---
+
+TogepiName:
+	text "Togepi"
+	done
+
+SpikeBallName:
+	text "Spike Ball"
+	done
+
+Togepi1Description:
+	text "It is considered to be a symbol"
+	line "of good luck. Its shell is said to"
+	line "be filled with happiness."
+	done
+
+TogeticName:
+	text "Togetic"
+	done
+
+CopyOppAttackDescription:
+	text "Choose 1 of the Defending Pokémon's"
+	line "attacks. Metronome copies that"
+	line "attack except for its Energy cost"
+	line "and anything else required for that"
+	line "attack to succeed."
+	done
+
+HappinessName:
+	text "Happiness"
+	done
+
+Togetic1Description:
+	text "Although small, it can flutter to"
+	line "and fro using its wings. It is said"
+	line "to appear before kindhearted people."
+	done
+
+LanturnName:
+	text "Lanturn"
+	done
+
+IonStormName:
+	text "Ion Storm"
+	done
+
+MayDo20ToSelfDesc:
+	text "Flip a coin. If tails, this attack"
+	line "does 20 damage to Lanturn."
+	done
+
+LightName:
+	text "Light"
+	done
+
+Lanturn2Description:
+	text "The light it emits can be seen from"
+	line "the deep, ocean floor. It comes from"
+	line "an organ that evolved from antennas."
+	done
+
+MiltankName:
+	text "Miltank"
+	done
+
+MilkDrinkName:
+	text "Milk Drink"
+	done
+
+Heal2DamageDesc:
+	text "Remove 2 damage counters from"
+	line "Miltank (or 1 if it only has 1)."
+	done
+
+MilkCowName:
+	text "Milk Cow"
+	done
+
+MiltankDescription:
+	text "It produces over five gallons of"
+	line "milk per day. Its tasty milk is"
+	line "popular with children and adults."
+	done
+
+BlisseyName:
+	text "Blissey"
+	done
+
+SoftboiledName:
+	text "Softboiled"
+	done
+
+SoftboiledDescription:
+	text "Once during your turn (before your"
+	line "attack), you may remove 3 damage"
+	line "counters from each of your Pokémon."
+	line "(If a Pokémon has fewer damage"
+	line "counters than that, remove all of"
+	line "them.) This power can't be used if"
+	line "Blissey is Asleep, Confused, or"
+	line "Paralyzed."
+	done
+
+BlisseyDescription:
+	text "Blissey senses sadness with its"
+	line "fluffy fur. If this happens, it"
+	line "will rush over to a sad person."
+	done
+
+ChikoritaName:
+	text "Chikorita"
+	done
+
+Chikorita1Description:
+	text "A sweet aroma gently wafts from"
+	line "the leaf on its head. It is fond"
+	line "of sunbathing."
+	done
+
+CyndaquilName:
+	text "Cyndaquil"
+	done
+
+BurnName:
+	text "Burn"
+	done
+
+Mill1CardIfSuccessDesc:
+	text "If this attack does damage, your"
+	line "opponent puts the top card of his"
+	line "or her deck in the Discard Pile."
+	done
+
+SwiftName:
+	text "Swift"
+	done
+
+FireMouseName:
+	text "Fire Mouse"
+	done
+
+Cyndaquil1Description:
+	text "It is timid and always curls"
+	line "itself up in a ball. If attacked,"
+	line "it flares up its back for protection."
+	done
+
+QuilavaName:
+	text "Quilava"
+	done
+
+DamageAndDo10ToABenchDesc:
+	text "Choose 1 of your opponent's"
+	line "Benched Pokémon and do 10 damage"
+	line "to it. (Don't apply Weakness and"
+	line "Resistance.)"
+	done
+
+VolcanoName:
+	text "Volcano"
+	done
+
+Quilava1Description:
+	text "Before battle, it turns its back"
+	line "on its opponent to demonstrate"
+	line "how ferociously its fire blazes."
+	done
+
+TotodileName:
+	text "Totodile"
+	done
+
+Do10MorePerSelfDamageDesc:
+	text "Does 10 damage plus 10 more damage"
+	line "for each damage counter on Totodile."
+	done
+
+BigJawName:
+	text "Big Jaw"
+	done
+
+Totodile1Description:
+	text "It is small but rough and tough."
+	line "It won't hesitate to take a bite"
+	line "out of anything that moves."
+	done
+

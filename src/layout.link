@@ -177,6 +177,8 @@ ROMX $30
 	"Card Gfx 13"
 ROMX $1a
 	"Card Gfx 14"
+ROMX $1b
+	"Card Gfx 15"
 ROMX $3d
 	"Audio 1"
 ROMX $3e

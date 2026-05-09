@@ -242,4 +242,13 @@
 	const SUNFLORA
 	const SCIZOR
 	const CHINCHOU1
+	const TOGEPI1
+	const TOGETIC1
+	const LANTURN2
+	const MILTANK
+	const BLISSEY
+	const CHIKORITA1
+	const CYNDAQUIL1
+	const QUILAVA1
+	const TOTODILE1
 DEF NUM_CARDS EQU const_value - 1

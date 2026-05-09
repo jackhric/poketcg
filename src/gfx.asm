@@ -2420,3 +2420,41 @@ ScizorCardGfx::
 Chinchou1CardGfx::
 	INCBIN "gfx/cards/chinchou1.2bpp"
 	INCBIN "gfx/cards/chinchou1.pal"
+
+SECTION "Card Gfx 15", ROMX
+
+Togepi1CardGfx::
+	INCBIN "gfx/cards/togepi1.2bpp"
+	INCBIN "gfx/cards/togepi1.pal"
+
+Togetic1CardGfx::
+	INCBIN "gfx/cards/togetic1.2bpp"
+	INCBIN "gfx/cards/togetic1.pal"
+
+Lanturn2CardGfx::
+	INCBIN "gfx/cards/lanturn2.2bpp"
+	INCBIN "gfx/cards/lanturn2.pal"
+
+MiltankCardGfx::
+	INCBIN "gfx/cards/miltank.2bpp"
+	INCBIN "gfx/cards/miltank.pal"
+
+BlisseyCardGfx::
+	INCBIN "gfx/cards/blissey.2bpp"
+	INCBIN "gfx/cards/blissey.pal"
+
+Chikorita1CardGfx::
+	INCBIN "gfx/cards/chikorita1.2bpp"
+	INCBIN "gfx/cards/chikorita1.pal"
+
+Cyndaquil1CardGfx::
+	INCBIN "gfx/cards/cyndaquil1.2bpp"
+	INCBIN "gfx/cards/cyndaquil1.pal"
+
+Quilava1CardGfx::
+	INCBIN "gfx/cards/quilava1.2bpp"
+	INCBIN "gfx/cards/quilava1.pal"
+
+Totodile1CardGfx::
+	INCBIN "gfx/cards/totodile1.2bpp"
+	INCBIN "gfx/cards/totodile1.pal"
