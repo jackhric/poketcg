@@ -3078,3 +3078,15 @@ TextOffsets::
 	textpointer SlugmaName                                         ; 0x0c02
 	textpointer LavaName                                           ; 0x0c03
 	textpointer SlugmaDescription                                  ; 0x0c04
+	textpointer SkiploomName                                       ; 0x0c05
+	textpointer SkiploomDescription                                ; 0x0c06
+	textpointer PupitarName                                        ; 0x0c07
+	textpointer SandstormName                                      ; 0x0c08
+	textpointer Do10ToAllOppBenchDesc                              ; 0x0c09
+	textpointer HardShellName                                      ; 0x0c0a
+	textpointer PupitarDescription                                 ; 0x0c0b
+	textpointer Phanpy2Description                                 ; 0x0c0c
+	textpointer Marill2Description                                 ; 0x0c0d
+	textpointer Do10MorePerWaterEnergyMax20Desc                    ; 0x0c0e
+	textpointer Mareep2Description                                 ; 0x0c0f
+	textpointer MayDo10ToSelfDesc                                  ; 0x0c10

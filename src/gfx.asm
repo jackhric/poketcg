@@ -2446,3 +2446,23 @@ HoppipCardGfx::
 SlugmaCardGfx::
 	INCBIN "gfx/cards/slugma.2bpp"
 	INCBIN "gfx/cards/slugma.pal"
+
+SkiploomCardGfx::
+	INCBIN "gfx/cards/skiploom.2bpp"
+	INCBIN "gfx/cards/skiploom.pal"
+
+PupitarCardGfx::
+	INCBIN "gfx/cards/pupitar.2bpp"
+	INCBIN "gfx/cards/pupitar.pal"
+
+Phanpy2CardGfx::
+	INCBIN "gfx/cards/phanpy2.2bpp"
+	INCBIN "gfx/cards/phanpy2.pal"
+
+Marill2CardGfx::
+	INCBIN "gfx/cards/marill2.2bpp"
+	INCBIN "gfx/cards/marill2.pal"
+
+Mareep2CardGfx::
+	INCBIN "gfx/cards/mareep2.2bpp"
+	INCBIN "gfx/cards/mareep2.pal"

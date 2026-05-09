@@ -249,4 +249,9 @@
 	const MARILL1                     ; $f8
 	const HOPPIP                      ; $f9
 	const SLUGMA                      ; $fa
+	const SKIPLOOM                    ; $fb
+	const PUPITAR                     ; $fc
+	const PHANPY2                     ; $fd
+	const MARILL2                     ; $fe
+	const MAREEP2                     ; $ff
 DEF NUM_CARDS EQU const_value - 1

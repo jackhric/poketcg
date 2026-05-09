@@ -254,6 +254,11 @@ CardPointers::
 	dw Marill1Card
 	dw HoppipCard
 	dw SlugmaCard
+	dw SkiploomCard
+	dw PupitarCard
+	dw Phanpy2Card
+	dw Marill2Card
+	dw Mareep2Card
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -11368,3 +11373,258 @@ SlugmaCard:
 	dw 77 * 10 ; weight
 	tx SlugmaDescription ; description
 	db 0
+
+SkiploomCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx SkiploomCardGfx ; gfx
+	tx SkiploomName ; name
+	db DIAMOND ; rarity
+	db LABORATORY | NONE ; sets
+	db SKIPLOOM
+	db 60 ; hp
+	db STAGE1 ; stage
+	tx HoppipName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx PoisonPowderName ; name
+	tx MayInflictPoisonDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictPoisonEffectCommands ; effect commands
+	db INFLICT_POISON ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_POWDER_EFFECT_CHANCE ; animation
+
+	; attack 2
+	energy GRASS, 1 ; energies
+	tx StunSporeName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_POWDER_EFFECT_CHANCE ; animation
+
+	db 0 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_FIGHTING ; resistance
+	tx CottonweedName ; category
+	db 188 ; Pokedex number
+	db 0
+	db 19 ; level
+	db 2, 0 ; length
+	dw 2 * 10 ; weight
+	tx SkiploomDescription ; description
+	db 16
+
+PupitarCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx PupitarCardGfx ; gfx
+	tx PupitarName ; name
+	db DIAMOND ; rarity
+	db EVOLUTION | NONE ; sets
+	db PUPITAR
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx LarvitarName ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 2 ; energies
+	tx TackleName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy FIGHTING, 2 ; energies
+	tx SandstormName ; name
+	tx Do10ToAllOppBenchDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Do10ToAllOppBenchedEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SMOG ; animation
+
+	db 2 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_LIGHTNING ; resistance
+	tx HardShellName ; category
+	db 247 ; Pokedex number
+	db 0
+	db 37 ; level
+	db 3, 11 ; length
+	dw 287 * 10 ; weight
+	tx PupitarDescription ; description
+	db 0
+
+Phanpy2Card:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx Phanpy2CardGfx ; gfx
+	tx PhanpyName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	db PHANPY2
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy FIGHTING, 1 ; energies
+	tx SandAttackName ; name
+	tx OpponentAttackMayDoNothingDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SandshrewSandAttackEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_DARK_GAS ; animation
+
+	; attack 2
+	energy COLORLESS, 1 ; energies
+	tx FlailName ; name
+	tx Do10XPerSelfDamageDesc ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_X ; category
+	dw Do10XPerSelfDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db 0
+	db ATK_ANIM_BIG_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_LIGHTNING ; resistance
+	tx LongNoseName ; category
+	db 231 ; Pokedex number
+	db 0
+	db 14 ; level
+	db 1, 8 ; length
+	dw 74 * 10 ; weight
+	tx Phanpy2Description ; description
+	db 19
+
+Marill2Card:
+	db TYPE_PKMN_WATER ; type
+	gfx Marill2CardGfx ; gfx
+	tx MarillName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db MARILL2
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy WATER, 1 ; energies
+	tx BubbleName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BUBBLES ; animation
+
+	; attack 2
+	energy WATER, 1 ; energies
+	tx WaterGunName ; name
+	tx Do10MorePerWaterEnergyMax20Desc ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw WWaterBoostEffectCommands ; effect commands
+	db NONE ; flags 1
+	db ATTACHED_ENERGY_BOOST ; flags 2
+	db NONE ; flags 3
+	db MAX_ENERGY_BOOST_IS_LIMITED
+	db ATK_ANIM_WATER_GUN ; animation
+
+	db 1 ; retreat cost
+	db WR_LIGHTNING ; weakness
+	db NONE ; resistance
+	tx AquamouseName ; category
+	db 183 ; Pokedex number
+	db 0
+	db 14 ; level
+	db 1, 4 ; length
+	dw 18 * 10 ; weight
+	tx Marill2Description ; description
+	db 16
+
+Mareep2Card:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx Mareep2CardGfx ; gfx
+	tx MareepName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db MAREEP2
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy LIGHTNING, 1, COLORLESS, 1 ; energies
+	tx ThunderJoltName ; name
+	tx MayDo10ToSelfDesc ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw CFT10ToSelfEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_THUNDERSHOCK ; animation
+
+	; attack 2
+	energy 0 ; energies
+	dw NONE ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx WoolName ; category
+	db 179 ; Pokedex number
+	db 0
+	db 11 ; level
+	db 2, 0 ; length
+	dw 17 * 10 ; weight
+	tx Mareep2Description ; description
+	db 16

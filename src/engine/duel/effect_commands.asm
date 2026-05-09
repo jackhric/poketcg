@@ -1753,3 +1753,27 @@ CFHOppCantAttackEffectCommands:
 ReduceDamageBy10EffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PikachuAltLv16GrowlEffect
 	db  $00
+
+; --- Neo additive batch 5 EffectCommands ---
+
+; Damage to attacker + 10 to all opp benched (Magneton Selfdestruct pattern)
+Do10ToAllOppBenchedEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MagnetonLv28SelfdestructEffect
+	db  $00
+
+; Smokescreen-style flip for opponent's next attack to do nothing
+SandshrewSandAttackEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SandAttackEffect
+	db  $00
+
+; +10 damage per attached water energy (Omanyte Water Gun pattern)
+WWaterBoostEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, OmanyteWaterGunEffect
+	dbw EFFECTCMDTYPE_AI, OmanyteWaterGunEffect
+	db  $00
+
+; Tails = 10 self damage (Thunder Jolt recoil pattern)
+CFT10ToSelfEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ThunderJolt_Recoil50PercentEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ThunderJolt_RecoilEffect
+	db  $00

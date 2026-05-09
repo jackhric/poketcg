@@ -613,3 +613,69 @@ SlugmaDescription:
 	line "of 18,000 degrees Fahrenheit. It"
 	line "lives in volcanic areas."
 	done
+
+; --- Neo additive batch 5 ---
+
+SkiploomName:
+	text "Skiploom"
+	done
+
+SkiploomDescription:
+	text "The bloom on top of its head opens"
+	line "and closes as the temperature"
+	line "fluctuates up and down."
+	done
+
+PupitarName:
+	text "Pupitar"
+	done
+
+SandstormName:
+	text "Sandstorm"
+	done
+
+Do10ToAllOppBenchDesc:
+	text "Does 10 damage to each of your"
+	line "opponent's Benched Pokémon."
+	done
+
+HardShellName:
+	text "Hard Shell"
+	done
+
+PupitarDescription:
+	text "Even sealed in its shell, it can"
+	line "move freely. Hard and tough, the"
+	line "shell is impervious to attack."
+	done
+
+Phanpy2Description:
+	text "Although docile, it has one tough"
+	line "feature: any of its bones, when"
+	line "broken, will quickly mend."
+	done
+
+Marill2Description:
+	text "Its tail, which contains rubbery"
+	line "flesh, is a buoyant aid that helps"
+	line "Marill stay afloat in water."
+	done
+
+Do10MorePerWaterEnergyMax20Desc:
+	text "Does 10 damage plus 10 more damage"
+	line "for each Water Energy attached to"
+	line "Marill but not used to pay for this"
+	line "attack's Energy cost. You can't add"
+	line "more than 20 damage in this way."
+	done
+
+Mareep2Description:
+	text "Its fluffy fleece easily stores"
+	line "electricity. Its rubbery hide keeps"
+	line "Mareep from being electrocuted."
+	done
+
+MayDo10ToSelfDesc:
+	text "Flip a coin. If tails, this attack"
+	line "does 10 damage to Mareep."
+	done
