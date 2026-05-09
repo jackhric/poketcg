@@ -233,6 +233,11 @@ CardPointers::
 	dw GamblerCard
 	dw RecycleCard
 	dw SentretCard
+	dw HoothootCard
+	dw AipomCard
+	dw DunsparceCard
+	dw StantlerCard
+	dw SkarmoryCard
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -10276,3 +10281,258 @@ SentretCard:
 	dw 13 * 10 ; weight
 	tx SentretDescription ; description
 	db 0
+
+HoothootCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx HoothootCardGfx ; gfx
+	tx HoothootName ; name
+	db CIRCLE ; rarity
+	db MYSTERY | NONE ; sets
+	db HOOTHOOT
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx HypnosisName ; name
+	tx InflictSleepDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw InflictSleepEffectCommands ; effect commands
+	db INFLICT_SLEEP ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HYPNOSIS ; animation
+
+	; attack 2
+	energy COLORLESS, 2 ; energies
+	tx PeckName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 0 ; retreat cost
+	db WR_LIGHTNING ; weakness
+	db WR_FIGHTING ; resistance
+	tx OwlName ; category
+	db 163 ; Pokedex number
+	db 0
+	db 8 ; level
+	db 2, 4 ; length
+	dw 46 * 10 ; weight
+	tx HoothootDescription ; description
+	db 3
+
+AipomCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx AipomCardGfx ; gfx
+	tx AipomName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	db AIPOM
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx FetchName ; name
+	tx Draw1CardDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw Draw1CardEffectCommands ; effect commands
+	db DRAW_CARD ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy COLORLESS, 2 ; energies
+	tx TailGrabName ; name
+	tx MayDraw1CardDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayDraw1CardEffectCommands ; effect commands
+	db DRAW_CARD ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 0 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_PSYCHIC ; resistance
+	tx TailGrabName ; category
+	db 190 ; Pokedex number
+	db 0
+	db 16 ; level
+	db 2, 7 ; length
+	dw 25 * 10 ; weight
+	tx AipomDescription ; description
+	db 0
+
+DunsparceCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx DunsparceCardGfx ; gfx
+	tx DunsparceName ; name
+	db CIRCLE ; rarity
+	db MYSTERY | NONE ; sets
+	db DUNSPARCE
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx GlareName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictParalysisEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_DARK_MIND ; animation
+
+	; attack 2
+	energy COLORLESS, 3 ; energies
+	tx FlyName ; name
+	tx MayPreventAllDamageOrNothingDesc ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayGetImmunityOrDoNothingEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_QUICK_ATTACK ; animation
+
+	db 0 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_PSYCHIC ; resistance
+	tx LandSnakeName ; category
+	db 206 ; Pokedex number
+	db 0
+	db 21 ; level
+	db 4, 11 ; length
+	dw 31 * 10 ; weight
+	tx DunsparceDescription ; description
+	db 16
+
+StantlerCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx StantlerCardGfx ; gfx
+	tx StantlerName ; name
+	db CIRCLE ; rarity
+	db MYSTERY | NONE ; sets
+	db STANTLER
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 2 ; energies
+	tx ConfuseRayName ; name
+	tx MayInflictConfusionDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayInflictConfusionEffectCommands ; effect commands
+	db INFLICT_CONFUSION ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_CONFUSE_RAY ; animation
+
+	; attack 2
+	energy COLORLESS, 3 ; energies
+	tx StompName ; name
+	tx MayDo20Plus20Desc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw MayDo10Plus20EffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 1
+	db ATK_ANIM_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_PSYCHIC ; resistance
+	tx BigHornName ; category
+	db 234 ; Pokedex number
+	db 0
+	db 18 ; level
+	db 4, 7 ; length
+	dw 157 * 10 ; weight
+	tx StantlerDescription ; description
+	db 0
+
+SkarmoryCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx SkarmoryCardGfx ; gfx
+	tx SkarmoryName ; name
+	db STAR ; rarity
+	db EVOLUTION | NONE ; sets
+	db SKARMORY
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx PeckName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy COLORLESS, 3 ; energies
+	tx SteelWingName ; name
+	tx ExpandDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ReduceDamageBy10AfterDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 10
+	db ATK_ANIM_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_GRASS ; resistance
+	tx ArmorBirdName ; category
+	db 227 ; Pokedex number
+	db 0
+	db 27 ; level
+	db 5, 7 ; length
+	dw 111 * 10 ; weight
+	tx SkarmoryDescription ; description
+	db 3

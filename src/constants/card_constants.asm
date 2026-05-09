@@ -228,4 +228,9 @@
 	const GAMBLER                     ; $e3
 	const RECYCLE                     ; $e4
 	const SENTRET                     ; $e5
+	const HOOTHOOT                    ; $e6
+	const AIPOM                       ; $e7
+	const DUNSPARCE                   ; $e8
+	const STANTLER                    ; $e9
+	const SKARMORY                    ; $ea
 DEF NUM_CARDS EQU const_value - 1

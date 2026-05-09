@@ -2358,3 +2358,23 @@ RecycleCardGfx::
 SentretCardGfx::
 	INCBIN "gfx/cards/sentret.2bpp"
 	INCBIN "gfx/cards/sentret.pal"
+
+HoothootCardGfx::
+	INCBIN "gfx/cards/hoothoot.2bpp"
+	INCBIN "gfx/cards/hoothoot.pal"
+
+AipomCardGfx::
+	INCBIN "gfx/cards/aipom.2bpp"
+	INCBIN "gfx/cards/aipom.pal"
+
+DunsparceCardGfx::
+	INCBIN "gfx/cards/dunsparce.2bpp"
+	INCBIN "gfx/cards/dunsparce.pal"
+
+StantlerCardGfx::
+	INCBIN "gfx/cards/stantler.2bpp"
+	INCBIN "gfx/cards/stantler.pal"
+
+SkarmoryCardGfx::
+	INCBIN "gfx/cards/skarmory.2bpp"
+	INCBIN "gfx/cards/skarmory.pal"

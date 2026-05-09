@@ -2995,3 +2995,23 @@ TextOffsets::
 	textpointer ScoutName                                          ; 0x0baf
 	textpointer Draw1CardDesc                                      ; 0x0bb0
 	textpointer SentretDescription                                 ; 0x0bb1
+	textpointer HoothootName                                       ; 0x0bb2
+	textpointer OwlName                                            ; 0x0bb3
+	textpointer HoothootDescription                                ; 0x0bb4
+	textpointer AipomName                                          ; 0x0bb5
+	textpointer TailGrabName                                       ; 0x0bb6
+	textpointer AipomDescription                                   ; 0x0bb7
+	textpointer DunsparceName                                      ; 0x0bb8
+	textpointer GlareName                                          ; 0x0bb9
+	textpointer LandSnakeName                                      ; 0x0bba
+	textpointer DunsparceDescription                               ; 0x0bbb
+	textpointer MayPreventAllDamageOrNothingDesc                   ; 0x0bbc
+	textpointer StantlerName                                       ; 0x0bbd
+	textpointer BigHornName                                        ; 0x0bbe
+	textpointer MayDo20Plus20Desc                                  ; 0x0bbf
+	textpointer StantlerDescription                                ; 0x0bc0
+	textpointer SkarmoryName                                       ; 0x0bc1
+	textpointer SteelWingName                                      ; 0x0bc2
+	textpointer ArmorBirdName                                      ; 0x0bc3
+	textpointer SkarmoryDescription                                ; 0x0bc4
+	textpointer MayDraw1CardDesc                                   ; 0x0bc5

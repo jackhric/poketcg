@@ -234,6 +234,10 @@ DEF IGNORE_THIS_ATTACK       EQU $1 << IGNORE_THIS_ATTACK_F
 DEF ENCOURAGE_THIS_ATTACK    EQU $1 << ENCOURAGE_THIS_ATTACK_F
 DEF FLAG_2_BIT_7             EQU $1 << FLAG_2_BIT_7_F
 
+; aliases used by ported Neo card data (same bit positions, neutral names)
+DEF FLAG_2_BIT_5 EQU IGNORE_THIS_ATTACK
+DEF FLAG_2_BIT_6 EQU ENCOURAGE_THIS_ATTACK
+
 ; CARD_DATA_ATTACK*_FLAG3_F constants
 ; bit 1 covers a wide variety of effects
 ; bits 2-7 are unused

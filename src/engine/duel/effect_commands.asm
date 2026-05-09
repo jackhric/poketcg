@@ -1622,3 +1622,42 @@ GustOfWindEffectCommands:
 Draw1CardEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FetchEffect
 	db  $00
+
+; --- Neo additive EffectCommands aliases (all wrap existing vanilla functions) ---
+
+; Always inflict sleep (no coin flip)
+InflictSleepEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SleepEffect
+	db  $00
+
+; Heads = draw 1 card (after damage), reuses Pay Day function
+MayDraw1CardEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PayDayEffect
+	db  $00
+
+; Heads = paralyse defending, reuses 50%-paralysis function
+MayInflictParalysisEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
+	db  $00
+
+; Heads = "Fly" agility (immune next turn), tails = nothing
+MayGetImmunityOrDoNothingEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Fly_Success50PercentEffect
+	dbw EFFECTCMDTYPE_AI, Fly_AIEffect
+	db  $00
+
+; Heads = confuse defending (50%)
+MayInflictConfusionEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, NidorinaSupersonicEffect
+	db  $00
+
+; Heads = +20 damage on a base-10 attack (Eevee Quick Attack pattern)
+MayDo10Plus20EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EeveeQuickAttack_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, EeveeQuickAttack_AIEffect
+	db  $00
+
+; Reduces incoming damage by 10 next turn (Skarmory Steel Wing / Expand)
+ReduceDamageBy10AfterDamageEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExpandEffect
+	db  $00

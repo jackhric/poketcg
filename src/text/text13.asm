@@ -201,3 +201,100 @@ SentretDescription:
 	line "others of danger by raising its tail"
 	line "and making a screeching cry."
 	done
+
+; --- Neo additive batch 1 ---
+
+HoothootName:
+	text "Hoothoot"
+	done
+
+OwlName:
+	text "Owl"
+	done
+
+HoothootDescription:
+	text "It always stands on one foot. It"
+	line "changes feet so fast that the"
+	line "movement can rarely be seen."
+	done
+
+AipomName:
+	text "Aipom"
+	done
+
+TailGrabName:
+	text "Tail Grab"
+	done
+
+AipomDescription:
+	text "It lives atop tall trees. When"
+	line "leaping from branch to branch, it"
+	line "deftly uses its tail for balance."
+	done
+
+DunsparceName:
+	text "Dunsparce"
+	done
+
+GlareName:
+	text "Glare"
+	done
+
+LandSnakeName:
+	text "Land Snake"
+	done
+
+DunsparceDescription:
+	text "When spotted, this Pokémon escapes"
+	line "backwards by furiously burrowing"
+	line "into the ground with its tail."
+	done
+
+MayPreventAllDamageOrNothingDesc:
+	text "Flip a coin. If heads, during your"
+	line "opponent's next turn, prevent all"
+	line "effects of attacks, including damage,"
+	line "done to this Pokémon. If tails, this"
+	line "attack does nothing (not even damage)."
+	done
+
+StantlerName:
+	text "Stantler"
+	done
+
+BigHornName:
+	text "Big Horn"
+	done
+
+MayDo20Plus20Desc:
+	text "Flip a coin. If Heads, this attack"
+	line "does 20 damage plus 20 more damage."
+	done
+
+StantlerDescription:
+	text "The curved antlers subtly change the"
+	line "flow of air to create a strange space"
+	line "where reality is distorted."
+	done
+
+SkarmoryName:
+	text "Skarmory"
+	done
+
+SteelWingName:
+	text "Steel Wing"
+	done
+
+ArmorBirdName:
+	text "Armor Bird"
+	done
+
+SkarmoryDescription:
+	text "Its strong wings of steel are forged"
+	line "by repeatedly battering them against"
+	line "sharp mountain rocks."
+	done
+
+MayDraw1CardDesc:
+	text "Flip a coin. If Heads, draw 1 card."
+	done
