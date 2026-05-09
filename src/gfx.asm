@@ -2462,7 +2462,3 @@ Phanpy2CardGfx::
 Marill2CardGfx::
 	INCBIN "gfx/cards/marill2.2bpp"
 	INCBIN "gfx/cards/marill2.pal"
-
-Mareep2CardGfx::
-	INCBIN "gfx/cards/mareep2.2bpp"
-	INCBIN "gfx/cards/mareep2.pal"

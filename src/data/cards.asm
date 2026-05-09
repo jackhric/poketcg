@@ -258,7 +258,6 @@ CardPointers::
 	dw PupitarCard
 	dw Phanpy2Card
 	dw Marill2Card
-	dw Mareep2Card
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -11578,53 +11577,3 @@ Marill2Card:
 	tx Marill2Description ; description
 	db 16
 
-Mareep2Card:
-	db TYPE_PKMN_LIGHTNING ; type
-	gfx Mareep2CardGfx ; gfx
-	tx MareepName ; name
-	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
-	db MAREEP2
-	db 50 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy LIGHTNING, 1, COLORLESS, 1 ; energies
-	tx ThunderJoltName ; name
-	tx MayDo10ToSelfDesc ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw CFT10ToSelfEffectCommands ; effect commands
-	db LOW_RECOIL ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_THUNDERSHOCK ; animation
-
-	; attack 2
-	energy 0 ; energies
-	dw NONE ; name
-	dw NONE ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_NONE ; animation
-
-	db 1 ; retreat cost
-	db WR_FIGHTING ; weakness
-	db NONE ; resistance
-	tx WoolName ; category
-	db 179 ; Pokedex number
-	db 0
-	db 11 ; level
-	db 2, 0 ; length
-	dw 17 * 10 ; weight
-	tx Mareep2Description ; description
-	db 16

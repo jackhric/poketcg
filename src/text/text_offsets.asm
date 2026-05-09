@@ -3088,5 +3088,3 @@ TextOffsets::
 	textpointer Phanpy2Description                                 ; 0x0c0c
 	textpointer Marill2Description                                 ; 0x0c0d
 	textpointer Do10MorePerWaterEnergyMax20Desc                    ; 0x0c0e
-	textpointer Mareep2Description                                 ; 0x0c0f
-	textpointer MayDo10ToSelfDesc                                  ; 0x0c10

@@ -669,13 +669,3 @@ Do10MorePerWaterEnergyMax20Desc:
 	line "more than 20 damage in this way."
 	done
 
-Mareep2Description:
-	text "Its fluffy fleece easily stores"
-	line "electricity. Its rubbery hide keeps"
-	line "Mareep from being electrocuted."
-	done
-
-MayDo10ToSelfDesc:
-	text "Flip a coin. If tails, this attack"
-	line "does 10 damage to Mareep."
-	done
