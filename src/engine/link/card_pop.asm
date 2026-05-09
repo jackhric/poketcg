@@ -328,11 +328,11 @@ DecideCardToReceiveFromCardPop:
 ; as a result, VenusaurLv64 is functionally unobtainable
 	ld a, MUSIC_MEDAL
 	ld [wCardPopCardObtainSong], a
-	ld e, VENUSAUR_LV64
+	ld e, VENUSAUR_LV67
 	ld a, d
 	and $1 ; get lower bit
 	jr z, .got_card_id
-	ld e, MEW_LV15
+	ld e, MEW_LV8
 	jr .got_card_id
 
 ; lists in wCardPopCardCandidates all cards that:

@@ -53,7 +53,7 @@ AIActionTable_ZappingSelfdestruct:
 .list_energy
 	ai_energy MAGNEMITE_LV13,  1, -1
 	ai_energy MAGNETON_LV28,   3, +1
-	ai_energy MAGNETON_LV35,   3, +1
+	ai_energy MAGNETON_LV28,   3, +1
 	ai_energy VOLTORB,         3, +1
 	ai_energy ELECTRODE_LV35,  3, +0
 	ai_energy ELECTABUZZ_LV35, 2, +1
@@ -61,7 +61,7 @@ AIActionTable_ZappingSelfdestruct:
 	db $00
 
 .list_prize
-	db MAGNETON_LV35
+	db MAGNETON_LV28
 	db PROFESSOR_OAK
 	db $00
 

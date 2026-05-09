@@ -36,7 +36,7 @@ AIActionTable_LegendaryMoltres:
 	db MAGMAR_LV24
 	db VULPIX
 	db MOLTRES_LV37
-	db MOLTRES_LV35
+	db MOLTRES_LV37
 	db TAUROS
 	db $00
 
@@ -50,7 +50,7 @@ AIActionTable_LegendaryMoltres:
 
 .list_play_hand
 	db MOLTRES_LV37
-	db MOLTRES_LV35
+	db MOLTRES_LV37
 	db MAGMAR_LV31
 	db MAGMAR_LV24
 	db VULPIX
@@ -68,7 +68,7 @@ AIActionTable_LegendaryMoltres:
 	ai_energy MAGMAR_LV24,    2, +0
 	ai_energy MAGMAR_LV31,    2, +0
 	ai_energy MOLTRES_LV37,   4, +2
-	ai_energy MOLTRES_LV35,   4, +2
+	ai_energy MOLTRES_LV37,   4, +2
 	ai_energy TAUROS,         3, +1
 	db $00
 
