@@ -669,3 +669,122 @@ Do10MorePerWaterEnergyMax20Desc:
 	line "more than 20 damage in this way."
 	done
 
+; --- Neo additive batch 6 ---
+
+CrobatName:
+	text "Crobat"
+	done
+
+SurpriseBiteName:
+	text "Surprise Bite"
+	done
+
+Do20ToABenchDesc:
+	text "Choose 1 of your opponent's Benched"
+	line "Pokémon and do 20 damage to it."
+	line "(Don't apply Weakness and"
+	line "Resistance.) This attack can't be"
+	line "used twice in a row."
+	done
+
+CrobatDescription:
+	text "It flits silently through the dark"
+	line "without flapping. Its prey doesn't"
+	line "notice it until it is too late."
+	done
+
+TyranitarName:
+	text "Tyranitar"
+	done
+
+TrampleName:
+	text "Trample"
+	done
+
+MayDo20ToEachOppsBenchDesc:
+	text "Flip a coin for each of your"
+	line "opponent's Benched Pokémon. If"
+	line "heads, this attack does 20 damage"
+	line "to that Pokémon (don't apply"
+	line "Weakness and Resistance)."
+	done
+
+ArmorName:
+	text "Armor"
+	done
+
+TyranitarDescription:
+	text "In a rage, it can topple a mountain."
+	line "It roams in mountains seeking new"
+	line "opponents to challenge."
+	done
+
+SteelixName:
+	text "Steelix"
+	done
+
+HeavySlamName:
+	text "Heavy Slam"
+	done
+
+Do10lessPerOppRCDesc:
+	text "Does 40 damage minus 10 damage for"
+	line "each * in the Defending Pokémon's"
+	line "Retreat Cost."
+	done
+
+IronTailName:
+	text "Iron Tail"
+	done
+
+ReduceDamageby20Desc:
+	text "If an attack does damage to Steelix"
+	line "during your opponent's next turn"
+	line "(after applying Weakness and"
+	line "Resistance), that attack does 20"
+	line "less damage."
+	done
+
+IronSnakeName:
+	text "Iron Snake"
+	done
+
+SteelixDescription:
+	text "Its body has been compressed deep"
+	line "under the ground. As a result, it"
+	line "is even harder than diamond."
+	done
+
+EspeonName:
+	text "Espeon"
+	done
+
+PrecognitionName:
+	text "Precognition"
+	done
+
+PrecognitionDescription:
+	text "Once during your turn (before your"
+	line "attack), you may look at the top 3"
+	line "cards of your opponent's deck and"
+	line "rearrange them as you like."
+	done
+
+Do10MorePerOppEenergyDesc:
+	text "Does 30 damage plus 10 more damage"
+	line "for each Energy attached to the"
+	line "Defending Pokémon but not used to"
+	line "pay for that Pokémon's attack's"
+	line "Energy cost."
+	done
+
+SunName:
+	text "Sun"
+	done
+
+Espeon1Description:
+	text "Its fur is so sensitive, it can"
+	line "feel minute shifts in the air and"
+	line "predict the next day's weather."
+	done
+

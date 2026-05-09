@@ -3088,3 +3088,25 @@ TextOffsets::
 	textpointer Phanpy2Description                                 ; 0x0c0c
 	textpointer Marill2Description                                 ; 0x0c0d
 	textpointer Do10MorePerWaterEnergyMax20Desc                    ; 0x0c0e
+	textpointer CrobatName                                         ; 0x0c0f
+	textpointer SurpriseBiteName                                   ; 0x0c10
+	textpointer Do20ToABenchDesc                                   ; 0x0c11
+	textpointer CrobatDescription                                  ; 0x0c12
+	textpointer TyranitarName                                      ; 0x0c13
+	textpointer TrampleName                                        ; 0x0c14
+	textpointer MayDo20ToEachOppsBenchDesc                         ; 0x0c15
+	textpointer ArmorName                                          ; 0x0c16
+	textpointer TyranitarDescription                               ; 0x0c17
+	textpointer SteelixName                                        ; 0x0c18
+	textpointer HeavySlamName                                      ; 0x0c19
+	textpointer Do10lessPerOppRCDesc                               ; 0x0c1a
+	textpointer IronTailName                                       ; 0x0c1b
+	textpointer ReduceDamageby20Desc                               ; 0x0c1c
+	textpointer IronSnakeName                                      ; 0x0c1d
+	textpointer SteelixDescription                                 ; 0x0c1e
+	textpointer EspeonName                                         ; 0x0c1f
+	textpointer PrecognitionName                                   ; 0x0c20
+	textpointer PrecognitionDescription                            ; 0x0c21
+	textpointer Do10MorePerOppEenergyDesc                          ; 0x0c22
+	textpointer SunName                                            ; 0x0c23
+	textpointer Espeon1Description                                 ; 0x0c24

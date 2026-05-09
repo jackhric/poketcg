@@ -220,4 +220,8 @@
 	const PUPITAR                     ; $fc
 	const PHANPY2                     ; $fd
 	const MARILL2                     ; $fe
+	const CROBAT
+	const TYRANITAR
+	const STEELIX
+	const ESPEON1
 DEF NUM_CARDS EQU const_value - 1

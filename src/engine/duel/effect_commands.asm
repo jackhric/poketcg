@@ -1767,3 +1767,52 @@ WWaterBoostEffectCommands:
 	dbw EFFECTCMDTYPE_AI, OmanyteWaterGunEffect
 	db  $00
 
+; --- Neo additive batch 6 EffectCommands ---
+
+; Damage to a benched opp once per duel (Leek Slap pattern)
+Do20ToABenchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, LeekSlap_SetUsedThisDuelFlag
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, LeekSlap_OncePerDuelCheck
+	dbw EFFECTCMDTYPE_AI_SELECTION, GengarDarkMind_AISelectEffect
+	db  $00
+
+; Toxic — double poison (canonical Toxic effect)
+ToxicEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Toxic_DoublePoisonEffect
+	dbw EFFECTCMDTYPE_AI, Toxic_AIEffect
+	db  $00
+
+; Discard 1 energy from defending (Whirlpool / Hyper Beam pattern)
+Discard1EnergyFromTargetEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Whirlpool_DiscardEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Whirlpool_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Whirlpool_AISelectEffect
+	db  $00
+
+; Flip a coin per opp's benched Pokemon, 20 per heads (Trample pattern)
+MayDo20ToEachOppBenchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExeggcuteLeechSeedEffect
+	db  $00
+
+; Damage scales down with opp retreat cost (Heavy Slam pattern)
+Do10LessPerOppRCEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoliwagWaterGunEffect
+	dbw EFFECTCMDTYPE_AI, PoliwagWaterGunEffect
+	db  $00
+
+; Reduce incoming damage by 20 next turn (Iron Tail pattern)
+ReduceBy20AfterAttackEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GrimerMinimizeEffect
+	db  $00
+
+; Pkmn Power: peek opponent's hand / deck (Clairvoyance pattern)
+PrecognitionEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, ClairvoyanceEffect
+	db  $00
+
+; +10 per opp's attached energy (Psychic damage pattern)
+Do10MorePerOppEnergyEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Psychic_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, Psychic_AIEffect
+	db  $00
+

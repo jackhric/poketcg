@@ -2330,3 +2330,19 @@ Phanpy2CardGfx::
 Marill2CardGfx::
 	INCBIN "gfx/cards/marill2.2bpp"
 	INCBIN "gfx/cards/marill2.pal"
+
+CrobatCardGfx::
+	INCBIN "gfx/cards/crobat.2bpp"
+	INCBIN "gfx/cards/crobat.pal"
+
+TyranitarCardGfx::
+	INCBIN "gfx/cards/tyranitar.2bpp"
+	INCBIN "gfx/cards/tyranitar.pal"
+
+SteelixCardGfx::
+	INCBIN "gfx/cards/steelix.2bpp"
+	INCBIN "gfx/cards/steelix.pal"
+
+Espeon1CardGfx::
+	INCBIN "gfx/cards/espeon1.2bpp"
+	INCBIN "gfx/cards/espeon1.pal"

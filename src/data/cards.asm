@@ -225,6 +225,10 @@ CardPointers::
 	dw PupitarCard
 	dw Phanpy2Card
 	dw Marill2Card
+	dw CrobatCard
+	dw TyranitarCard
+	dw SteelixCard
+	dw Espeon1Card
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -9860,4 +9864,208 @@ Marill2Card:
 	dw 18 * 10 ; weight
 	tx Marill2Description ; description
 	db 16
+
+CrobatCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx CrobatCardGfx ; gfx
+	tx CrobatName ; name
+	db STAR ; rarity
+	db LABORATORY | NONE ; sets
+	db CROBAT
+	db 80 ; hp
+	db STAGE2 ; stage
+	tx GolbatName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx SurpriseBiteName ; name
+	tx Do20ToABenchDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw Do20ToABenchEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 3
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy GRASS, 2, COLORLESS, 1 ; energies
+	tx ToxicName ; name
+	tx ToxicDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ToxicEffectCommands ; effect commands
+	db INFLICT_POISON ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 2
+	db ATK_ANIM_TOXIC ; animation
+
+	db 0 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db WR_FIGHTING ; resistance
+	tx BatName ; category
+	db 169 ; Pokedex number
+	db 0
+	db 42 ; level
+	db 5, 11 ; length
+	dw 165 * 10 ; weight
+	tx CrobatDescription ; description
+	db 19
+
+TyranitarCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx TyranitarCardGfx ; gfx
+	tx TyranitarName ; name
+	db STAR ; rarity
+	db EVOLUTION | NONE ; sets
+	db TYRANITAR
+	db 100 ; hp
+	db STAGE2 ; stage
+	tx PupitarName ; pre-evo name
+
+	; attack 1
+	energy FIGHTING, 2, COLORLESS, 1 ; energies
+	tx HyperBeamName ; name
+	tx Discard1EnergyFromTargetDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Discard1EnergyFromTargetEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_HYPER_BEAM ; animation
+
+	; attack 2
+	energy FIGHTING, 2, COLORLESS, 2 ; energies
+	tx TrampleName ; name
+	tx MayDo20ToEachOppsBenchDesc ; description
+	dw NONE ; description (cont)
+	db 60 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayDo20ToEachOppBenchEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 1
+	db ATK_ANIM_BIG_HIT ; animation
+
+	db 4 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_PSYCHIC ; resistance
+	tx ArmorName ; category
+	db 248 ; Pokedex number
+	db 0
+	db 75 ; level
+	db 6, 7 ; length
+	dw 445 * 10 ; weight
+	tx TyranitarDescription ; description
+	db 19
+
+SteelixCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx SteelixCardGfx ; gfx
+	tx SteelixName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	db STEELIX
+	db 110 ; hp
+	db STAGE1 ; stage
+	tx OnixName ; pre-evo name
+
+	; attack 1
+	energy FIGHTING, 1, COLORLESS, 1 ; energies
+	tx HeavySlamName ; name
+	tx Do10lessPerOppRCDesc ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_MINUS ; category
+	dw Do10LessPerOppRCEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_7 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy FIGHTING, 3, COLORLESS, 1 ; energies
+	tx IronTailName ; name
+	tx ReduceDamageby20Desc ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ReduceBy20AfterAttackEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BIG_HIT ; animation
+
+	db 4 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_GRASS ; resistance
+	tx IronSnakeName ; category
+	db 208 ; Pokedex number
+	db 0
+	db 53 ; level
+	db 30, 2 ; length
+	dw 882 * 10 ; weight
+	tx SteelixDescription ; description
+	db 0
+
+Espeon1Card:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx Espeon1CardGfx ; gfx
+	tx EspeonName ; name
+	db STAR ; rarity
+	db EVOLUTION | NONE ; sets
+	db ESPEON1
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx EeveeName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx PrecognitionName ; name
+	tx PrecognitionDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw PrecognitionEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+
+	; attack 2
+	energy PSYCHIC, 2, COLORLESS, 1 ; energies
+	tx PsychicName ; name
+	tx Do10MorePerOppEenergyDesc ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw Do10MorePerOppEnergyEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PSYCHIC_HIT ; animation
+
+	db 0 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
+	tx SunName ; category
+	db 196 ; Pokedex number
+	db 0
+	db 43 ; level
+	db 2, 11 ; length
+	dw 58 * 10 ; weight
+	tx Espeon1Description ; description
+	db 19
 
