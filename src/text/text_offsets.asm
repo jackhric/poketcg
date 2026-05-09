@@ -3212,3 +3212,4 @@ TextOffsets::
 	textpointer Do10MorePerSelfDamageDesc                          ; 0x0c88
 	textpointer BigJawName                                         ; 0x0c89
 	textpointer Totodile1Description                               ; 0x0c8a
+	textpointer LeafName                                           ; 0x0c8b

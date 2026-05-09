@@ -1239,6 +1239,10 @@ ChikoritaName:
 	text "Chikorita"
 	done
 
+LeafName:
+	text "Leaf"
+	done
+
 Chikorita1Description:
 	text "A sweet aroma gently wafts from"
 	line "the leaf on its head. It is fond"
