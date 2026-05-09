@@ -2354,3 +2354,7 @@ GamblerCardGfx::
 RecycleCardGfx::
 	INCBIN "gfx/cards/recycle.2bpp"
 	INCBIN "gfx/cards/recycle.pal"
+
+SentretCardGfx::
+	INCBIN "gfx/cards/sentret.2bpp"
+	INCBIN "gfx/cards/sentret.pal"

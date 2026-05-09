@@ -183,3 +183,21 @@ RecycleDescription:
 	line "in your discard pile on top of your"
 	line "deck."
 	done
+
+SentretName:
+	text "Sentret"
+	done
+
+ScoutName:
+	text "Scout"
+	done
+
+Draw1CardDesc:
+	text "Draw a card."
+	done
+
+SentretDescription:
+	text "When acting as a lookout, it warns"
+	line "others of danger by raising its tail"
+	line "and making a screeching cry."
+	done

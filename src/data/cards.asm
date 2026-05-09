@@ -232,6 +232,7 @@ CardPointers::
 	dw PokemonFluteCard
 	dw GamblerCard
 	dw RecycleCard
+	dw SentretCard
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -10222,3 +10223,56 @@ RecycleCard:
 	dw RecycleEffectCommands ; effect commands
 	tx RecycleDescription ; description
 	dw NONE ; description (cont)
+
+; --- Neo additions ---
+
+SentretCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx SentretCardGfx ; gfx
+	tx SentretName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	db SENTRET
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx FetchName ; name
+	tx Draw1CardDesc ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw Draw1CardEffectCommands ; effect commands
+	db DRAW_CARD ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy COLORLESS, 2 ; energies
+	tx TackleName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 0 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx ScoutName ; category
+	db 161 ; Pokedex number
+	db 0
+	db 14 ; level
+	db 2, 7 ; length
+	dw 13 * 10 ; weight
+	tx SentretDescription ; description
+	db 0

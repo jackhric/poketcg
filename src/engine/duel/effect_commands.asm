@@ -1617,3 +1617,8 @@ GustOfWindEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, GustOfWind_PlayerSelection
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GustOfWind_SwitchEffect
 	db  $00
+
+; Generic "draw 1 card" attack effect, equivalent to Kangaskhan's Fetch.
+Draw1CardEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FetchEffect
+	db  $00

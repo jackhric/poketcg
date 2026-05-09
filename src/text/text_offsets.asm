@@ -2991,3 +2991,7 @@ TextOffsets::
 	textpointer GamblerDescription                                 ; 0x0bab
 	textpointer RecycleName                                        ; 0x0bac
 	textpointer RecycleDescription                                 ; 0x0bad
+	textpointer SentretName                                        ; 0x0bae
+	textpointer ScoutName                                          ; 0x0baf
+	textpointer Draw1CardDesc                                      ; 0x0bb0
+	textpointer SentretDescription                                 ; 0x0bb1
