@@ -2355,6 +2355,8 @@ RecycleCardGfx::
 	INCBIN "gfx/cards/recycle.2bpp"
 	INCBIN "gfx/cards/recycle.pal"
 
+SECTION "Card Gfx 12", ROMX
+
 SentretCardGfx::
 	INCBIN "gfx/cards/sentret.2bpp"
 	INCBIN "gfx/cards/sentret.pal"
