@@ -78,9 +78,10 @@ ROMX $08
 	"AI Logic 2"
 ROMX $0b
 	"Effect Functions"
+ROMX $09
+	"Cards"
 ROMX $0c
 	"Decks"
-	"Cards"
 ROMX $0a
 	"Text Offsets"
 ROMX $0d
