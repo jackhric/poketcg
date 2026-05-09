@@ -2307,18 +2307,6 @@ Marill1CardGfx::
 	INCBIN "gfx/cards/marill1.2bpp"
 	INCBIN "gfx/cards/marill1.pal"
 
-HoppipCardGfx::
-	INCBIN "gfx/cards/hoppip.2bpp"
-	INCBIN "gfx/cards/hoppip.pal"
-
-SlugmaCardGfx::
-	INCBIN "gfx/cards/slugma.2bpp"
-	INCBIN "gfx/cards/slugma.pal"
-
-SkiploomCardGfx::
-	INCBIN "gfx/cards/skiploom.2bpp"
-	INCBIN "gfx/cards/skiploom.pal"
-
 PupitarCardGfx::
 	INCBIN "gfx/cards/pupitar.2bpp"
 	INCBIN "gfx/cards/pupitar.pal"
@@ -2458,3 +2446,23 @@ Quilava1CardGfx::
 Totodile1CardGfx::
 	INCBIN "gfx/cards/totodile1.2bpp"
 	INCBIN "gfx/cards/totodile1.pal"
+
+Typhlosion1CardGfx::
+	INCBIN "gfx/cards/typhlosion1.2bpp"
+	INCBIN "gfx/cards/typhlosion1.pal"
+
+Bayleef2CardGfx::
+	INCBIN "gfx/cards/bayleef2.2bpp"
+	INCBIN "gfx/cards/bayleef2.pal"
+
+Meganium1CardGfx::
+	INCBIN "gfx/cards/meganium1.2bpp"
+	INCBIN "gfx/cards/meganium1.pal"
+
+Croconaw2CardGfx::
+	INCBIN "gfx/cards/croconaw2.2bpp"
+	INCBIN "gfx/cards/croconaw2.pal"
+
+Feraligatr2CardGfx::
+	INCBIN "gfx/cards/feraligatr2.2bpp"
+	INCBIN "gfx/cards/feraligatr2.pal"

@@ -214,9 +214,6 @@
 	const MAREEP1                     ; $f6
 	const HOUNDOUR1                   ; $f7
 	const MARILL1                     ; $f8
-	const HOPPIP                      ; $f9
-	const SLUGMA                      ; $fa
-	const SKIPLOOM                    ; $fb
 	const PUPITAR                     ; $fc
 	const PHANPY2                     ; $fd
 	const MARILL2                     ; $fe
@@ -251,4 +248,9 @@
 	const CYNDAQUIL1
 	const QUILAVA1
 	const TOTODILE1
+	const TYPHLOSION1
+	const BAYLEEF2
+	const MEGANIUM1
+	const CROCONAW2
+	const FERALIGATR2
 DEF NUM_CARDS EQU const_value - 1

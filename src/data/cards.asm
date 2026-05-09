@@ -219,9 +219,6 @@ CardPointers::
 	dw Mareep1Card
 	dw Houndour1Card
 	dw Marill1Card
-	dw HoppipCard
-	dw SlugmaCard
-	dw SkiploomCard
 	dw PupitarCard
 	dw Phanpy2Card
 	dw Marill2Card
@@ -256,6 +253,11 @@ CardPointers::
 	dw Cyndaquil1Card
 	dw Quilava1Card
 	dw Totodile1Card
+	dw Typhlosion1Card
+	dw Bayleef2Card
+	dw Meganium1Card
+	dw Croconaw2Card
+	dw Feraligatr2Card
 	dw NULL
 	assert_table_length NUM_CARDS + 2
 
@@ -9586,159 +9588,6 @@ Marill1Card:
 	tx Marill1Description ; description
 	db 19
 
-HoppipCard:
-	db TYPE_PKMN_GRASS ; type
-	gfx HoppipCardGfx ; gfx
-	tx HoppipName ; name
-	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
-	db HOPPIP
-	db 30 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy GRASS, 1 ; energies
-	tx TackleName ; name
-	dw NONE ; description
-	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-
-	; attack 2
-	energy 0 ; energies
-	dw NONE ; name
-	dw NONE ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_NONE ; animation
-
-	db 0 ; retreat cost
-	db WR_FIRE ; weakness
-	db NONE ; resistance
-	tx CottonweedName ; category
-	db 187 ; Pokedex number
-	db 0
-	db 5 ; level
-	db 1, 4 ; length
-	dw 1 * 10 ; weight
-	tx HoppipDescription ; description
-	db 0
-
-SlugmaCard:
-	db TYPE_PKMN_FIRE ; type
-	gfx SlugmaCardGfx ; gfx
-	tx SlugmaName ; name
-	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
-	db SLUGMA
-	db 60 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy FIRE, 2 ; energies
-	tx EmberName ; name
-	dw NONE ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_SMALL_FLAME ; animation
-
-	; attack 2
-	energy 0 ; energies
-	dw NONE ; name
-	dw NONE ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_NONE ; animation
-
-	db 2 ; retreat cost
-	db WR_WATER ; weakness
-	db NONE ; resistance
-	tx LavaName ; category
-	db 218 ; Pokedex number
-	db 0
-	db 15 ; level
-	db 2, 4 ; length
-	dw 77 * 10 ; weight
-	tx SlugmaDescription ; description
-	db 0
-
-SkiploomCard:
-	db TYPE_PKMN_GRASS ; type
-	gfx SkiploomCardGfx ; gfx
-	tx SkiploomName ; name
-	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
-	db SKIPLOOM
-	db 60 ; hp
-	db STAGE1 ; stage
-	tx HoppipName ; pre-evo name
-
-	; attack 1
-	energy GRASS, 1 ; energies
-	tx PoisonPowderName ; name
-	tx MayInflictPoisonDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw MayInflictPoisonEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_POWDER_EFFECT_CHANCE ; animation
-
-	; attack 2
-	energy GRASS, 1 ; energies
-	tx StunSporeName ; name
-	tx MayInflictParalysisDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw MayInflictParalysisEffectCommands ; effect commands
-	db INFLICT_PARALYSIS ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_POWDER_EFFECT_CHANCE ; animation
-
-	db 0 ; retreat cost
-	db WR_FIRE ; weakness
-	db WR_FIGHTING ; resistance
-	tx CottonweedName ; category
-	db 188 ; Pokedex number
-	db 0
-	db 19 ; level
-	db 2, 0 ; length
-	dw 2 * 10 ; weight
-	tx SkiploomDescription ; description
-	db 16
-
 PupitarCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx PupitarCardGfx ; gfx
@@ -11473,3 +11322,258 @@ Totodile1Card:
 	tx Totodile1Description ; description
 	db 0
 
+
+Typhlosion1Card:
+	db TYPE_PKMN_FIRE ; type
+	gfx Typhlosion1CardGfx ; gfx
+	tx TyphlosionName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	db TYPHLOSION1
+	db 100 ; hp
+	db STAGE2 ; stage
+	tx QuilavaName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx FireBoostName ; name
+	tx FireBoostDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw Get4FireFromDeckEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_FIREGIVER ; animation
+
+	; attack 2
+	energy FIRE, 4 ; energies
+	tx EruptionName ; name
+	tx Minus10PerSelfDamageDesc ; description
+	dw NONE ; description (cont)
+	db 90 ; damage
+	db DAMAGE_MINUS ; category
+	dw Do10LessPerSelfDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_7 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_FIRE_SPIN ; animation
+
+	db 2 ; retreat cost
+	db WR_WATER ; weakness
+	db WR_GRASS ; resistance
+	tx VolcanoName ; category
+	db 157 ; Pokedex number
+	db 0
+	db 58 ; level
+	db 5, 7 ; length
+	dw 175 * 10 ; weight
+	tx Typhlosion1Description ; description
+	db 0
+
+Bayleef2Card:
+	db TYPE_PKMN_GRASS ; type
+	gfx Bayleef2CardGfx ; gfx
+	tx BayleefName ; name
+	db DIAMOND ; rarity
+	db COLOSSEUM | NONE ; sets
+	db BAYLEEF2
+	db 80 ; hp
+	db STAGE1 ; stage
+	tx ChikoritaName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx AbsorbName ; name
+	tx HealHalfDamageDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw HealHalfDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db NONE ; flags 3
+	db 2
+	db ATK_ANIM_DRAIN ; animation
+
+	; attack 2
+	energy GRASS, 2, COLORLESS, 1 ; energies
+	tx GrassKnotName ; name
+	tx Do10MorePerOppRCDesc ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw Do10MorePerOppRCEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx LeafName ; category
+	db 153 ; Pokedex number
+	db 0
+	db 26 ; level
+	db 3, 11 ; length
+	dw 35 * 10 ; weight
+	tx Bayleef2Description ; description
+	db 0
+
+Meganium1Card:
+	db TYPE_PKMN_GRASS ; type
+	gfx Meganium1CardGfx ; gfx
+	tx MeganiumName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	db MEGANIUM1
+	db 100 ; hp
+	db STAGE2 ; stage
+	tx BayleefName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 2 ; energies
+	tx FullBloomName ; name
+	tx AttackSearchAttachEnergyDesc ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SearchAndAttachEnergyEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy GRASS, 3, COLORLESS, 1 ; energies
+	tx GigaDrainName ; name
+	tx HealHalfDamageDesc ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_NORMAL ; category
+	dw HealHalfDamageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db NONE ; flags 3
+	db 2
+	db ATK_ANIM_DRAIN ; animation
+
+	db 2 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_WATER ; resistance
+	tx HerbName ; category
+	db 154 ; Pokedex number
+	db 0
+	db 52 ; level
+	db 5, 11 ; length
+	dw 221 * 10 ; weight
+	tx Meganium1Description ; description
+	db 0
+
+Croconaw2Card:
+	db TYPE_PKMN_WATER ; type
+	gfx Croconaw2CardGfx ; gfx
+	tx CroconawName ; name
+	db DIAMOND ; rarity
+	db COLOSSEUM | NONE ; sets
+	db CROCONAW2
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx TotodileName ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 2 ; energies
+	tx PounceName ; name
+	tx PounceDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ReduceDamageBy10EffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 10
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy WATER, 2, COLORLESS, 1 ; energies
+	tx TakeDownName ; name
+	tx Do20toSelfDesc ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Do20ToSelfEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 20
+	db ATK_ANIM_HIT_RECOIL ; animation
+
+	db 2 ; retreat cost
+	db WR_GRASS ; weakness
+	db NONE ; resistance
+	tx BigJawName ; category
+	db 159 ; Pokedex number
+	db 0
+	db 29 ; level
+	db 3, 7 ; length
+	dw 55 * 10 ; weight
+	tx Croconaw2Description ; description
+	db 0
+
+Feraligatr2Card:
+	db TYPE_PKMN_WATER ; type
+	gfx Feraligatr2CardGfx ; gfx
+	tx FeraligatrName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	db FERALIGATR2
+	db 90 ; hp
+	db STAGE2 ; stage
+	tx CroconawName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx ScareName ; name
+	tx ScareDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw NoPokePowersEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+
+	; attack 2
+	energy WATER, 2, COLORLESS, 1 ; energies
+	tx WhirlpoolName ; name
+	tx Discard1EnergyFromTargetDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw Discard1EnergyFromTargetEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 3
+	db ATK_ANIM_HIT ; animation
+
+	db 3 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_FIRE ; resistance
+	tx BigJawName ; category
+	db 160 ; Pokedex number
+	db 0
+	db 55 ; level
+	db 7, 7 ; length
+	dw 195 * 10 ; weight
+	tx Feraligatr2Description ; description
+	db 0

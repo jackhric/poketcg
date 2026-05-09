@@ -1975,3 +1975,31 @@ Discard1FireEffectCommands:
 	dbw EFFECTCMDTYPE_AI_SELECTION, Ember_AISelectEffect
 	db  $00
 
+; Pkmn Power: search 4 Fire energy from deck on play (Moltres Firegiver pattern)
+Get4FireFromDeckEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Firegiver_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, Firegiver_AddToHandEffect
+	db  $00
+
+; -10 damage per self damage counter (Karate Chop pattern)
+Do10LessPerSelfDamageEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, KarateChop_DamageSubtractionEffect
+	dbw EFFECTCMDTYPE_AI, KarateChop_AIEffect
+	db  $00
+
+; +10 damage per defender colorless retreat cost (Butterfree Mega Drain pattern)
+Do10MorePerOppRCEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ButterfreeMegaDrainEffect
+	dbw EFFECTCMDTYPE_AI, ButterfreeMegaDrainEffect
+	db  $00
+
+; 20 damage to self after attack (Jigglypuff Double Edge pattern)
+Do20ToSelfEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, JigglypuffDoubleEdgeEffect
+	db  $00
+
+; All Pkmn Powers stop working (Toxic Gas pattern)
+NoPokePowersEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, ToxicGasEffect
+	db  $00
+

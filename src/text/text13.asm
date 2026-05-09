@@ -1317,3 +1317,118 @@ Totodile1Description:
 	line "out of anything that moves."
 	done
 
+
+TyphlosionName:
+	text "Typhlosion"
+	done
+
+FireBoostName:
+	text "Fire Boost"
+	done
+
+FireBoostDescription:
+	text "When you play Typhlosion from your"
+	line "hand, put 4 <FIRE> Energy cards from"
+	line "your deck into your hand. Shuffle"
+	line "your deck afterwards."
+	done
+
+EruptionName:
+	text "Eruption"
+	done
+
+Minus10PerSelfDamageDesc:
+	text "This attack does 10 less damage for"
+	line "each damage counter on this Pokémon."
+	done
+
+Typhlosion1Description:
+	text "It has a secret, devastating move."
+	line "It rubs its blazing fur together to"
+	line "cause huge explosions."
+	done
+
+BayleefName:
+	text "Bayleef"
+	done
+
+GrassKnotName:
+	text "Grass Knot"
+	done
+
+Do10MorePerOppRCDesc:
+	text "This attack does 10 more damage for"
+	line "each <COLORLESS> in the Defending"
+	line "Pokémon's retreat cost."
+	done
+
+Bayleef2Description:
+	text "The scent of spices comes from"
+	line "around its neck. Somehow, sniffing"
+	line "it makes you want to fight."
+	done
+
+MeganiumName:
+	text "Meganium"
+	done
+
+FullBloomName:
+	text "Full Bloom"
+	done
+
+AttackSearchAttachEnergyDesc:
+	text "After doing damage, search your deck"
+	line "for a basic Energy card and attach"
+	line "it to 1 of your Pokémon. Shuffle"
+	line "your deck afterward."
+	done
+
+GigaDrainName:
+	text "Giga Drain"
+	done
+
+HerbName:
+	text "Herb"
+	done
+
+Meganium1Description:
+	text "The aroma that rises from its petals"
+	line "contains a substance that calms"
+	line "aggressive feelings."
+	done
+
+CroconawName:
+	text "Croconaw"
+	done
+
+Do20toSelfDesc:
+	text "This Pokémon does 20 damage to"
+	line "itself."
+	done
+
+Croconaw2Description:
+	text "The tips of its fangs are slanted"
+	line "backwards. Once those fangs clamp"
+	line "down, there is no hope for escape."
+	done
+
+FeraligatrName:
+	text "Feraligatr"
+	done
+
+ScareName:
+	text "Scare"
+	done
+
+ScareDescription:
+	text "All Pokémon Powers other than Scare"
+	line "stop working. This power stops"
+	line "working while this Pokémon is"
+	line "Asleep, Confused, or Paralyzed."
+	done
+
+Feraligatr2Description:
+	text "Its powerful muscles allow it to"
+	line "move at a speed that belies its"
+	line "bulk."
+	done

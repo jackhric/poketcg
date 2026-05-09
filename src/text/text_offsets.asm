@@ -3213,3 +3213,26 @@ TextOffsets::
 	textpointer BigJawName                                         ; 0x0c89
 	textpointer Totodile1Description                               ; 0x0c8a
 	textpointer LeafName                                           ; 0x0c8b
+	textpointer TyphlosionName                                     ; 0x0c8c
+	textpointer FireBoostName                                      ; 0x0c8d
+	textpointer FireBoostDescription                               ; 0x0c8e
+	textpointer EruptionName                                       ; 0x0c8f
+	textpointer Minus10PerSelfDamageDesc                           ; 0x0c90
+	textpointer Typhlosion1Description                             ; 0x0c91
+	textpointer BayleefName                                        ; 0x0c92
+	textpointer GrassKnotName                                      ; 0x0c93
+	textpointer Do10MorePerOppRCDesc                               ; 0x0c94
+	textpointer Bayleef2Description                                ; 0x0c95
+	textpointer MeganiumName                                       ; 0x0c96
+	textpointer FullBloomName                                      ; 0x0c97
+	textpointer AttackSearchAttachEnergyDesc                       ; 0x0c98
+	textpointer GigaDrainName                                      ; 0x0c99
+	textpointer HerbName                                           ; 0x0c9a
+	textpointer Meganium1Description                               ; 0x0c9b
+	textpointer CroconawName                                       ; 0x0c9c
+	textpointer Do20toSelfDesc                                     ; 0x0c9d
+	textpointer Croconaw2Description                               ; 0x0c9e
+	textpointer FeraligatrName                                     ; 0x0c9f
+	textpointer ScareName                                          ; 0x0ca0
+	textpointer ScareDescription                                   ; 0x0ca1
+	textpointer Feraligatr2Description                             ; 0x0ca2
