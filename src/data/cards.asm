@@ -520,7 +520,7 @@ ButterfreeCard:
 	db TYPE_PKMN_GRASS ; type
 	gfx ButterfreeCardGfx ; gfx
 	tx ButterfreeName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; Stage 2 — promoted from DIAMOND so all Stage 2s are rare
 	db EVOLUTION | JUNGLE ; sets
 	db BUTTERFREE
 	db 70 ; hp
@@ -2816,7 +2816,7 @@ MoltresLv37Card:
 	gfx MoltresLv37CardGfx ; gfx
 	tx MoltresName ; name
 	db STAR ; rarity
-	db PROMOTIONAL | GB ; sets
+	db LABORATORY | GB ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
 	db MOLTRES_LV37
 	db 100 ; hp
 	db BASIC ; stage
@@ -4243,7 +4243,7 @@ OmastarCard:
 	db TYPE_PKMN_WATER ; type
 	gfx OmastarCardGfx ; gfx
 	tx OmastarName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; Stage 2 — promoted from DIAMOND so all Stage 2s are rare
 	db MYSTERY | FOSSIL ; sets
 	db OMASTAR
 	db 70 ; hp
@@ -4295,7 +4295,7 @@ ArticunoLv37Card:
 	gfx ArticunoLv37CardGfx ; gfx
 	tx ArticunoName ; name
 	db STAR ; rarity
-	db PROMOTIONAL | GB ; sets
+	db MYSTERY | GB ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
 	db ARTICUNO_LV37
 	db 100 ; hp
 	db BASIC ; stage
@@ -4805,7 +4805,7 @@ ZapdosLv68Card:
 	gfx ZapdosLv68CardGfx ; gfx
 	tx ZapdosName ; name
 	db STAR ; rarity
-	db PROMOTIONAL | GB ; sets
+	db LABORATORY | GB ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
 	db ZAPDOS_LV68
 	db 100 ; hp
 	db BASIC ; stage
@@ -5416,7 +5416,7 @@ GolemCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx GolemCardGfx ; gfx
 	tx GolemName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; Stage 2 — promoted from DIAMOND so all Stage 2s are rare
 	db EVOLUTION | FOSSIL ; sets
 	db GOLEM
 	db 80 ; hp
@@ -8069,7 +8069,7 @@ DragoniteLv41Card:
 	gfx DragoniteLv41CardGfx ; gfx
 	tx DragoniteName ; name
 	db STAR ; rarity
-	db PROMOTIONAL | GB ; sets
+	db EVOLUTION | GB ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
 	db DRAGONITE_LV41
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -8196,7 +8196,7 @@ ProfessorOakCard:
 	db TYPE_TRAINER ; type
 	gfx ProfessorOakCardGfx ; gfx
 	tx ProfessorOakName ; name
-	db CIRCLE ; rarity
+	db DIAMOND ; rarity ; promoted CIRCLE -> DIAMOND: top-tier draw engine
 	db COLOSSEUM | NONE ; sets
 	db PROFESSOR_OAK
 	dw ProfessorOakEffectCommands ; effect commands
@@ -8218,7 +8218,7 @@ BillCard:
 	db TYPE_TRAINER ; type
 	gfx BillCardGfx ; gfx
 	tx BillName ; name
-	db CIRCLE ; rarity
+	db DIAMOND ; rarity ; promoted CIRCLE -> DIAMOND: free 2-card draw is core to most decks
 	db COLOSSEUM | NONE ; sets
 	db BILL
 	dw BillEffectCommands ; effect commands
@@ -8262,7 +8262,7 @@ PokemonTraderCard:
 	db TYPE_TRAINER ; type
 	gfx PokemonTraderCardGfx ; gfx
 	tx PokemonTraderName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; promoted DIAMOND -> STAR: searches deck for any Pokemon
 	db EVOLUTION | NONE ; sets
 	db POKEMON_TRADER
 	dw PokemonTraderEffectCommands ; effect commands
@@ -8339,7 +8339,7 @@ EnergyRemovalCard:
 	db TYPE_TRAINER ; type
 	gfx EnergyRemovalCardGfx ; gfx
 	tx EnergyRemovalName ; name
-	db CIRCLE ; rarity
+	db DIAMOND ; rarity ; promoted CIRCLE -> DIAMOND: tempo disruption is core in TCG
 	db MYSTERY | NONE ; sets
 	db ENERGY_REMOVAL
 	dw EnergyRemovalEffectCommands ; effect commands
@@ -8405,7 +8405,7 @@ ComputerSearchCard:
 	db TYPE_TRAINER ; type
 	gfx ComputerSearchCardGfx ; gfx
 	tx ComputerSearchName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; promoted DIAMOND -> STAR: tutors any card; chase trainer
 	db COLOSSEUM | NONE ; sets
 	db COMPUTER_SEARCH
 	dw ComputerSearchEffectCommands ; effect commands
@@ -8449,7 +8449,7 @@ ItemFinderCard:
 	db TYPE_TRAINER ; type
 	gfx ItemFinderCardGfx ; gfx
 	tx ItemFinderName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; promoted DIAMOND -> STAR: trainer recursion enables loops
 	db COLOSSEUM | NONE ; sets
 	db ITEM_FINDER
 	dw ItemFinderEffectCommands ; effect commands
@@ -8460,7 +8460,7 @@ GustOfWindCard:
 	db TYPE_TRAINER ; type
 	gfx GustOfWindCardGfx ; gfx
 	tx GustOfWindName ; name
-	db CIRCLE ; rarity
+	db DIAMOND ; rarity ; promoted CIRCLE -> DIAMOND: snipes Bench, KO setup
 	db EVOLUTION | NONE ; sets
 	db GUST_OF_WIND
 	dw GustOfWindEffectCommands ; effect commands
