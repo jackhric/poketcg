@@ -2101,7 +2101,7 @@ ScytherCard:
 	db TYPE_PKMN_GRASS ; type
 	gfx ScytherCardGfx ; gfx
 	tx ScytherName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; promoted DIAMOND -> STAR: 70HP basic with free retreat, classic Haymaker chase
 	db COLOSSEUM | JUNGLE ; sets
 	db SCYTHER
 	db 70 ; hp
@@ -4702,7 +4702,7 @@ ElectabuzzLv35Card:
 	db TYPE_PKMN_LIGHTNING ; type
 	gfx ElectabuzzLv35CardGfx ; gfx
 	tx ElectabuzzName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; promoted DIAMOND -> STAR: 70HP basic, Haymaker staple
 	db COLOSSEUM | NONE ; sets
 	db ELECTABUZZ_LV35
 	db 70 ; hp
@@ -5671,7 +5671,7 @@ HitmonchanCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx HitmonchanCardGfx ; gfx
 	tx HitmonchanName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; promoted DIAMOND -> STAR: 70HP basic with strong attacks, classic Haymaker
 	db COLOSSEUM | NONE ; sets
 	db HITMONCHAN
 	db 70 ; hp
@@ -7609,7 +7609,7 @@ ChanseyCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx ChanseyCardGfx ; gfx
 	tx ChanseyName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; promoted DIAMOND -> STAR: 120HP basic wall, the iconic chase
 	db COLOSSEUM | NONE ; sets
 	db CHANSEY
 	db 120 ; hp
@@ -8251,8 +8251,8 @@ ImakuniCard:
 	db TYPE_TRAINER ; type
 	gfx ImakuniCardGfx ; gfx
 	tx ImakuniName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
+	db DIAMOND ; rarity ; was PROMOSTAR — joke card, now pullable as a quirky uncommon
+	db MYSTERY | PRO ; sets ; moved out of PROMOTIONAL for accessibility
 	db IMAKUNI_CARD
 	dw ImakuniEffectCommands ; effect commands
 	tx ImakuniDescription ; description
@@ -8929,7 +8929,7 @@ WobbuffetCard:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx WobbuffetCardGfx ; gfx
 	tx WobbuffetName ; name
-	db DIAMOND ; rarity
+	db STAR ; rarity ; promoted DIAMOND -> STAR: 90HP basic with Counter, strong control card
 	db LABORATORY | NONE ; sets
 	db WOBBUFFET
 	db 90 ; hp
@@ -11020,7 +11020,7 @@ MiltankCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx MiltankCardGfx ; gfx
 	tx MiltankName ; name
-	db CIRCLE ; rarity
+	db DIAMOND ; rarity ; promoted CIRCLE -> DIAMOND: 70HP basic, above the common-tier ceiling
 	db EVOLUTION | NONE ; sets
 	db MILTANK
 	db 70 ; hp
@@ -11327,7 +11327,7 @@ Typhlosion1Card:
 	db TYPE_PKMN_FIRE ; type
 	gfx Typhlosion1CardGfx ; gfx
 	tx TyphlosionName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — Gen-2 starter Stage 2 finisher (parallels Charizard)
 	db COLOSSEUM | NONE ; sets
 	db TYPHLOSION1
 	db 100 ; hp
@@ -11429,7 +11429,7 @@ Meganium1Card:
 	db TYPE_PKMN_GRASS ; type
 	gfx Meganium1CardGfx ; gfx
 	tx MeganiumName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — Gen-2 starter Stage 2 finisher (parallels Venusaur)
 	db COLOSSEUM | NONE ; sets
 	db MEGANIUM1
 	db 100 ; hp
@@ -11531,7 +11531,7 @@ Feraligatr2Card:
 	db TYPE_PKMN_WATER ; type
 	gfx Feraligatr2CardGfx ; gfx
 	tx FeraligatrName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — Gen-2 starter Stage 2 finisher (parallels Blastoise)
 	db COLOSSEUM | NONE ; sets
 	db FERALIGATR2
 	db 90 ; hp
