@@ -127,7 +127,7 @@ UnnamedDeck:
 	card_item DRATINI,         4
 	card_item DRAGONAIR,       4
 	card_item DRAGONITE_LV41,  4
-	card_item MEOWTH_LV14,     4
+	card_item MEOWTH_LV15,     4
 	card_item DITTO,           4
 	card_item PIDGEY,          4
 	card_item PIDGEOTTO,       4
@@ -141,8 +141,8 @@ UnnamedDeck:
 	card_item LIGHTNING_ENERGY, 12
 	card_item GASTLY_LV17,        2
 	card_item GASTLY_LV17,       2
-	card_item HAUNTER_LV17,      2
-	card_item HAUNTER_LV17,      1
+	card_item HAUNTER_LV22,      2
+	card_item HAUNTER_LV22,      1
 	card_item GENGAR,            2
 	card_item ELECTABUZZ_LV35,   2
 	card_item ELECTABUZZ_LV35,   2
@@ -170,7 +170,7 @@ UnnamedDeck:
 	card_item KADABRA,           4
 	card_item ALAKAZAM,          4
 	card_item GASTLY_LV17,       4
-	card_item HAUNTER_LV17,      4
+	card_item HAUNTER_LV22,      4
 	card_item GENGAR,            4
 	card_item POKEMON_BREEDER,   4
 	deck_list_end
@@ -181,7 +181,7 @@ UnnamedDeck:
 	card_item CHARMANDER,       4
 	card_item PIDGEY,           4
 	card_item GASTLY_LV17,      4
-	card_item HAUNTER_LV17,     4
+	card_item HAUNTER_LV22,     4
 	card_item RATTATA,          4
 	card_item RATICATE,         4
 	card_item POKEMON_BREEDER,  4
@@ -198,7 +198,7 @@ UnnamedDeck:
 	card_item SPEAROW,          4
 	card_item PORYGON,          4
 	card_item GASTLY_LV17,      4
-	card_item HAUNTER_LV17,     4
+	card_item HAUNTER_LV22,     4
 	card_item GENGAR,           4
 	card_item MEW_LV8,         4
 	card_item POKEMON_BREEDER,  4
@@ -238,7 +238,7 @@ UnnamedDeck:
 	card_item MACHOKE,          4
 	card_item MACHOP,           4
 	card_item GASTLY_LV17,      4
-	card_item HAUNTER_LV17,     4
+	card_item HAUNTER_LV22,     4
 	card_item RATTATA,          4
 	card_item POKEMON_BREEDER,  4
 	card_item DEFENDER,         2
@@ -269,7 +269,7 @@ UnnamedDeck:
 	card_item HITMONCHAN,       4
 	card_item DIGLETT,          4
 	card_item MACHOP,           4
-	card_item MEOWTH_LV14,      4
+	card_item MEOWTH_LV15,      4
 	card_item RATTATA,          4
 	card_item DODUO,            4
 	card_item POKEDEX,          2
@@ -331,7 +331,7 @@ UnnamedDeck2:
 	card_item DRATINI,         4
 	card_item DRAGONAIR,       4
 	card_item DRAGONITE_LV41,  4
-	card_item MEOWTH_LV14,     4
+	card_item MEOWTH_LV15,     4
 	card_item DITTO,           4
 	card_item PIDGEY,          4
 	card_item PIDGEOTTO,       4
@@ -635,7 +635,7 @@ CharmanderAndFriendsDeck:
 	card_item RAICHU_LV40,       1
 	card_item MAGNEMITE_LV13,    2
 	card_item MAGNETON_LV28,     1
-	card_item MEOWTH_LV14,       2
+	card_item MEOWTH_LV15,       2
 	card_item RATTATA,           2
 	card_item RATICATE,          1
 	card_item BILL,              2
@@ -691,7 +691,7 @@ SquirtleAndFriendsDeck:
 	card_item MACHOKE,           1
 	card_item GEODUDE,           2
 	card_item GRAVELER,          1
-	card_item MEOWTH_LV14,       2
+	card_item MEOWTH_LV15,       2
 	card_item RATTATA,           2
 	card_item RATICATE,          1
 	card_item BILL,              2
@@ -748,8 +748,8 @@ BulbasaurAndFriendsDeck:
 	card_item ABRA,              2
 	card_item KADABRA,           1
 	card_item GASTLY_LV17,       2
-	card_item HAUNTER_LV17,      1
-	card_item MEOWTH_LV14,       2
+	card_item HAUNTER_LV22,      1
+	card_item MEOWTH_LV15,       2
 	card_item RATTATA,           2
 	card_item RATICATE,          1
 	card_item BILL,              2
@@ -775,7 +775,7 @@ BulbasaurExtraDeck:
 	card_item KADABRA,           1
 	card_item JYNX,              1
 	card_item GASTLY_LV17,        2
-	card_item HAUNTER_LV17,      1
+	card_item HAUNTER_LV22,      1
 	card_item DIGLETT,           1
 	card_item DUGTRIO,           1
 	card_item HITMONCHAN,        1
@@ -1302,7 +1302,7 @@ MusclesforBrainsDeck:
 	card_item MACHAMP,                  2
 	card_item HITMONLEE,                2
 	card_item HITMONCHAN,               2
-	card_item MEOWTH_LV14,              3
+	card_item MEOWTH_LV15,              3
 	card_item PERSIAN,                  2
 	card_item LICKITUNG,                1
 	card_item KANGASKHAN,               1
@@ -1658,10 +1658,10 @@ GhostDeck:
 	card_item GOLBAT,                   3
 	card_item GASTLY_LV17,               2
 	card_item GASTLY_LV17,              2
-	card_item HAUNTER_LV17,             2
-	card_item HAUNTER_LV17,             2
+	card_item HAUNTER_LV22,             2
+	card_item HAUNTER_LV22,             2
 	card_item GENGAR,                   4
-	card_item MEOWTH_LV14,              3
+	card_item MEOWTH_LV15,              3
 	card_item DITTO,                    3
 	card_item PROFESSOR_OAK,            2
 	card_item BILL,                     1
@@ -1680,8 +1680,8 @@ NapTimeDeck:
 	card_item PARAS,            4
 	card_item EXEGGCUTE,        4
 	card_item GASTLY_LV17,       4
-	card_item HAUNTER_LV17,     2
-	card_item HAUNTER_LV17,     2
+	card_item HAUNTER_LV22,     2
+	card_item HAUNTER_LV22,     2
 	card_item JIGGLYPUFF_LV14,  4
 	card_item WIGGLYTUFF,       3
 	card_item BILL,             2
@@ -1752,7 +1752,7 @@ LovelyNidoranDeck:
 	card_item KOFFING,          2
 	card_item WEEZING,          1
 	card_item PINSIR,           1
-	card_item MEOWTH_LV14,      2
+	card_item MEOWTH_LV15,      2
 	card_item FARFETCHD,        2
 	card_item DODUO,            2
 	card_item PROFESSOR_OAK,    1

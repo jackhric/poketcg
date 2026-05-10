@@ -124,7 +124,7 @@
 	const SLOWPOKE_LV9                ; $91
 	const SLOWBRO                     ; $93
 	const GASTLY_LV17                 ; $95
-	const HAUNTER_LV17                ; $96
+	const HAUNTER_LV22                ; $96 ; ROM hack: was HAUNTER_LV17, swapped to alt-level variant
 	const GENGAR                      ; $98
 	const DROWZEE                     ; $99
 	const HYPNO                       ; $9a
@@ -144,7 +144,7 @@
 	const CLEFABLE                    ; $ac
 	const JIGGLYPUFF_LV14             ; $af
 	const WIGGLYTUFF                  ; $b0
-	const MEOWTH_LV14                 ; $b1
+	const MEOWTH_LV15                 ; $b1 ; ROM hack: was MEOWTH_LV14, swapped to alt-level variant
 	const PERSIAN                     ; $b3
 	const FARFETCHD                   ; $b4
 	const DODUO                       ; $b5

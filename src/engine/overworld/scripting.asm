@@ -2085,6 +2085,14 @@ Func_d4fb:
 	set_event_value EVENT_CHALLENGE_CUP_1_STATE
 	ret
 
+; ROM hack: stub script that SetScriptData substitutes in when the
+; player tries to talk to a defeated typical opponent. Skips the
+; vanilla rematch prompt entirely -- the NPC just states they've
+; got nothing more to teach.
+Script_AlreadyDefeatedNoRematch::
+	start_script
+	print_text_quit_fully AlreadyDefeatedNoRematchText
+
 INCLUDE "scripts/mason_laboratory.asm"
 INCLUDE "scripts/deck_machine_room.asm"
 

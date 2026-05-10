@@ -229,16 +229,39 @@ CalculateTypeChances:
 	ld a, [hl]
 	or a
 	jr z, .amount_of_type_or_chance_zero
+	ld d, a                  ; d = how many cards of this type are in the pool
 	ld hl, wBoosterData_TypeChances
 	add hl, bc
 	ld a, [hl]
 	or a
 	jr z, .amount_of_type_or_chance_zero
+	; ROM hack: scale per-type chance by the number of cards available
+	; of that type. Previously the engine treated every nonzero-chance
+	; type as equally likely regardless of pool size, which let
+	; singleton-type cards (e.g. Lanturn2 as the lone Lightning STAR in
+	; Mystery) appear disproportionately often relative to cards in
+	; types with multiple candidates. We now stack `e` once per card so
+	; per-card draw probability is uniform within nonzero-chance types
+	; (and bias from the pack's type weights is preserved). Saturate at
+	; $ff to fit in 8-bit.
+	ld e, a                  ; e = pack chance for this type
+.scale_chance_loop
+	dec d
+	jr z, .chance_scaled
+	add e
+	jr c, .saturate_chance
+	jr .scale_chance_loop
+.saturate_chance
+	ld a, $ff
+.chance_scaled
 	ld hl, wBoosterTempTypeChancesTable
 	add hl, bc
 	ld [hl], a
 	ld a, [wTempBoosterChances]
 	add [hl]
+	jr nc, .total_in_range
+	ld a, $ff
+.total_in_range
 	ld [wTempBoosterChances], a
 .amount_of_type_or_chance_zero
 	pop bc

@@ -3797,7 +3797,7 @@ AIDecide_FullHeal:
 	ld a, GASTLY_LV17
 	call .CheckPlayerArenaCard
 	jr c, .set_carry
-	ld a, HAUNTER_LV17
+	ld a, HAUNTER_LV22
 	call .CheckPlayerArenaCard
 	jr c, .set_carry
 	jr .paralyzed
@@ -4379,7 +4379,7 @@ AIDecide_Recycle:
 	jr .loop_2
 
 .meowth
-	cp MEOWTH_LV14
+	cp MEOWTH_LV15
 	jr nz, .loop_2
 	ld a, b
 	ld [wce08 + 4], a

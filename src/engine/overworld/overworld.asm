@@ -111,6 +111,21 @@ SetScriptData:
 	ld a, [wScriptNPC]
 	ld [wLoadedNPCTempIndex], a
 	farcall SetNewScriptNPC
+	; ROM hack: when the player initiates dialog with a defeated typical
+	; opponent, replace their normal script with a stub that just says
+	; "I have nothing more to teach you" -- no rematch prompt, no duel
+	; trigger path. Bosses, Sam, and Aaron are exempt via
+	; ShouldBlockRematch so their dialogs stay intact.
+	push bc
+	ld a, [wScriptNPC]
+	ld l, LOADED_NPC_ID
+	call GetItemInLoadedNPCIndex
+	ld a, [hl]
+	farcall ShouldBlockRematch
+	pop bc
+	jr nc, .write_script
+	ld bc, Script_AlreadyDefeatedNoRematch
+.write_script
 	ld a, c
 	ld [wNextScript], a
 	ld a, b

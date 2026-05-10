@@ -1931,9 +1931,9 @@ GastlyLv17CardGfx::
 	INCBIN "gfx/cards/gastly2.2bpp"
 	INCBIN "gfx/cards/gastly2.pal"
 
-HaunterLv17CardGfx::
-	INCBIN "gfx/cards/haunter1.2bpp"
-	INCBIN "gfx/cards/haunter1.pal"
+HaunterLv22CardGfx::
+	INCBIN "gfx/cards/haunter2.2bpp"
+	INCBIN "gfx/cards/haunter2.pal"
 
 GengarCardGfx::
 	INCBIN "gfx/cards/gengar.2bpp"
@@ -2015,9 +2015,9 @@ WigglytuffCardGfx::
 	INCBIN "gfx/cards/wigglytuff.2bpp"
 	INCBIN "gfx/cards/wigglytuff.pal"
 
-MeowthLv14CardGfx::
-	INCBIN "gfx/cards/meowth1.2bpp"
-	INCBIN "gfx/cards/meowth1.pal"
+MeowthLv15CardGfx::
+	INCBIN "gfx/cards/meowth2.2bpp"
+	INCBIN "gfx/cards/meowth2.pal"
 
 PersianCardGfx::
 	INCBIN "gfx/cards/persian.2bpp"
