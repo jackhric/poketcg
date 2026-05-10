@@ -20,7 +20,11 @@ GenerateBoosterPack:
 ; generate all Pokemon or Trainer cards (if any) for the current booster pack
 ; return carry if ran out of cards to add to the booster pack
 GenerateBoosterNonEnergies:
-	ld a, STAR
+	; ROM hack: iterate HOLO -> STAR -> DIAMOND -> CIRCLE so packs that
+	; specify a holo slot (premium packs) draw from the chase pool first.
+	; Non-premium packs have wBoosterData_HoloAmount == 0 and skip
+	; straight to the STAR pass on the first iteration, behaving as before.
+	ld a, HOLO
 	ld [wBoosterCurrentRarity], a
 .generate_card_loop
 	call GetCurrentRarityAmount
@@ -580,22 +584,29 @@ BoosterDataJumptable:
 	dw BoosterPack_RandomEnergies
 	assert_table_length NUM_BOOSTERS
 
-; load rarity amounts of the booster pack set at [wBoosterData_Set] to wBoosterData*Amount
+; load rarity amounts of the booster pack set at [wBoosterData_Set] to wBoosterData*Amount.
+; ROM hack: each entry in BoosterSetRarityAmountsTable is now 5 bytes wide
+; (energies, commons, uncommons, rares, holos) so we step by set*5.
 LoadRarityAmountsToWram:
 	ld a, [wBoosterData_Set]
-	add a
-	add a
+	; multiply set index by 5 (entry width) into bc
 	ld c, a
 	ld b, $00
 	ld hl, BoosterSetRarityAmountsTable
-	add hl, bc
-	inc hl
+	add hl, bc        ; * 1
+	add hl, bc        ; * 2
+	add hl, bc        ; * 3
+	add hl, bc        ; * 4
+	add hl, bc        ; * 5
+	inc hl            ; skip the energy byte
 	ld a, [hli]
 	ld [wBoosterData_CommonAmount], a
 	ld a, [hli]
 	ld [wBoosterData_UncommonAmount], a
 	ld a, [hli]
 	ld [wBoosterData_RareAmount], a
+	ld a, [hli]
+	ld [wBoosterData_HoloAmount], a
 	ret
 
 INCLUDE "data/booster_packs.asm"

@@ -1,11 +1,13 @@
 BoosterSetRarityAmountsTable:
-;	db energies, commons, uncommons, rares
-; commons + uncommons + rares needs to be equal to 10 minus the number of energy cards
-; defined in the pack's data below; otherwise, the number of cards in the pack won't be 10.
-	db 1, 5, 3, 1 ; COLOSSEUM
-	db 1, 5, 3, 1 ; EVOLUTION
-	db 0, 6, 3, 1 ; MYSTERY
-	db 0, 6, 3, 1 ; LABORATORY
+;	db energies, commons, uncommons, rares, holos
+; commons + uncommons + rares + holos needs to equal 10 minus the number
+; of energy cards defined in the pack's data below; otherwise, the number
+; of cards in the pack won't be 10. ROM hack: the trailing "holos" column
+; was added so premium pack types can carve a slot out of the rare pool.
+	db 1, 5, 3, 1, 0 ; COLOSSEUM
+	db 1, 5, 3, 1, 0 ; EVOLUTION
+	db 0, 6, 3, 1, 0 ; MYSTERY
+	db 0, 6, 3, 1, 0 ; LABORATORY
 
 MACRO booster_set
 	db \1 >> 4

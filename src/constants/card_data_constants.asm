@@ -131,6 +131,12 @@ DEF TYPE_TRAINER_F EQU 4
 DEF CIRCLE    EQU $0
 DEF DIAMOND   EQU $1
 DEF STAR      EQU $2
+; ROM hack: HOLO is a chase tier above STAR. Pack data lists how many holo
+; slots a pack has alongside common/uncommon/rare; the engine iterates
+; HOLO -> STAR -> DIAMOND -> CIRCLE when filling a pack. Most existing
+; pack types have 0 holos and behave exactly as before; "premium" packs
+; trade their rare slot for a holo slot.
+DEF HOLO      EQU $3
 DEF PROMOSTAR EQU $ff
 
 ; card set constants (set 1)

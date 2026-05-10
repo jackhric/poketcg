@@ -2942,15 +2942,21 @@ wBoosterAveragedTypeChances:: ; d66d
 	ds $1
 
 ; data of the booster pack copied from the corresponding BoosterSetRarityAmountsTable entry
+; ORDER MATTERS: the engine indexes these by [wBoosterCurrentRarity] (CIRCLE=0,
+; DIAMOND=1, STAR=2, HOLO=3) via GetCurrentRarityAmount.
 wBoosterData_CommonAmount:: ; d66e
 	ds $1
 wBoosterData_UncommonAmount:: ; d66f
 	ds $1
 wBoosterData_RareAmount:: ; d670
 	ds $1
+; ROM hack: holo slot count for the current pack. 0 for vanilla packs;
+; nonzero for premium pack types that draw from the chase pool.
+wBoosterData_HoloAmount::
+	ds $1
 
 ; how many cards of each type are available of a certain rarity in the booster pack's set
-wBoosterAmountOfCardTypeTable:: ; d671
+wBoosterAmountOfCardTypeTable::
 	ds NUM_BOOSTER_CARD_TYPES
 
 ; holds information similar to wBoosterData_TypeChances, except that it contains 00 on any type
