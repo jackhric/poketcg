@@ -190,21 +190,21 @@ RemoveCardFromCollection::
 	ret
 
 ; return the amount of different cards that the player has collected in d
-; return NUM_CARDS in e, minus 1 if VENUSAUR_LV64 or MEW_LV15 has not been collected (minus 2 if neither)
+; return NUM_CARDS in e, minus 1 if VENUSAUR_LV67 or MEW_LV8 has not been collected (minus 2 if neither)
 GetCardAlbumProgress::
 	push hl
 	call EnableSRAM
 	ld e, NUM_CARDS
 	ld h, HIGH(sCardCollection)
-	ld l, VENUSAUR_LV64
+	ld l, VENUSAUR_LV67
 	bit CARD_NOT_OWNED_F, [hl]
 	jr z, .next1
-	dec e ; if VENUSAUR_LV64 not owned
+	dec e ; if VENUSAUR_LV67 not owned
 .next1
-	ld l, MEW_LV15
+	ld l, MEW_LV8
 	bit CARD_NOT_OWNED_F, [hl]
 	jr z, .next2
-	dec e ; if MEW_LV15 not owned
+	dec e ; if MEW_LV8 not owned
 .next2
 	ld d, LOW(sCardCollection)
 	ld l, d

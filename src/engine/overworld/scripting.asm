@@ -1509,28 +1509,28 @@ ScriptCommand_PickChallengeCupPrizeCard:
 	jp IncreaseScriptPointerBy1
 
 ChallengeCupPrizeCards:
-	db MEWTWO_LV60
+	db MEWTWO_LV53
 	tx MewtwoTradeCardName
 
 	db MEW_LV8
 	tx MewTradeCardName
 
-	db ARCANINE_LV34
+	db ARCANINE_LV45
 	tx ArcanineTradeCardName
 
-	db PIKACHU_LV16
+	db PIKACHU_LV14
 	tx PikachuTradeCardName
 
-	db PIKACHU_ALT_LV16
+	db PIKACHU_LV14
 	tx PikachuTradeCardName
 
-	db SURFING_PIKACHU_LV13
+	db PIKACHU_LV12
 	tx SurfingPikachuTradeCardName
 
-	db SURFING_PIKACHU_ALT_LV13
+	db PIKACHU_LV12
 	tx SurfingPikachuTradeCardName
 
-	db ELECTABUZZ_LV20
+	db ELECTABUZZ_LV35
 	tx ElectabuzzTradeCardName
 
 	db SLOWPOKE_LV9
@@ -1539,19 +1539,19 @@ ChallengeCupPrizeCards:
 	db MEWTWO_ALT_LV60
 	tx MewtwoTradeCardName
 
-	db MEWTWO_LV60
+	db MEWTWO_LV53
 	tx MewtwoTradeCardName
 
 	db MEW_LV8
 	tx MewTradeCardName
 
-	db JIGGLYPUFF_LV12
+	db JIGGLYPUFF_LV14
 	tx JigglypuffTradeCardName
 
 	db SUPER_ENERGY_RETRIEVAL
 	tx SuperEnergyRetrievalTradeCardName
 
-	db FLYING_PIKACHU
+	db PIKACHU_LV12
 	tx FlyingPikachuTradeCardName
 .end
 

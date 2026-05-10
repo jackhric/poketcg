@@ -202,9 +202,7 @@ CheckIfEnergyIsUseful:
 	jr z, .check_energy
 
 	ld d, WATER_ENERGY
-	cp SURFING_PIKACHU_LV13
-	jr z, .check_energy
-	cp SURFING_PIKACHU_ALT_LV13
+	cp PIKACHU_LV12
 	jr z, .check_energy
 
 	cp EEVEE
@@ -2035,11 +2033,11 @@ AISelectSpecialAttackParameters:
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
 	ld a, e
-	cp MEW_LV23
+	cp MEW_LV8
 	jr z, .DevolutionBeam
 	cp MEWTWO_ALT_LV60
 	jr z, .EnergyAbsorption
-	cp MEWTWO_LV60
+	cp MEWTWO_LV53
 	jr z, .EnergyAbsorption
 	cp EXEGGUTOR
 	jr z, .Teleport

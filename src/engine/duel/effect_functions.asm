@@ -3508,7 +3508,7 @@ IceBreath_RandomPokemonDamageEffect:
 
 FocusEnergyEffect:
 	ld a, [wTempTurnDuelistCardID]
-	cp VAPOREON_LV29
+	cp VAPOREON_LV42
 	ret nz ; return if no VaporeonLv29
 	ld a, SUBSTATUS1_NEXT_TURN_DOUBLE_DAMAGE
 	call ApplySubstatus1ToAttackingCard
