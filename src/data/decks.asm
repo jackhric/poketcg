@@ -620,10 +620,10 @@ CharmanderAndFriendsDeck:
 	; the spirit of the original game's starter design (Charmander deck
 	; was Fire/Lightning/Fighting). Pairs the Charmander and Cyndaquil
 	; evolution lines as the Fire core, with Pikachu/Magneton lines as
-	; Lightning support and Meowth/Rattata as colorless basics.
-	; 22 Pokemon / 22 Energy / 16 Trainers = 60.
+	; Lightning support and Meowth + Rattata/Raticate as colorless
+	; basics. 23 Pokemon / 24 Energy / 13 Trainers = 60.
 	deck_list_start
-	card_item FIRE_ENERGY,      12
+	card_item FIRE_ENERGY,      14
 	card_item LIGHTNING_ENERGY, 10
 	card_item CHARMANDER,        4
 	card_item CHARMELEON,        2
@@ -637,8 +637,9 @@ CharmanderAndFriendsDeck:
 	card_item MAGNETON_LV28,     1
 	card_item MEOWTH_LV14,       2
 	card_item RATTATA,           2
-	card_item BILL,              4
-	card_item PROFESSOR_OAK,     2
+	card_item RATICATE,          1
+	card_item BILL,              2
+	card_item PROFESSOR_OAK,     1
 	card_item SWITCH,            2
 	card_item POTION,            2
 	card_item ENERGY_REMOVAL,    2
@@ -675,10 +676,10 @@ SquirtleAndFriendsDeck:
 	; the spirit of the original game's starter design (Squirtle deck
 	; was Water/Fighting/Psychic). Pairs the Squirtle and Totodile
 	; evolution lines as the Water core, with Machop/Geodude lines as
-	; Fighting support and Meowth/Rattata as colorless basics.
-	; 22 Pokemon / 22 Energy / 16 Trainers = 60.
+	; Fighting support and Meowth + Rattata/Raticate as colorless
+	; basics. 23 Pokemon / 24 Energy / 13 Trainers = 60.
 	deck_list_start
-	card_item WATER_ENERGY,     12
+	card_item WATER_ENERGY,     14
 	card_item FIGHTING_ENERGY,  10
 	card_item SQUIRTLE,          4
 	card_item WARTORTLE,         2
@@ -692,8 +693,9 @@ SquirtleAndFriendsDeck:
 	card_item GRAVELER,          1
 	card_item MEOWTH_LV14,       2
 	card_item RATTATA,           2
-	card_item BILL,              4
-	card_item PROFESSOR_OAK,     2
+	card_item RATICATE,          1
+	card_item BILL,              2
+	card_item PROFESSOR_OAK,     1
 	card_item SWITCH,            2
 	card_item POTION,            2
 	card_item ENERGY_REMOVAL,    2
@@ -732,10 +734,10 @@ BulbasaurAndFriendsDeck:
 	; the spirit of the original game's starter design (Bulbasaur deck
 	; was Grass/Fire/Water). Pairs the Bulbasaur and Chikorita evolution
 	; lines as the Grass core, with Abra/Gastly lines as Psychic support
-	; and Meowth/Rattata as colorless basics.
-	; 22 Pokemon / 22 Energy / 16 Trainers = 60.
+	; and Meowth + Rattata/Raticate as colorless basics.
+	; 23 Pokemon / 24 Energy / 13 Trainers = 60.
 	deck_list_start
-	card_item GRASS_ENERGY,     12
+	card_item GRASS_ENERGY,     14
 	card_item PSYCHIC_ENERGY,   10
 	card_item BULBASAUR,         4
 	card_item IVYSAUR,           2
@@ -749,8 +751,9 @@ BulbasaurAndFriendsDeck:
 	card_item HAUNTER_LV17,      1
 	card_item MEOWTH_LV14,       2
 	card_item RATTATA,           2
-	card_item BILL,              4
-	card_item PROFESSOR_OAK,     2
+	card_item RATICATE,          1
+	card_item BILL,              2
+	card_item PROFESSOR_OAK,     1
 	card_item SWITCH,            2
 	card_item POTION,            2
 	card_item ENERGY_REMOVAL,    2
