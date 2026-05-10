@@ -38,7 +38,7 @@ BenchAttackCardList:
 	card_item ZAPDOS_LV68,       2
 	card_item HITMONLEE,         4
 	card_item HITMONCHAN,        2
-	card_item MEOWTH_LV14,       4
+	card_item MEOWTH_LV15,       4
 	card_item PROFESSOR_OAK,     1
 	card_item BILL,              2
 	card_item MR_FUJI,           1
@@ -61,7 +61,7 @@ BattleContestCardList:
 	card_item MACHOKE,                  3
 	card_item HITMONLEE,                2
 	card_item HITMONCHAN,               2
-	card_item MEOWTH_LV14,              3
+	card_item MEOWTH_LV15,              3
 	card_item PERSIAN,                  2
 	card_item DRATINI,                  3
 	card_item DRAGONAIR,                2
@@ -302,7 +302,7 @@ EnergyRemovalCardList:
 	card_item POLIWHIRL,                3
 	card_item POLIWRATH,                2
 	card_item GASTLY_LV17,              4
-	card_item HAUNTER_LV17,             3
+	card_item HAUNTER_LV22,             3
 	card_item DRATINI,                  3
 	card_item DRAGONAIR,                2
 	card_item PROFESSOR_OAK,            1
@@ -594,8 +594,8 @@ PsychicPowerCardList:
 	card_item SLOWBRO,           1
 	card_item GASTLY_LV17,        1
 	card_item GASTLY_LV17,       2
-	card_item HAUNTER_LV17,      1
-	card_item HAUNTER_LV17,      1
+	card_item HAUNTER_LV22,      1
+	card_item HAUNTER_LV22,      1
 	card_item GENGAR,            1
 	card_item DROWZEE,           2
 	card_item HYPNO,             1
@@ -622,13 +622,13 @@ DreamEaterHaunterCardList:
 	card_item ZUBAT,                   3
 	card_item GOLBAT,                  2
 	card_item GASTLY_LV17,              4
-	card_item HAUNTER_LV17,            1
-	card_item HAUNTER_LV17,            2
+	card_item HAUNTER_LV22,            1
+	card_item HAUNTER_LV22,            2
 	card_item GENGAR,                  2
 	card_item DROWZEE,                 3
 	card_item HYPNO,                   2
 	card_item JIGGLYPUFF_LV14,         2
-	card_item MEOWTH_LV14,             2
+	card_item MEOWTH_LV15,             2
 	card_item PROFESSOR_OAK,           2
 	card_item BILL,                    2
 	card_item ENERGY_RETRIEVAL,        2
@@ -736,7 +736,7 @@ ScienceCorpsCardList:
 	card_item MUK,              1
 	card_item KOFFING,          2
 	card_item WEEZING,          1
-	card_item MEOWTH_LV14,      2
+	card_item MEOWTH_LV15,      2
 	card_item PERSIAN,          1
 	card_item PROFESSOR_OAK,    1
 	card_item BILL,             1
@@ -952,7 +952,7 @@ CharmanderAndFriendsCardList:
 	card_item SEAKING,          1
 	card_item RATTATA,          2
 	card_item RATICATE,         1
-	card_item MEOWTH_LV14,      1
+	card_item MEOWTH_LV15,      1
 	card_item PROFESSOR_OAK,    1
 	card_item BILL,             2
 	card_item SWITCH,           1
@@ -990,7 +990,7 @@ SquirtleAndFriendsCardList:
 	card_item ELECTABUZZ_LV35,   1
 	card_item RATTATA,           2
 	card_item RATICATE,          1
-	card_item MEOWTH_LV14,       1
+	card_item MEOWTH_LV15,       1
 	card_item PROFESSOR_OAK,     1
 	card_item BILL,              1
 	card_item SWITCH,            1
@@ -1020,10 +1020,10 @@ BulbasaurAndFriendsCardList:
 	card_item ABRA,             2
 	card_item KADABRA,          1
 	card_item GASTLY_LV17,       2
-	card_item HAUNTER_LV17,     1
+	card_item HAUNTER_LV22,     1
 	card_item JYNX,             1
 	card_item JIGGLYPUFF_LV14,  1
-	card_item MEOWTH_LV14,      1
+	card_item MEOWTH_LV15,      1
 	card_item KANGASKHAN,       1
 	card_item PROFESSOR_OAK,    1
 	card_item BILL,             1
@@ -1052,7 +1052,7 @@ PsychicMachampCardList:
 	card_item KADABRA,          1
 	card_item ALAKAZAM,         1
 	card_item GASTLY_LV17,       2
-	card_item HAUNTER_LV17,     1
+	card_item HAUNTER_LV22,     1
 	card_item GENGAR,           1
 	card_item MR_MIME,          1
 	card_item JYNX,             1

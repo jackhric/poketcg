@@ -129,7 +129,7 @@ CardPointers::
 	dw SlowpokeLv9Card
 	dw SlowbroCard
 	dw GastlyLv17Card
-	dw HaunterLv17Card
+	dw HaunterLv22Card
 	dw GengarCard
 	dw DrowzeeCard
 	dw HypnoCard
@@ -149,7 +149,7 @@ CardPointers::
 	dw ClefableCard
 	dw JigglypuffLv14Card
 	dw WigglytuffCard
-	dw MeowthLv14Card
+	dw MeowthLv15Card
 	dw PersianCard
 	dw FarfetchdCard
 	dw DoduoCard
@@ -6279,52 +6279,56 @@ GastlyLv17Card:
 	tx GastlyLv17Description ; description
 	db AI_INFO_UNK_03 | HAS_EVOLUTION ; AI info
 
-HaunterLv17Card:
+; ROM hack: swapped from HaunterLv17 (Transparency Pokemon Power +
+; Nightmare) to HaunterLv22 (Hypnosis + Dream Eater) — classic move
+; set, less of a niche power-deck enabler. Re-uses the haunter2.png
+; alt-art that's already in src/gfx/cards.
+HaunterLv22Card:
 	db TYPE_PKMN_PSYCHIC ; type
-	gfx HaunterLv17CardGfx ; gfx
+	gfx HaunterLv22CardGfx ; gfx
 	tx HaunterName ; name
-	db STAR ; rarity
-	db LABORATORY | FOSSIL ; sets
-	db HAUNTER_LV17
-	db 50 ; hp
+	db DIAMOND ; rarity
+	db EVOLUTION | NONE ; sets
+	db HAUNTER_LV22
+	db 60 ; hp
 	db STAGE1 ; stage
 	tx GastlyName ; pre-evo name
 
 	; attack 1
-	energy 0 ; energies
-	tx TransparencyName ; name
-	tx TransparencyDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db POKEMON_POWER ; category
-	dw HaunterTransparencyEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_PKMN_POWER_1 ; animation
-
-	; attack 2
-	energy PSYCHIC, 1, COLORLESS, 1 ; energies
-	tx NightmareName ; name
+	energy PSYCHIC, 1 ; energies
+	tx HypnosisName ; name
 	tx InflictSleepDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
+	db 0 ; damage
 	db DAMAGE_NORMAL ; category
-	dw HaunterNightmareEffectCommands ; effect commands
+	dw HaunterHypnosisEffectCommands ; effect commands
 	db INFLICT_SLEEP ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_NIGHTMARE ; animation
+	db ATK_ANIM_HYPNOSIS ; animation
 
-	db 0 ; retreat cost
+	; attack 2
+	energy PSYCHIC, 2 ; energies
+	tx DreamEaterName ; name
+	tx DreamEaterDescription ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_NORMAL ; category
+	dw HaunterDreamEaterEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PSYCHIC_HIT ; animation
+
+	db 1 ; retreat cost
 	db NONE ; weakness
 	db WR_FIGHTING ; resistance
 	tx GasName ; category
 	db 93 ; Pokedex number
 	db 0
-	db 17 ; level
+	db 22 ; level
 	db 5, 3 ; length
 	dw 2 ; weight
 	tx HaunterDescription ; description
@@ -7299,30 +7303,33 @@ WigglytuffCard:
 	tx WigglytuffDescription ; description
 	db 0 ; AI info
 
-MeowthLv14Card:
+; ROM hack: swapped from MeowthLv14 (Cat Punch bench-damage) to
+; MeowthLv15 (Pay Day with DRAW_CARD). Pay Day is the more iconic and
+; more starter-deck-appropriate Meowth attack. Re-uses meowth2.png.
+MeowthLv15Card:
 	db TYPE_PKMN_COLORLESS ; type
-	gfx MeowthLv14CardGfx ; gfx
+	gfx MeowthLv15CardGfx ; gfx
 	tx MeowthName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | GB ; sets
-	db MEOWTH_LV14
+	db MYSTERY | JUNGLE ; sets
+	db MEOWTH_LV15
 	db 50 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
 
 	; attack 1
 	energy COLORLESS, 2 ; energies
-	tx CatPunchName ; name
-	tx CatPunchDescription ; description
+	tx PayDayName ; name
+	tx PayDayDescription ; description
 	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw MeowthCatPunchEffectCommands ; effect commands
-	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
-	db ENCOURAGE_THIS_ATTACK ; flags 2
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MeowthPayDayEffectCommands ; effect commands
+	db DRAW_CARD ; flags 1
+	db NONE ; flags 2
 	db NONE ; flags 3
-	db 2 ; attack score bonus for ENCOURAGE_THIS_ATTACK
-	db ATK_ANIM_CAT_PUNCH ; animation
+	db 0
+	db ATK_ANIM_HIT ; animation
 
 	; attack 2
 	energy 0 ; energies
@@ -7344,10 +7351,10 @@ MeowthLv14Card:
 	tx ScratchCatName ; category
 	db 52 ; Pokedex number
 	db 0
-	db 14 ; level
+	db 15 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MeowthLv14Description ; description
+	tx MeowthLv15Description ; description
 	db HAS_EVOLUTION ; AI info
 
 PersianCard:

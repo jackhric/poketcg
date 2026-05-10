@@ -240,7 +240,7 @@ HandleStrikesBack_AgainstDamagingAttack::
 	pop hl
 	ret
 
-; return carry if NShield or Transparency activate (if MEW_LV8 or HAUNTER_LV17 is
+; return carry if NShield or Transparency activate (if MEW_LV8 or HAUNTER_LV22 is
 ; the turn holder's arena Pokemon), and print their corresponding text if so
 HandleNShieldAndTransparency::
 	push de
@@ -251,7 +251,7 @@ HandleNShieldAndTransparency::
 	ld a, e
 	cp MEW_LV8
 	jr z, .nshield
-	cp HAUNTER_LV17
+	cp HAUNTER_LV22
 	jr z, .transparency
 .done
 	pop de
@@ -417,12 +417,12 @@ HandleNoDamageOrEffectSubstatus::
 	ldtx hl, NoDamageOrEffectDueToNShieldText
 	jr .no_damage_or_effect
 
-; if the Pokemon being attacked is HAUNTER_LV17, and its Transparency is active,
+; if the Pokemon being attacked is HAUNTER_LV22, and its Transparency is active,
 ; there is a 50% chance that any damage or effect is prevented
 ; return carry if damage is prevented
 HandleTransparency::
 	ld a, [wTempNonTurnDuelistCardID]
-	cp HAUNTER_LV17
+	cp HAUNTER_LV22
 	jr z, .transparency
 .done
 	or a
