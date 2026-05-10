@@ -403,7 +403,14 @@ Script_EnterLabFirstTime:
 .ows_d80c
 	print_npc_text Text05e9
 	ask_question_jump_default_yes NULL, .ows_d817
-	script_jump .ows_d7bc
+	; ROM hack: NO at "want a practice duel?" used to loop back into the
+	; rules multichoice with no exit. Now it short-circuits straight into
+	; the post-duel handler, which gives the player their starter deck
+	; without making them play out the tutorial fight against Sam.
+	close_advanced_text_box
+	set_next_npc_and_script NPC_DRMASON, Script_AfterPracticeDuel
+	end_script
+	ret
 
 .ows_d817
 	set_dialog_npc NPC_DRMASON

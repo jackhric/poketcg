@@ -616,36 +616,35 @@ SamsPracticeDeck:
 	tx SamsPracticeDeckName
 
 CharmanderAndFriendsDeck:
+	; ROM hack: Fire + Lightning dual-type with a colorless splash, in
+	; the spirit of the original game's starter design (Charmander deck
+	; was Fire/Lightning/Fighting). Pairs the Charmander and Cyndaquil
+	; evolution lines as the Fire core, with Pikachu/Magneton lines as
+	; Lightning support and Meowth + Rattata/Raticate as colorless
+	; basics. 23 Pokemon / 24 Energy / 13 Trainers = 60.
 	deck_list_start
-	card_item FIRE_ENERGY,      10
-	card_item LIGHTNING_ENERGY,  8
-	card_item FIGHTING_ENERGY,   6
-	card_item CHARMANDER,        2
-	card_item CHARMELEON,        1
+	card_item FIRE_ENERGY,      14
+	card_item LIGHTNING_ENERGY, 10
+	card_item CHARMANDER,        4
+	card_item CHARMELEON,        2
 	card_item CHARIZARD,         1
-	card_item GROWLITHE,         2
-	card_item ARCANINE_LV45,     1
-	card_item PONYTA,            2
-	card_item MAGMAR_LV24,       1
+	card_item CYNDAQUIL1,        3
+	card_item QUILAVA1,          1
+	card_item TYPHLOSION1,       1
 	card_item PIKACHU_LV12,      2
 	card_item RAICHU_LV40,       1
 	card_item MAGNEMITE_LV13,    2
 	card_item MAGNETON_LV28,     1
-	card_item ZAPDOS_LV68,       1
-	card_item DIGLETT,           2
-	card_item DUGTRIO,           1
-	card_item MACHOP,            1
-	card_item MACHOKE,           1
+	card_item MEOWTH_LV14,       2
 	card_item RATTATA,           2
 	card_item RATICATE,          1
-	card_item MEOWTH_LV14,       1
-	card_item PROFESSOR_OAK,     1
 	card_item BILL,              2
-	card_item SWITCH,            1
-	card_item COMPUTER_SEARCH,   1
-	card_item PLUSPOWER,         1
+	card_item PROFESSOR_OAK,     1
+	card_item SWITCH,            2
 	card_item POTION,            2
-	card_item FULL_HEAL,         2
+	card_item ENERGY_REMOVAL,    2
+	card_item ENERGY_RETRIEVAL,  2
+	card_item ENERGY_SEARCH,     2
 	deck_list_end
 	tx CharmanderAndFriendsDeckName
 
@@ -673,39 +672,35 @@ CharmanderExtraDeck:
 	tx CharmanderExtraDeckName
 
 SquirtleAndFriendsDeck:
+	; ROM hack: Water + Fighting dual-type with a colorless splash, in
+	; the spirit of the original game's starter design (Squirtle deck
+	; was Water/Fighting/Psychic). Pairs the Squirtle and Totodile
+	; evolution lines as the Water core, with Machop/Geodude lines as
+	; Fighting support and Meowth + Rattata/Raticate as colorless
+	; basics. 23 Pokemon / 24 Energy / 13 Trainers = 60.
 	deck_list_start
-	card_item WATER_ENERGY,    11
-	card_item FIGHTING_ENERGY,  6
-	card_item PSYCHIC_ENERGY,   8
-	card_item SQUIRTLE,         2
-	card_item WARTORTLE,        1
-	card_item BLASTOISE,        1
-	card_item SEEL,             2
-	card_item DEWGONG,          1
-	card_item STARYU,           1
-	card_item STARMIE,          1
-	card_item GOLDEEN,          1
-	card_item SEAKING,          1
-	card_item LAPRAS,           1
-	card_item ABRA,             2
-	card_item KADABRA,          1
-	card_item GASTLY_LV17,       2
-	card_item HAUNTER_LV17,     1
-	card_item MACHOP,           1
-	card_item MACHOKE,          1
-	card_item GEODUDE,          2
-	card_item HITMONCHAN,       1
-	card_item RATTATA,          2
-	card_item RATICATE,         1
-	card_item MEOWTH_LV14,      1
-	card_item PROFESSOR_OAK,    1
-	card_item BILL,             1
-	card_item SWITCH,           1
-	card_item POKE_BALL,        1
-	card_item SCOOP_UP,         1
-	card_item ITEM_FINDER,      1
-	card_item POTION,           1
-	card_item FULL_HEAL,        1
+	card_item WATER_ENERGY,     14
+	card_item FIGHTING_ENERGY,  10
+	card_item SQUIRTLE,          4
+	card_item WARTORTLE,         2
+	card_item BLASTOISE,         1
+	card_item TOTODILE1,         3
+	card_item CROCONAW2,         1
+	card_item FERALIGATR2,       1
+	card_item MACHOP,            2
+	card_item MACHOKE,           1
+	card_item GEODUDE,           2
+	card_item GRAVELER,          1
+	card_item MEOWTH_LV14,       2
+	card_item RATTATA,           2
+	card_item RATICATE,          1
+	card_item BILL,              2
+	card_item PROFESSOR_OAK,     1
+	card_item SWITCH,            2
+	card_item POTION,            2
+	card_item ENERGY_REMOVAL,    2
+	card_item ENERGY_RETRIEVAL,  2
+	card_item ENERGY_SEARCH,     2
 	deck_list_end
 	tx SquirtleAndFriendsDeckName
 
@@ -735,38 +730,35 @@ SquirtleExtraDeck:
 	tx SquirtleExtraDeckName
 
 BulbasaurAndFriendsDeck:
+	; ROM hack: Grass + Psychic dual-type with a colorless splash, in
+	; the spirit of the original game's starter design (Bulbasaur deck
+	; was Grass/Fire/Water). Pairs the Bulbasaur and Chikorita evolution
+	; lines as the Grass core, with Abra/Gastly lines as Psychic support
+	; and Meowth + Rattata/Raticate as colorless basics.
+	; 23 Pokemon / 24 Energy / 13 Trainers = 60.
 	deck_list_start
-	card_item GRASS_ENERGY,    11
-	card_item FIRE_ENERGY,      3
-	card_item WATER_ENERGY,     9
-	card_item BULBASAUR,        2
-	card_item IVYSAUR,          1
-	card_item VENUSAUR_LV67,    1
-	card_item CATERPIE,         2
-	card_item METAPOD,          1
-	card_item NIDORANF,         2
-	card_item NIDORANM,         2
-	card_item NIDORINO,         1
-	card_item TANGELA_LV12,     1
-	card_item FLAREON_LV28,     1
-	card_item SEEL,             1
-	card_item DEWGONG,          1
-	card_item KRABBY,           2
-	card_item KINGLER,          1
-	card_item GOLDEEN,          2
-	card_item SEAKING,          1
-	card_item VAPOREON_LV42,    1
-	card_item JIGGLYPUFF_LV14,  1
-	card_item MEOWTH_LV14,      1
-	card_item EEVEE,            2
-	card_item KANGASKHAN,       1
-	card_item PROFESSOR_OAK,    1
-	card_item SWITCH,           1
-	card_item POKE_BALL,        1
-	card_item PLUSPOWER,        2
-	card_item DEFENDER,         1
-	card_item FULL_HEAL,        2
-	card_item REVIVE,           1
+	card_item GRASS_ENERGY,     14
+	card_item PSYCHIC_ENERGY,   10
+	card_item BULBASAUR,         4
+	card_item IVYSAUR,           2
+	card_item VENUSAUR_LV67,     1
+	card_item CHIKORITA1,        3
+	card_item BAYLEEF2,          1
+	card_item MEGANIUM1,         1
+	card_item ABRA,              2
+	card_item KADABRA,           1
+	card_item GASTLY_LV17,       2
+	card_item HAUNTER_LV17,      1
+	card_item MEOWTH_LV14,       2
+	card_item RATTATA,           2
+	card_item RATICATE,          1
+	card_item BILL,              2
+	card_item PROFESSOR_OAK,     1
+	card_item SWITCH,            2
+	card_item POTION,            2
+	card_item ENERGY_REMOVAL,    2
+	card_item ENERGY_RETRIEVAL,  2
+	card_item ENERGY_SEARCH,     2
 	deck_list_end
 	tx BulbasaurAndFriendsDeckName
 
