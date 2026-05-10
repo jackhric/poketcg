@@ -367,7 +367,7 @@ VenusaurLv67Card:
 	db TYPE_PKMN_GRASS ; type
 	gfx VenusaurLv67CardGfx ; gfx
 	tx VenusaurName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — Stage 2 starter finisher
 	db EVOLUTION | NONE ; sets
 	db VENUSAUR_LV67
 	db 100 ; hp
@@ -2305,7 +2305,7 @@ CharizardCard:
 	db TYPE_PKMN_FIRE ; type
 	gfx CharizardCardGfx ; gfx
 	tx CharizardName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — iconic Stage 2 finisher
 	db EVOLUTION | NONE ; sets
 	db CHARIZARD
 	db 120 ; hp
@@ -2815,8 +2815,8 @@ MoltresLv37Card:
 	db TYPE_PKMN_FIRE ; type
 	gfx MoltresLv37CardGfx ; gfx
 	tx MoltresName ; name
-	db STAR ; rarity
-	db LABORATORY | GB ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
+	db HOLO ; rarity ; chase tier — legendary
+	db LABORATORY | GB ; sets ; moved out of PROMOTIONAL in Pass B
 	db MOLTRES_LV37
 	db 100 ; hp
 	db BASIC ; stage
@@ -2968,7 +2968,7 @@ BlastoiseCard:
 	db TYPE_PKMN_WATER ; type
 	gfx BlastoiseCardGfx ; gfx
 	tx BlastoiseName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — Stage 2 starter finisher
 	db EVOLUTION | NONE ; sets
 	db BLASTOISE
 	db 100 ; hp
@@ -4294,8 +4294,8 @@ ArticunoLv37Card:
 	db TYPE_PKMN_WATER ; type
 	gfx ArticunoLv37CardGfx ; gfx
 	tx ArticunoName ; name
-	db STAR ; rarity
-	db MYSTERY | GB ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
+	db HOLO ; rarity ; chase tier — legendary
+	db MYSTERY | GB ; sets ; moved out of PROMOTIONAL in Pass B
 	db ARTICUNO_LV37
 	db 100 ; hp
 	db BASIC ; stage
@@ -4804,8 +4804,8 @@ ZapdosLv68Card:
 	db TYPE_PKMN_LIGHTNING ; type
 	gfx ZapdosLv68CardGfx ; gfx
 	tx ZapdosName ; name
-	db STAR ; rarity
-	db LABORATORY | GB ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
+	db HOLO ; rarity ; chase tier — legendary
+	db LABORATORY | GB ; sets ; moved out of PROMOTIONAL in Pass B
 	db ZAPDOS_LV68
 	db 100 ; hp
 	db BASIC ; stage
@@ -6130,8 +6130,8 @@ SlowpokeLv9Card:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx SlowpokeLv9CardGfx ; gfx
 	tx SlowpokeName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
+	db CIRCLE ; rarity ; basic — was PROMOSTAR/unreachable, now common like other basics
+	db MYSTERY | PRO ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
 	db SLOWPOKE_LV9
 	db 40 ; hp
 	db BASIC ; stage
@@ -6589,7 +6589,7 @@ MewtwoLv53Card:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx MewtwoLv53CardGfx ; gfx
 	tx MewtwoName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — top psychic finisher
 	db LABORATORY | NONE ; sets
 	db MEWTWO_LV53
 	db 60 ; hp
@@ -6640,8 +6640,8 @@ MewtwoAltLV60Card:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx MewtwoAltLV60CardGfx ; gfx
 	tx MewtwoName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
+	db HOLO ; rarity ; chase tier — alt-art Mewtwo
+	db MYSTERY | PRO ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
 	db MEWTWO_ALT_LV60
 	db 70 ; hp
 	db BASIC ; stage
@@ -6691,8 +6691,8 @@ MewLv8Card:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx MewLv8CardGfx ; gfx
 	tx MewName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
+	db HOLO ; rarity ; chase tier — phantom card finally pullable
+	db MYSTERY | PRO ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
 	db MEW_LV8
 	db 40 ; hp
 	db BASIC ; stage
@@ -7915,7 +7915,7 @@ SnorlaxCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx SnorlaxCardGfx ; gfx
 	tx SnorlaxName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — iconic 90HP wall basic
 	db COLOSSEUM | JUNGLE ; sets
 	db SNORLAX
 	db 90 ; hp
@@ -8068,8 +8068,8 @@ DragoniteLv41Card:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx DragoniteLv41CardGfx ; gfx
 	tx DragoniteName ; name
-	db STAR ; rarity
-	db EVOLUTION | GB ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
+	db HOLO ; rarity ; chase tier — legendary
+	db EVOLUTION | GB ; sets ; moved out of PROMOTIONAL in Pass B
 	db DRAGONITE_LV41
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -8317,8 +8317,8 @@ SuperEnergyRetrievalCard:
 	db TYPE_TRAINER ; type
 	gfx SuperEnergyRetrievalCardGfx ; gfx
 	tx SuperEnergyRetrievalName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
+	db HOLO ; rarity ; chase tier — strongest energy-recursion trainer
+	db LABORATORY | PRO ; sets ; was PROMOTIONAL — moved into a pack set for accessibility
 	db SUPER_ENERGY_RETRIEVAL
 	dw SuperEnergyRetrievalEffectCommands ; effect commands
 	tx SuperEnergyRetrievalDescription ; description
@@ -9796,7 +9796,7 @@ TyranitarCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx TyranitarCardGfx ; gfx
 	tx TyranitarName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — Gen-2 pseudo-legendary Stage 2
 	db EVOLUTION | NONE ; sets
 	db TYRANITAR
 	db 100 ; hp
@@ -9847,7 +9847,7 @@ SteelixCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx SteelixCardGfx ; gfx
 	tx SteelixName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — 110HP Stage 1, top-end fighting wall
 	db COLOSSEUM | NONE ; sets
 	db STEELIX
 	db 110 ; hp
@@ -10306,7 +10306,7 @@ SlowkingCard:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx SlowkingCardGfx ; gfx
 	tx SlowkingName ; name
-	db STAR ; rarity
+	db HOLO ; rarity ; chase tier — Gen-2 Stage 1 with strong control attack
 	db COLOSSEUM | NONE ; sets
 	db SLOWKING
 	db 90 ; hp
