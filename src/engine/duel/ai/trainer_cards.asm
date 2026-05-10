@@ -1062,12 +1062,12 @@ AIDecide_GustOfWind:
 	jr c, .no_carry ; if energy card is in hand
 
 .check_id
-	; skip if current active card is MEW_LV23 or MEWTWO_LV53
+	; skip if current active card is MEW_LV8 or MEWTWO_LV53
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
 	ld a, e
-	cp MEW_LV23
+	cp MEW_LV8
 	jr z, .no_carry
 	cp MEWTWO_LV53
 	jr z, .no_carry
@@ -1957,8 +1957,6 @@ AIDecide_PokemonBreeder:
 ; stage 2 Pokemon cards
 	ld d, a
 	call LoadCardDataToBuffer1_FromDeckIndex
-	cp VENUSAUR_LV64
-	jr z, .found
 	cp VENUSAUR_LV67
 	jr z, .found
 	cp BLASTOISE
@@ -3793,13 +3791,13 @@ AIDecide_FullHeal:
 .asleep
 ; set carry if any of the following
 ; cards are the player's Active Pokemon.
-	ld a, GASTLY_LV8
+	ld a, GASTLY_LV17
 	call .CheckPlayerArenaCard
 	jr c, .set_carry
 	ld a, GASTLY_LV17
 	call .CheckPlayerArenaCard
 	jr c, .set_carry
-	ld a, HAUNTER_LV22
+	ld a, HAUNTER_LV17
 	call .CheckPlayerArenaCard
 	jr c, .set_carry
 	jr .paralyzed
@@ -4318,7 +4316,7 @@ AIDecide_Recycle:
 	jr .loop_1
 
 .jigglypuff
-	cp JIGGLYPUFF_LV12
+	cp JIGGLYPUFF_LV14
 	jr nz, .loop_1
 	ld a, b
 	ld [wce08 + 3], a
@@ -4360,7 +4358,7 @@ AIDecide_Recycle:
 	jr .loop_2
 
 .gastly1
-	cp GASTLY_LV8
+	cp GASTLY_LV17
 	jr nz, .zubat
 	ld a, b
 	ld [wce08 + 1], a
@@ -4381,7 +4379,7 @@ AIDecide_Recycle:
 	jr .loop_2
 
 .meowth
-	cp MEOWTH_LV15
+	cp MEOWTH_LV14
 	jr nz, .loop_2
 	ld a, b
 	ld [wce08 + 4], a
@@ -4845,7 +4843,7 @@ AIDecide_Pokeball:
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	ret c
-	ld e, JIGGLYPUFF_LV12
+	ld e, JIGGLYPUFF_LV14
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	ret c
@@ -4875,11 +4873,11 @@ AIDecide_Pokeball:
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	ret c
-	ld e, PIKACHU_LV16
+	ld e, PIKACHU_LV14
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	ret c
-	ld e, PIKACHU_ALT_LV16
+	ld e, PIKACHU_LV14
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	ret c
@@ -4887,7 +4885,7 @@ AIDecide_Pokeball:
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	ret c
-	ld e, FLYING_PIKACHU
+	ld e, PIKACHU_LV12
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	ret c
@@ -4960,13 +4958,13 @@ AIDecide_Pokeball:
 	ld a, PSYCHIC_ENERGY
 	call LookForCardIDInHandList_Bank8
 	jr nc, .done_etcetera
-	ld a, GASTLY_LV8
+	ld a, GASTLY_LV17
 	call LookForCardIDInHandList_Bank8
 	jr c, .done_etcetera
 	ld a, JYNX
 	call LookForCardIDInHandList_Bank8
 	jr c, .done_etcetera
-	ld e, GASTLY_LV8
+	ld e, GASTLY_LV17
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	ret c
@@ -5318,7 +5316,7 @@ AIDecide_ComputerSearch_FireCharge:
 	ld a, TAUROS
 	call LookForCardIDInHandList_Bank8
 	jr nc, .tauros
-	ld a, JIGGLYPUFF_LV12
+	ld a, JIGGLYPUFF_LV14
 	call LookForCardIDInHandList_Bank8
 	jr nc, .jigglypuff
 	; fallthrough
@@ -5345,7 +5343,7 @@ AIDecide_ComputerSearch_FireCharge:
 	ld [wce06], a
 	jr .find_discard_cards
 .jigglypuff
-	ld e, JIGGLYPUFF_LV12
+	ld e, JIGGLYPUFF_LV14
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation_Bank8
 	jp nc, .no_carry
@@ -5389,11 +5387,11 @@ AIDecide_ComputerSearch_Anger:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_discard_cards
 	ld b, GROWLITHE
-	ld a, ARCANINE_LV34
+	ld a, ARCANINE_LV45
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_discard_cards
 	ld a, GROWLITHE
-	ld b, ARCANINE_LV34
+	ld b, ARCANINE_LV45
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_discard_cards
 	ld b, DODUO
@@ -5476,7 +5474,7 @@ AIDecide_PokemonTrader_LegendaryMoltres:
 ; look for MoltresLv37 card in deck to trade with a
 ; card in hand different from MoltresLv35.
 	ld a, MOLTRES_LV37
-	ld e, MOLTRES_LV35
+	ld e, MOLTRES_LV37
 	call LookForCardIDToTradeWithDifferentHandCard
 	jr nc, .no_carry
 ; success
@@ -5490,7 +5488,7 @@ AIDecide_PokemonTrader_LegendaryMoltres:
 
 AIDecide_PokemonTrader_LegendaryArticuno:
 ; if has none of these cards in Hand or Play Area, proceed
-	ld a, ARTICUNO_LV35
+	ld a, ARTICUNO_LV37
 	call LookForCardIDInHandAndPlayArea
 	jr c, .no_carry
 	ld a, LAPRAS
@@ -5647,27 +5645,27 @@ AIDecide_PokemonTrader_LegendaryRonald:
 ; otherwise, check if the evolution card is in
 ; hand and if so, choose it as target instead.
 	ld b, EEVEE
-	ld a, FLAREON_LV22
+	ld a, FLAREON_LV28
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
 	ld b, EEVEE
-	ld a, VAPOREON_LV29
+	ld a, VAPOREON_LV42
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
 	ld b, EEVEE
-	ld a, JOLTEON_LV24
+	ld a, JOLTEON_LV29
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
 	ld a, EEVEE
-	ld b, FLAREON_LV22
+	ld b, FLAREON_LV28
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
 	ld a, EEVEE
-	ld b, VAPOREON_LV29
+	ld b, VAPOREON_LV42
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
 	ld a, EEVEE
-	ld b, JOLTEON_LV24
+	ld b, JOLTEON_LV29
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
 	ld b, DRATINI
@@ -5854,7 +5852,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld b, VOLTORB
-	ld a, ELECTRODE_LV42
+	ld a, ELECTRODE_LV35
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld b, VOLTORB
@@ -5862,7 +5860,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld a, VOLTORB
-	ld b, ELECTRODE_LV42
+	ld b, ELECTRODE_LV35
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld a, VOLTORB
@@ -5870,30 +5868,30 @@ AIDecide_PokemonTrader_PowerGenerator:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld b, MAGNEMITE_LV13
-	ld a, MAGNETON_LV35
-	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
-	jr c, .find_duplicates
-	ld b, MAGNEMITE_LV15
-	ld a, MAGNETON_LV35
+	ld a, MAGNETON_LV28
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld b, MAGNEMITE_LV13
 	ld a, MAGNETON_LV28
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld b, MAGNEMITE_LV15
+	ld b, MAGNEMITE_LV13
 	ld a, MAGNETON_LV28
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld a, MAGNEMITE_LV15
-	ld b, MAGNETON_LV35
+	ld b, MAGNEMITE_LV13
+	ld a, MAGNETON_LV28
+	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
+	jr c, .find_duplicates
+	ld a, MAGNEMITE_LV13
+	ld b, MAGNETON_LV28
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld a, MAGNEMITE_LV13
-	ld b, MAGNETON_LV35
+	ld b, MAGNETON_LV28
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld a, MAGNEMITE_LV15
+	ld a, MAGNEMITE_LV13
 	ld b, MAGNETON_LV28
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
@@ -6025,11 +6023,11 @@ AIDecide_PokemonTrader_Flamethrower:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld b, VULPIX
-	ld a, NINETALES_LV32
+	ld a, NINETALES_LV35
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld a, VULPIX
-	ld b, NINETALES_LV32
+	ld b, NINETALES_LV35
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld b, GROWLITHE

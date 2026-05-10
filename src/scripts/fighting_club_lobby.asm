@@ -63,8 +63,8 @@ Script_Man1:
 
 .ows_dcd7
 	print_npc_text Man1PlayerReceivePikachuAltLv16Text
-	give_card PIKACHU_ALT_LV16
-	show_card_received_screen PIKACHU_ALT_LV16
+	give_card PIKACHU_LV14
+	show_card_received_screen PIKACHU_LV14
 	print_npc_text Man1ThankYouText
 	set_event EVENT_MAN1_GIFT_SEQUENCE_STATE, MAN1_GIFT_SEQUENCE_COMPLETE
 	quit_script_fully

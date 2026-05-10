@@ -701,6 +701,18 @@ ScriptCommand_AskQuestionJump:
 ; args - prize cards, deck id, duel theme index
 ; sets a duel up, doesn't start until we break out of the script system.
 ScriptCommand_StartDuel:
+	; ROM hack: refuse rematches against typical (non-boss) opponents the
+	; player has already defeated. Bosses go through the BO7 series flow
+	; instead and are always re-fightable. We resolve the NPC ID early,
+	; print a polite "no rematch" line, and then advance the script past
+	; the start_duel command without triggering a duel.
+	ld a, [wScriptNPC]
+	ld l, LOADED_NPC_ID
+	call GetItemInLoadedNPCIndex
+	ld a, [hl]
+	farcall ShouldBlockRematch
+	jr c, .blocked_rematch
+
 	call SetNPCDuelParams
 	ld a, [wScriptNPC]
 	ld l, LOADED_NPC_ID
@@ -734,6 +746,15 @@ ScriptCommand_StartDuel:
 	ld [wGameEvent], a
 	ld hl, wOverworldTransition
 	set 6, [hl]
+	jp IncreaseScriptPointerBy4
+
+.blocked_rematch
+	; ROM hack: typical opponent already defeated -- print a "no rematch"
+	; line via the NPC textbox and advance the script past the start_duel
+	; command's arg bytes so the script continues normally (the NPC's
+	; script almost always quits straight after start_duel).
+	ldtx hl, AlreadyDefeatedNoRematchText
+	call Func_cc32
 	jp IncreaseScriptPointerBy4
 
 ScriptCommand_StartChallengeHallDuel:
@@ -955,6 +976,25 @@ ScriptCommand_GiveBoosterPacks:
 	jr z, .done
 	farcall GiveBoosterPack
 .done
+	; ROM hack: award one extra booster pack the first time the player
+	; defeats a typical (non-boss) opponent. The helper guards on
+	; wScriptNPC matching wNPCDuelist (so that gift-only scripts like
+	; Mason's tutorial don't accidentally trigger this) and on the bit
+	; not already being set, so re-running this script can't farm packs.
+	; The bonus pack reuses the script's first pack arg, which keeps
+	; the reward thematic to the NPC's club.
+	ld a, [wScriptNPC]
+	ld l, LOADED_NPC_ID
+	call GetItemInLoadedNPCIndex
+	ld a, [hl]
+	farcall TryMarkFirstDefeatOfTypical
+	jr nc, .no_bonus_pack
+	ld a, TRUE
+	ld [wAnotherBoosterPack], a
+	call GetScriptArgs1AfterPointer
+	ld a, c
+	farcall GiveBoosterPack
+.no_bonus_pack
 	call ReturnToOverworldNoCallback
 	jp IncreaseScriptPointerBy4
 
@@ -1469,28 +1509,28 @@ ScriptCommand_PickChallengeCupPrizeCard:
 	jp IncreaseScriptPointerBy1
 
 ChallengeCupPrizeCards:
-	db MEWTWO_LV60
+	db MEWTWO_LV53
 	tx MewtwoTradeCardName
 
 	db MEW_LV8
 	tx MewTradeCardName
 
-	db ARCANINE_LV34
+	db ARCANINE_LV45
 	tx ArcanineTradeCardName
 
-	db PIKACHU_LV16
+	db PIKACHU_LV14
 	tx PikachuTradeCardName
 
-	db PIKACHU_ALT_LV16
+	db PIKACHU_LV14
 	tx PikachuTradeCardName
 
-	db SURFING_PIKACHU_LV13
+	db PIKACHU_LV12
 	tx SurfingPikachuTradeCardName
 
-	db SURFING_PIKACHU_ALT_LV13
+	db PIKACHU_LV12
 	tx SurfingPikachuTradeCardName
 
-	db ELECTABUZZ_LV20
+	db ELECTABUZZ_LV35
 	tx ElectabuzzTradeCardName
 
 	db SLOWPOKE_LV9
@@ -1499,19 +1539,19 @@ ChallengeCupPrizeCards:
 	db MEWTWO_ALT_LV60
 	tx MewtwoTradeCardName
 
-	db MEWTWO_LV60
+	db MEWTWO_LV53
 	tx MewtwoTradeCardName
 
 	db MEW_LV8
 	tx MewTradeCardName
 
-	db JIGGLYPUFF_LV12
+	db JIGGLYPUFF_LV14
 	tx JigglypuffTradeCardName
 
 	db SUPER_ENERGY_RETRIEVAL
 	tx SuperEnergyRetrievalTradeCardName
 
-	db FLYING_PIKACHU
+	db PIKACHU_LV12
 	tx FlyingPikachuTradeCardName
 .end
 

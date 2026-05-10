@@ -20,7 +20,18 @@ GenerateBoosterPack:
 ; generate all Pokemon or Trainer cards (if any) for the current booster pack
 ; return carry if ran out of cards to add to the booster pack
 GenerateBoosterNonEnergies:
-	ld a, STAR
+	; ROM hack: 1-in-8 chance to upgrade the rare slot to a holo slot.
+	; Operates on the in-WRAM copy of the pack's rarity counts, so the
+	; per-set table is left untouched. This is what makes the chase tier
+	; actually drawable -- for every regular pack, ~12.5% of the time the
+	; rare becomes a HOLO of the same set.
+	call MaybeUpgradeRareSlotToHolo
+	; ROM hack: iterate HOLO -> STAR -> DIAMOND -> CIRCLE so packs whose
+	; rare slot was just upgraded (or premium packs that came in with
+	; holo > 0) draw from the chase pool first. Untouched packs have
+	; wBoosterData_HoloAmount == 0 and skip straight to STAR on the
+	; first iteration, behaving exactly as before.
+	ld a, HOLO
 	ld [wBoosterCurrentRarity], a
 .generate_card_loop
 	call GetCurrentRarityAmount
@@ -48,6 +59,20 @@ GenerateBoosterNonEnergies:
 	or a
 	ret
 .no_valid_cards
+	; ROM hack: if the upgrade rolled HOLO but the current pack's set has
+	; no HOLO cards of any drawable type, undo the upgrade, restore the
+	; rare slot, and fall through to STAR. This keeps the pack at 10
+	; cards even if a future card-data edit leaves a set without holos.
+	ld a, [wBoosterCurrentRarity]
+	cp HOLO
+	jr nz, .truly_no_valid_cards
+	xor a
+	ld [wBoosterData_HoloAmount], a
+	ld a, [wBoosterData_RareAmount]
+	inc a
+	ld [wBoosterData_RareAmount], a
+	jr .no_more_of_current_rarity
+.truly_no_valid_cards
 	debug_nop
 	scf
 	ret
@@ -580,22 +605,49 @@ BoosterDataJumptable:
 	dw BoosterPack_RandomEnergies
 	assert_table_length NUM_BOOSTERS
 
-; load rarity amounts of the booster pack set at [wBoosterData_Set] to wBoosterData*Amount
+; ROM hack: with 1-in-8 odds, swap one rare slot of the current pack for
+; a holo slot. Does nothing if the pack has no rare to upgrade. This is
+; what gates the chase tier; without it, no regular pack would ever pull
+; a HOLO card.
+MaybeUpgradeRareSlotToHolo:
+	ld a, [wBoosterData_RareAmount]
+	or a
+	ret z                   ; nothing to upgrade
+	ld a, 8
+	call Random             ; a = 0..7
+	or a
+	ret nz                  ; only fire on the 0 outcome (1/8)
+	ld a, [wBoosterData_RareAmount]
+	dec a
+	ld [wBoosterData_RareAmount], a
+	ld a, [wBoosterData_HoloAmount]
+	inc a
+	ld [wBoosterData_HoloAmount], a
+	ret
+
+; load rarity amounts of the booster pack set at [wBoosterData_Set] to wBoosterData*Amount.
+; ROM hack: each entry in BoosterSetRarityAmountsTable is now 5 bytes wide
+; (energies, commons, uncommons, rares, holos) so we step by set*5.
 LoadRarityAmountsToWram:
 	ld a, [wBoosterData_Set]
-	add a
-	add a
+	; multiply set index by 5 (entry width) into bc
 	ld c, a
 	ld b, $00
 	ld hl, BoosterSetRarityAmountsTable
-	add hl, bc
-	inc hl
+	add hl, bc        ; * 1
+	add hl, bc        ; * 2
+	add hl, bc        ; * 3
+	add hl, bc        ; * 4
+	add hl, bc        ; * 5
+	inc hl            ; skip the energy byte
 	ld a, [hli]
 	ld [wBoosterData_CommonAmount], a
 	ld a, [hli]
 	ld [wBoosterData_UncommonAmount], a
 	ld a, [hli]
 	ld [wBoosterData_RareAmount], a
+	ld a, [hli]
+	ld [wBoosterData_HoloAmount], a
 	ret
 
 INCLUDE "data/booster_packs.asm"

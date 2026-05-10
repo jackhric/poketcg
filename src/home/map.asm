@@ -108,7 +108,11 @@ GameEvent_Duel::
 	ld [sPlayerInChallengeMachine], a
 	call DisableSRAM
 	call SaveGeneralSaveData
+	farcall BossSeries_BeginIfBoss
+.bo7_loop
 	bank1call StartDuel_VSAIOpp
+	farcall BossSeries_AfterDuel
+	jr nz, .bo7_loop
 	scf
 	ret
 

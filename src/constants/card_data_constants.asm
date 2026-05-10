@@ -131,6 +131,12 @@ DEF TYPE_TRAINER_F EQU 4
 DEF CIRCLE    EQU $0
 DEF DIAMOND   EQU $1
 DEF STAR      EQU $2
+; ROM hack: HOLO is a chase tier above STAR. Pack data lists how many holo
+; slots a pack has alongside common/uncommon/rare; the engine iterates
+; HOLO -> STAR -> DIAMOND -> CIRCLE when filling a pack. Most existing
+; pack types have 0 holos and behave exactly as before; "premium" packs
+; trade their rare slot for a holo slot.
+DEF HOLO      EQU $3
 DEF PROMOSTAR EQU $ff
 
 ; card set constants (set 1)
@@ -233,6 +239,10 @@ DEF ATTACHED_ENERGY_BOOST    EQU $1 << ATTACHED_ENERGY_BOOST_F
 DEF IGNORE_THIS_ATTACK       EQU $1 << IGNORE_THIS_ATTACK_F
 DEF ENCOURAGE_THIS_ATTACK    EQU $1 << ENCOURAGE_THIS_ATTACK_F
 DEF FLAG_2_BIT_7             EQU $1 << FLAG_2_BIT_7_F
+
+; aliases used by ported Neo card data (same bit positions, neutral names)
+DEF FLAG_2_BIT_5 EQU IGNORE_THIS_ATTACK
+DEF FLAG_2_BIT_6 EQU ENCOURAGE_THIS_ATTACK
 
 ; CARD_DATA_ATTACK*_FLAG3_F constants
 ; bit 1 covers a wide variety of effects

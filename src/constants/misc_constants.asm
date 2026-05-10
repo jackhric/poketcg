@@ -40,6 +40,19 @@ DEF CARDPOP_NAME_LIST_SIZE EQUS "CARDPOP_NAME_LIST_MAX_ELEMS * NAME_BUFFER_LENGT
 
 DEF NUM_CHALLENGE_MACHINE_OPPONENTS EQU 5
 
+; ROM hack: Best-of-7 boss series. The first side to BO7_NEEDED_WINS wins
+; takes the series. wBossSeriesActive holds the boss NPC ID, or 0 when no
+; series is active; BO7_CM_MARKER is a sentinel meaning "currently inside
+; a Challenge Machine match" (so the Challenge Machine doesn't need to
+; care which opponent it's facing).
+DEF BO7_NEEDED_WINS EQU 4
+DEF BO7_CM_MARKER   EQU $fe
+
+; ROM hack: defeated-NPCs bitmap. NUM_NPCS is well under 128 (currently
+; 116), and we round up to 16 bytes so future NPC additions have headroom
+; without re-jiggering save layout.
+DEF DEFEATED_NPCS_BITMAP_BYTES EQU 16
+
 ; rJOYP constants to read SNES input
 DEF JOYP_SGB_MLT_REQ EQU %00000011
 

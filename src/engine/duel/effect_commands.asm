@@ -1617,3 +1617,389 @@ GustOfWindEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, GustOfWind_PlayerSelection
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GustOfWind_SwitchEffect
 	db  $00
+
+; Generic "draw 1 card" attack effect, equivalent to Kangaskhan's Fetch.
+Draw1CardEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FetchEffect
+	db  $00
+
+; --- Neo additive EffectCommands aliases (all wrap existing vanilla functions) ---
+
+; Always inflict sleep (no coin flip)
+InflictSleepEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SleepEffect
+	db  $00
+
+; Heads = draw 1 card (after damage), reuses Pay Day function
+MayDraw1CardEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PayDayEffect
+	db  $00
+
+; Heads = paralyse defending, reuses 50%-paralysis function
+MayInflictParalysisEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
+	db  $00
+
+; Heads = "Fly" agility (immune next turn), tails = nothing
+MayGetImmunityOrDoNothingEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Fly_Success50PercentEffect
+	dbw EFFECTCMDTYPE_AI, Fly_AIEffect
+	db  $00
+
+; Heads = confuse defending (50%)
+MayInflictConfusionEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, NidorinaSupersonicEffect
+	db  $00
+
+; Heads = +20 damage on a base-10 attack (Eevee Quick Attack pattern)
+MayDo10Plus20EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EeveeQuickAttack_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, EeveeQuickAttack_AIEffect
+	db  $00
+
+; Reduces incoming damage by 10 next turn (Skarmory Steel Wing / Expand)
+ReduceDamageBy10AfterDamageEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExpandEffect
+	db  $00
+
+; --- Neo additive batch 2 EffectCommands (all wrap existing functions) ---
+
+; Heads = +10 damage (base 20, Tauros Stomp pattern)
+MayDo20Plus10EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TaurosStomp_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, TaurosStomp_AIEffect
+	db  $00
+
+; Flip 2 coins, deal 30 per heads (Dragonite Slam pattern)
+CF30X2EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DragoniteLv41Slam_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, DragoniteLv41Slam_AIEffect
+	db  $00
+
+; Copy opponent's last attack (Pidgeotto Mirror Move pattern)
+CounterLastAttackEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, PidgeottoMirrorMove_InitialEffect1
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, PidgeottoMirrorMove_InitialEffect2
+	db  $00
+
+; Damage then switch defending Pokemon (Pidgey Whirlwind pattern)
+SwitchOppAfterDamageEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PidgeyWhirlwind_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, PidgeyWhirlwind_SelectEffect
+	dbw EFFECTCMDTYPE_AI_SWITCH_DEFENDING_PKMN, PidgeyWhirlwind_SelectEffect
+	db  $00
+
+; Heads = poison defending (50% chance)
+MayInflictPoisonEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Poison50PercentEffect
+	dbw EFFECTCMDTYPE_AI, WeepinbellPoisonPowder_AIEffect
+	db  $00
+
+; Heads = full immunity next turn (Fearow Agility pattern)
+MayGetImmunityEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FearowAgilityEffect
+	db  $00
+
+; Damage ignores weakness/resistance (Magneton Sonicboom pattern)
+DontApplyWREffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MagnetonSonicboom_UnaffectedByColorEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MagnetonSonicboom_NullEffect
+	dbw EFFECTCMDTYPE_AI, MagnetonSonicboom_UnaffectedByColorEffect
+	db  $00
+
+; --- Neo additive batch 3 EffectCommands ---
+
+; Selfdestruct variant: 10 to all benched, 40 to self
+Do10ToAllBenchAnd40ToSelfEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GolemSelfdestructEffect
+	db  $00
+
+; Flip 3 coins, deal 10 per heads
+CF10X3EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, NidoranFFurySwipes_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, NidoranFFurySwipes_AIEffect
+	db  $00
+
+; +10 damage per benched Pokemon (Wigglytuff Do The Wave pattern)
+Do10MorePerSelfBenchEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DoTheWaveEffect
+	dbw EFFECTCMDTYPE_AI, DoTheWaveEffect
+	db  $00
+
+; Heads = prevent damage next turn (but not effects). Metapod's Stiffen.
+MayPreventDamageOnlyEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MetapodStiffenEffect
+	db  $00
+
+; Reduce damage by 20 next turn (Phanpy Snivel pattern)
+ReduceDamageBy20EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SnivelEffect
+	db  $00
+
+; Damage scales with own damage counters (Magikarp Flail pattern)
+Do10XPerSelfDamageEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MagikarpFlail_HPCheck
+	dbw EFFECTCMDTYPE_AI, MagikarpFlail_AIEffect
+	db  $00
+
+; --- Neo additive batch 4 EffectCommands ---
+
+; Heads = opp can't attack next turn (Leer pattern)
+CFHOppCantAttackEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LeerEffect
+	db  $00
+
+; Reduce incoming damage by 10 next turn (vanilla Pikachu Alt Lv16 Growl)
+ReduceDamageBy10EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PikachuAltLv16GrowlEffect
+	db  $00
+
+; --- Neo additive batch 5 EffectCommands ---
+
+; Damage to attacker + 10 to all opp benched (Magneton Selfdestruct pattern)
+Do10ToAllOppBenchedEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MagnetonLv28SelfdestructEffect
+	db  $00
+
+; +10 damage per attached water energy (Omanyte Water Gun pattern)
+WWaterBoostEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, OmanyteWaterGunEffect
+	dbw EFFECTCMDTYPE_AI, OmanyteWaterGunEffect
+	db  $00
+
+; --- Neo additive batch 6 EffectCommands ---
+
+; Damage to a benched opp once per duel (Leek Slap pattern)
+Do20ToABenchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, LeekSlap_SetUsedThisDuelFlag
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, LeekSlap_OncePerDuelCheck
+	dbw EFFECTCMDTYPE_AI_SELECTION, GengarDarkMind_AISelectEffect
+	db  $00
+
+; Toxic — double poison (canonical Toxic effect)
+ToxicEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Toxic_DoublePoisonEffect
+	dbw EFFECTCMDTYPE_AI, Toxic_AIEffect
+	db  $00
+
+; Discard 1 energy from defending (Whirlpool / Hyper Beam pattern)
+Discard1EnergyFromTargetEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Whirlpool_DiscardEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Whirlpool_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Whirlpool_AISelectEffect
+	db  $00
+
+; Flip a coin per opp's benched Pokemon, 20 per heads (Trample pattern)
+MayDo20ToEachOppBenchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExeggcuteLeechSeedEffect
+	db  $00
+
+; Damage scales down with opp retreat cost (Heavy Slam pattern)
+Do10LessPerOppRCEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoliwagWaterGunEffect
+	dbw EFFECTCMDTYPE_AI, PoliwagWaterGunEffect
+	db  $00
+
+; Reduce incoming damage by 20 next turn (Iron Tail pattern)
+ReduceBy20AfterAttackEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GrimerMinimizeEffect
+	db  $00
+
+; Pkmn Power: peek opponent's hand / deck (Clairvoyance pattern)
+PrecognitionEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, ClairvoyanceEffect
+	db  $00
+
+; +10 per opp's attached energy (Psychic damage pattern)
+Do10MorePerOppEnergyEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Psychic_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, Psychic_AIEffect
+	db  $00
+
+; --- Neo additive batch 7 EffectCommands ---
+
+; +10 per self damage, tails = self confusion (Rampage pattern)
+Do10PerSelfDamageThenMayConfuseEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Rampage_Confusion50PercentEffect
+	dbw EFFECTCMDTYPE_AI, Rampage_AIEffect
+	db  $00
+
+; If attack didn't KO, return defending Pokemon to hand (Hurricane)
+IfNoKOReturnToHandEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, HurricaneEffect
+	db  $00
+
+; Pkmn Power: damage attacker on attack (Kabuto Armor pattern)
+IroncladEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, KabutoArmorEffect
+	db  $00
+
+; Flip 3 coins, 20 per heads (Sandslash Fury Swipes pattern)
+CF20X3EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SandslashFurySwipes_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, SandslashFurySwipes_AIEffect
+	db  $00
+
+; Flip 4 coins, 10 per heads (uses Acid effect machinery)
+CF10X4EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AcidEffect
+	dbw EFFECTCMDTYPE_AI, GloomPoisonPowder_AIEffect
+	db  $00
+
+; Flip 4 coins, 20 per heads (Comet Punch pattern)
+CF20X4EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, CometPunch_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, CometPunch_AIEffect
+	db  $00
+
+; Halve incoming damage next turn (Light Screen pattern)
+HalveDamageEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LightScreenEffect
+	db  $00
+
+; --- Neo additive batch 8 EffectCommands ---
+
+; Pkmn Power: attach water energy as often as you want (Rain Dance)
+RainDanceEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, RainDanceEffect
+	db  $00
+
+; Pkmn Power: move damage counters between Pokemon (Damage Swap)
+DamageSwapEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, DamageSwap_CheckDamage
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DamageSwap_SelectAndSwapEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DamageSwap_SwapEffect
+	db  $00
+
+; Heads = +10 damage and confusion (Nidorina Double Kick pattern)
+MayDo10MoreAndConfuseEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, NidorinaDoubleKick_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, NidorinaDoubleKick_AIEffect
+	db  $00
+
+; 10 damage to all your benched (Earthquake pattern)
+Do10ToOwnBenchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EarthquakeEffect
+	db  $00
+
+; Flip 3 coins, 30 per heads (Jolteon Double Kick pattern)
+CF30X3EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, JolteonDoubleKick_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, JolteonDoubleKick_AIEffect
+	db  $00
+
+; Heal half the damage dealt (Mega Drain / Absorb pattern)
+HealHalfDamageEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, AbsorbEffect
+	db  $00
+
+; --- Neo additive batch 9 EffectCommands ---
+
+; 20 damage to a single benched opp (Stretch Kick pattern)
+Do20ToOppBenchOnlyEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, StretchKick_CheckBench
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PikachuLv16GrowlEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StretchKick_PlayerSelectEffect
+	db  $00
+
+; Look at top 3 of opp deck and rearrange (Prophecy pattern)
+ProphecyEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Prophecy_CheckDeck
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Prophecy_ReorderDeckEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Prophecy_PlayerSelectEffect
+	db  $00
+
+; Search deck for a basic energy and attach it (Energy Spike pattern)
+SearchAndAttachEnergyEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EnergySpike_DeckCheck
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergySpike_AttachEnergyEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergySpike_PlayerSelectEffect
+	db  $00
+
+; Flip 9 coins, 10 per heads (Dancing Embers pattern)
+CF10X9EffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DancingEmbers_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, DancingEmbers_AIEffect
+	db  $00
+
+; Damage + 10 to 1 benched opp (Gengar Dark Mind pattern)
+DamageAndDo10ToABenchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GengarDarkMind_DamageBenchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, GengarDarkMind_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, GengarDarkMind_AISelectEffect
+	db  $00
+
+; --- Neo additive batch 10 EffectCommands ---
+
+; Copy opponent's last attack, costs 1 energy (Clefable Metronome pattern)
+CopyOppAttackEffectCommands2:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, ClefableMetronome_CheckAttacks
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, ClefableMetronome_UseAttackEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, ClefableMetronome_AISelectEffect
+	db  $00
+
+; Tails = 20 self damage (Thrash recoil pattern)
+CFT20ToSelfEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Thrash_ModifierEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Thrash_RecoilEffect
+	db  $00
+
+; Heal 20 from self (First Aid / Dodrio Rage pattern)
+Heal20DamageEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DodrioRage_AIEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DodrioRage_DamageBoostEffect
+	db  $00
+
+; Pkmn Power: heal 30 from all your Pokemon on play (Healing Wind)
+ETBHeal30AllSelfEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, HealingWind_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, HealingWind_PlayAreaHealEffect
+	db  $00
+
+; Mill 1 opp deck card if attack dealt damage (Spit Poison AI pattern)
+Mill1OppCardEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, SpitPoison_AIEffect
+	db  $00
+
+; +10 damage per self damage counters (Cubone Rage pattern)
+Do10MorePerSelfDamageEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, CuboneRage_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, CuboneRage_AIEffect
+	db  $00
+
+; Discard 1 fire energy then attack (Charmeleon's Flamethrower pattern)
+Discard1FireEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Ember_CheckEnergy
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Ember_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Ember_DiscardEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Ember_AISelectEffect
+	db  $00
+
+; Pkmn Power: search 4 Fire energy from deck on play (Moltres Firegiver pattern)
+Get4FireFromDeckEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Firegiver_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, Firegiver_AddToHandEffect
+	db  $00
+
+; -10 damage per self damage counter (Karate Chop pattern)
+Do10LessPerSelfDamageEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, KarateChop_DamageSubtractionEffect
+	dbw EFFECTCMDTYPE_AI, KarateChop_AIEffect
+	db  $00
+
+; +10 damage per defender colorless retreat cost (Butterfree Mega Drain pattern)
+Do10MorePerOppRCEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ButterfreeMegaDrainEffect
+	dbw EFFECTCMDTYPE_AI, ButterfreeMegaDrainEffect
+	db  $00
+
+; 20 damage to self after attack (Jigglypuff Double Edge pattern)
+Do20ToSelfEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, JigglypuffDoubleEdgeEffect
+	db  $00
+
+; All Pkmn Powers stop working (Toxic Gas pattern)
+NoPokePowersEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, ToxicGasEffect
+	db  $00
+

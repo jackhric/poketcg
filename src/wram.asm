@@ -2443,6 +2443,26 @@ wd3b9:: ; d3b9
 wMastersBeatenList:: ; d3bb
 	ds $a
 
+; ROM hack: best-of-7 boss series state. Saved alongside the rest of the
+; general save block. wBossSeriesActive holds the NPC ID of the current
+; boss series, or 0 when no series is in progress; BO7_CM_MARKER ($fe)
+; stands in for "this is a Challenge Machine match".
+wBossSeriesActive::
+	ds 1
+wBossSeriesPlayerWins::
+	ds 1
+wBossSeriesOpponentWins::
+	ds 1
+
+; ROM hack: bitmap of defeated typical opponents, indexed by NPC ID.
+; Once a typical (non-boss) NPC's bit is set, talking to them again can no
+; longer trigger a duel; instead a "no rematch" textbox is shown. The bit is
+; set when the player wins their first match against that NPC and is
+; awarded a bonus booster pack at the same time. NUM_NPCS is currently 116
+; so 16 bytes is enough; the extra slack is reserved for future NPC IDs.
+wDefeatedNPCs::
+	ds DEFEATED_NPCS_BITMAP_BYTES
+
 wGeneralSaveDataCheckSum:: ; d3c5
 	ds $2
 
@@ -2922,15 +2942,21 @@ wBoosterAveragedTypeChances:: ; d66d
 	ds $1
 
 ; data of the booster pack copied from the corresponding BoosterSetRarityAmountsTable entry
+; ORDER MATTERS: the engine indexes these by [wBoosterCurrentRarity] (CIRCLE=0,
+; DIAMOND=1, STAR=2, HOLO=3) via GetCurrentRarityAmount.
 wBoosterData_CommonAmount:: ; d66e
 	ds $1
 wBoosterData_UncommonAmount:: ; d66f
 	ds $1
 wBoosterData_RareAmount:: ; d670
 	ds $1
+; ROM hack: holo slot count for the current pack. 0 for vanilla packs;
+; nonzero for premium pack types that draw from the chase pool.
+wBoosterData_HoloAmount::
+	ds $1
 
 ; how many cards of each type are available of a certain rarity in the booster pack's set
-wBoosterAmountOfCardTypeTable:: ; d671
+wBoosterAmountOfCardTypeTable::
 	ds NUM_BOOSTER_CARD_TYPES
 
 ; holds information similar to wBoosterData_TypeChances, except that it contains 00 on any type

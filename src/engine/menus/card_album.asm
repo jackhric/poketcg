@@ -29,9 +29,9 @@ CreateCardSetList:
 
 ; it's same set as input
 	ld a, e
-	cp VENUSAUR_LV64
+	cp VENUSAUR_LV67
 	jp z, .SetVenusaurLv64OwnedFlag
-	cp MEW_LV15
+	cp MEW_LV8
 	jp z, .SetMewLv15OwnedFlag
 
 	push bc
@@ -183,7 +183,7 @@ CreateCardSetList:
 .PlaceVenusaurLv64InList
 	push af
 	push hl
-	ld e, VENUSAUR_LV64
+	ld e, VENUSAUR_LV67
 ;	fallthrough
 
 ; places card in register e directly in the list
@@ -204,7 +204,7 @@ CreateCardSetList:
 .PlaceMewLv15InList
 	push af
 	push hl
-	ld e, MEW_LV15
+	ld e, MEW_LV8
 	jr .PlaceCardInList
 
 ; a = CARD_SET_* constant
@@ -389,9 +389,9 @@ PrintCardSetListEntries:
 	ld a, [hl]
 	cp DOUBLE_COLORLESS_ENERGY + 1
 	jr c, .energy_card
-	cp VENUSAUR_LV64
+	cp VENUSAUR_LV67
 	jr z, .phantom_card
-	cp MEW_LV15
+	cp MEW_LV8
 	jr z, .phantom_card
 
 	ld a, [wNumVisibleCardListEntries]

@@ -35,14 +35,14 @@ AIActionTable_LegendaryArticuno:
 	db CHANSEY
 	db LAPRAS
 	db SEEL
-	db ARTICUNO_LV35
+	db ARTICUNO_LV37
 	db ARTICUNO_LV37
 	db MR_MIME
 	db TAUROS
 	db $00
 
 .list_bench
-	db ARTICUNO_LV35
+	db ARTICUNO_LV37
 	db ARTICUNO_LV37
 	db LAPRAS
 	db CHANSEY
@@ -61,7 +61,7 @@ AIActionTable_LegendaryArticuno:
 	ai_energy SEEL,          1, +0
 	ai_energy DEWGONG,       4, +1
 	ai_energy LAPRAS,        3, +1
-	ai_energy ARTICUNO_LV35, 4, +1
+	ai_energy ARTICUNO_LV37, 4, +1
 	ai_energy ARTICUNO_LV37, 4, +1
 	ai_energy CHANSEY,       0, -8
 	ai_energy MR_MIME,       1, -2
@@ -104,7 +104,7 @@ ScoreLegendaryArticunoCards:
 	ld a, LAPRAS
 	call CheckForBenchIDAtHalfHPAndCanUseSecondAttack
 	jr c, .articuno
-	ld a, ARTICUNO_LV35
+	ld a, ARTICUNO_LV37
 	call CheckForBenchIDAtHalfHPAndCanUseSecondAttack
 	jr c, .lapras
 	ld a, DEWGONG
@@ -131,11 +131,11 @@ ScoreLegendaryArticunoCards:
 	ret
 
 .articuno
-	ld a, ARTICUNO_LV35
+	ld a, ARTICUNO_LV37
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank5
 	jr nc, .dewgong
-	ld a, ARTICUNO_LV35
+	ld a, ARTICUNO_LV37
 	call RaiseAIScoreToAllMatchingIDsInBench
 	ret
 

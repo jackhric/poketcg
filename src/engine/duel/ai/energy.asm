@@ -473,7 +473,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 ; if there is no surplus energy, encourage playing energy.
 .discard_energy
 	ld a, [wLoadedCard1ID]
-	cp ZAPDOS_LV64
+	cp ZAPDOS_LV68
 	jr z, .check_evolution
 	call CheckIfNoSurplusEnergyForAttack
 	jr c, .asm_166cd
@@ -723,7 +723,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 ; for these to be treated differently.
 ; for both attacks, load its energy cost.
 	ld a, b
-	cp ZAPDOS_LV64
+	cp ZAPDOS_LV68
 	jr z, .zapdos
 	cp CHARIZARD
 	jr z, .charizard_or_exeggutor

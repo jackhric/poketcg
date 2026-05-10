@@ -243,7 +243,20 @@ Func_c1b1:
 	farcall ClearOWMapEvents
 	farcall ClearMasterBeatenList
 	farcall ChallengeMachine_Reset
+	; ROM hack: zero the BO7 series counters and the defeated-NPCs
+	; bitmap on new game so stale SRAM bytes from a previous save can't
+	; accidentally resume a series or block a fresh playthrough's first
+	; encounters.
 	xor a
+	ld [wBossSeriesActive], a
+	ld [wBossSeriesPlayerWins], a
+	ld [wBossSeriesOpponentWins], a
+	ld hl, wDefeatedNPCs
+	ld c, DEFEATED_NPCS_BITMAP_BYTES
+.zero_defeated_npcs
+	ld [hli], a
+	dec c
+	jr nz, .zero_defeated_npcs
 	ld [wPlayTimeCounter + 0], a
 	ld [wPlayTimeCounter + 1], a
 	ld [wPlayTimeCounter + 2], a

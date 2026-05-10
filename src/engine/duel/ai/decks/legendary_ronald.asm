@@ -61,11 +61,11 @@ AIActionTable_LegendaryRonald:
 	db $00
 
 .list_energy
-	ai_energy FLAREON_LV22,   3, +0
+	ai_energy FLAREON_LV28,   3, +0
 	ai_energy MOLTRES_LV37,   4, +2
-	ai_energy VAPOREON_LV29,  3, +0
+	ai_energy VAPOREON_LV42,  3, +0
 	ai_energy ARTICUNO_LV37,  4, +2
-	ai_energy JOLTEON_LV24,   3, +0
+	ai_energy JOLTEON_LV29,   3, +0
 	ai_energy ZAPDOS_LV68,    4, +2
 	ai_energy KANGASKHAN,     3, +0
 	ai_energy EEVEE,          1, -2

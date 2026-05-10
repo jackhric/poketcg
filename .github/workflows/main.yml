@@ -52,6 +52,17 @@ jobs:
             return 1
           fi
 
+      - name: Upload ROM artifact
+        if: ${{ github.repository_owner != 'pret' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: poketcg-${{ github.sha }}
+          path: |
+            poketcg.gbc
+            poketcg.sym
+            poketcg.map
+          if-no-files-found: error
+          retention-days: 30
       - name: Publish release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository_owner != 'pret' }}
         uses: softprops/action-gh-release@v2

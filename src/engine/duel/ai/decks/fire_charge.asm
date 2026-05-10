@@ -32,7 +32,7 @@ AIActionTable_FireCharge:
 	ret
 
 .list_arena
-	db JIGGLYPUFF_LV13
+	db JIGGLYPUFF_LV14
 	db CHANSEY
 	db MAGMAR_LV24
 	db GROWLITHE
@@ -41,14 +41,14 @@ AIActionTable_FireCharge:
 
 .list_bench
 	db GROWLITHE
-	db JIGGLYPUFF_LV13
+	db JIGGLYPUFF_LV14
 	db MAGMAR_LV24
 	db CHANSEY
 	db TAUROS
 	db $00
 
 .list_retreat
-	ai_retreat JIGGLYPUFF_LV13, -1
+	ai_retreat JIGGLYPUFF_LV14, -1
 	ai_retreat CHANSEY,         -1
 	ai_retreat GROWLITHE,       -1
 	db $00
@@ -57,7 +57,7 @@ AIActionTable_FireCharge:
 	ai_energy GROWLITHE,       3, +0
 	ai_energy ARCANINE_LV45,   4, +1
 	ai_energy MAGMAR_LV24,     2, +0
-	ai_energy JIGGLYPUFF_LV13, 3, +0
+	ai_energy JIGGLYPUFF_LV14, 3, +0
 	ai_energy WIGGLYTUFF,      3, +1
 	ai_energy CHANSEY,         3, -1
 	ai_energy TAUROS,          3, +0

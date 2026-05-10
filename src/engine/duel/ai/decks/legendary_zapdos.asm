@@ -36,12 +36,12 @@ AIActionTable_LegendaryZapdos:
 	db MAGNEMITE_LV13
 	db VOLTORB
 	db ZAPDOS_LV68
-	db ZAPDOS_LV64
+	db ZAPDOS_LV68
 	db $00
 
 .list_bench
 	db ZAPDOS_LV68
-	db ZAPDOS_LV64
+	db ZAPDOS_LV68
 	db MAGNEMITE_LV13
 	db VOLTORB
 	db ELECTABUZZ_LV35
@@ -60,7 +60,7 @@ AIActionTable_LegendaryZapdos:
 	ai_energy MAGNETON_LV28,   3, +1
 	ai_energy ELECTABUZZ_LV35, 2, +1
 	ai_energy ZAPDOS_LV68,     4, +2
-	ai_energy ZAPDOS_LV64,     4, +1
+	ai_energy ZAPDOS_LV68,     4, +1
 	db $00
 
 .list_prize
