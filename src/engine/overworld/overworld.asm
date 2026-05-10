@@ -243,6 +243,12 @@ Func_c1b1:
 	farcall ClearOWMapEvents
 	farcall ClearMasterBeatenList
 	farcall ChallengeMachine_Reset
+	; ROM hack: zero the BO7 series counters on new game so a stale
+	; SRAM value from a previous save can't accidentally resume a series.
+	xor a
+	ld [wBossSeriesActive], a
+	ld [wBossSeriesPlayerWins], a
+	ld [wBossSeriesOpponentWins], a
 	xor a
 	ld [wPlayTimeCounter + 0], a
 	ld [wPlayTimeCounter + 1], a
