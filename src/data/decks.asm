@@ -616,36 +616,28 @@ SamsPracticeDeck:
 	tx SamsPracticeDeckName
 
 CharmanderAndFriendsDeck:
+	; ROM hack: redesigned mono-Fire starter pairing the Charmander and
+	; Cyndaquil evolution lines, with extra Fire support and a tight
+	; trainer skeleton. 21 Pokemon / 24 Energy / 15 Trainers = 60.
 	deck_list_start
-	card_item FIRE_ENERGY,      10
-	card_item LIGHTNING_ENERGY,  8
-	card_item FIGHTING_ENERGY,   6
-	card_item CHARMANDER,        2
-	card_item CHARMELEON,        1
+	card_item FIRE_ENERGY,      24
+	card_item CHARMANDER,        4
+	card_item CHARMELEON,        2
 	card_item CHARIZARD,         1
+	card_item CYNDAQUIL1,        4
+	card_item QUILAVA1,          2
+	card_item TYPHLOSION1,       1
+	card_item VULPIX,            2
+	card_item NINETALES_LV35,    1
+	card_item MAGMAR_LV24,       2
 	card_item GROWLITHE,         2
-	card_item ARCANINE_LV45,     1
-	card_item PONYTA,            2
-	card_item MAGMAR_LV24,       1
-	card_item PIKACHU_LV12,      2
-	card_item RAICHU_LV40,       1
-	card_item MAGNEMITE_LV13,    2
-	card_item MAGNETON_LV28,     1
-	card_item ZAPDOS_LV68,       1
-	card_item DIGLETT,           2
-	card_item DUGTRIO,           1
-	card_item MACHOP,            1
-	card_item MACHOKE,           1
-	card_item RATTATA,           2
-	card_item RATICATE,          1
-	card_item MEOWTH_LV14,       1
-	card_item PROFESSOR_OAK,     1
-	card_item BILL,              2
-	card_item SWITCH,            1
-	card_item COMPUTER_SEARCH,   1
-	card_item PLUSPOWER,         1
+	card_item BILL,              3
+	card_item PROFESSOR_OAK,     2
+	card_item SWITCH,            2
 	card_item POTION,            2
-	card_item FULL_HEAL,         2
+	card_item ENERGY_REMOVAL,    2
+	card_item ENERGY_RETRIEVAL,  2
+	card_item ENERGY_SEARCH,     2
 	deck_list_end
 	tx CharmanderAndFriendsDeckName
 
@@ -673,39 +665,29 @@ CharmanderExtraDeck:
 	tx CharmanderExtraDeckName
 
 SquirtleAndFriendsDeck:
+	; ROM hack: redesigned mono-Water starter pairing the Squirtle and
+	; Totodile evolution lines, with Seel/Dewgong and Staryu/Starmie as
+	; secondary pressure. 21 Pokemon / 24 Energy / 15 Trainers = 60.
 	deck_list_start
-	card_item WATER_ENERGY,    11
-	card_item FIGHTING_ENERGY,  6
-	card_item PSYCHIC_ENERGY,   8
-	card_item SQUIRTLE,         2
-	card_item WARTORTLE,        1
-	card_item BLASTOISE,        1
-	card_item SEEL,             2
-	card_item DEWGONG,          1
-	card_item STARYU,           1
-	card_item STARMIE,          1
-	card_item GOLDEEN,          1
-	card_item SEAKING,          1
-	card_item LAPRAS,           1
-	card_item ABRA,             2
-	card_item KADABRA,          1
-	card_item GASTLY_LV17,       2
-	card_item HAUNTER_LV17,     1
-	card_item MACHOP,           1
-	card_item MACHOKE,          1
-	card_item GEODUDE,          2
-	card_item HITMONCHAN,       1
-	card_item RATTATA,          2
-	card_item RATICATE,         1
-	card_item MEOWTH_LV14,      1
-	card_item PROFESSOR_OAK,    1
-	card_item BILL,             1
-	card_item SWITCH,           1
-	card_item POKE_BALL,        1
-	card_item SCOOP_UP,         1
-	card_item ITEM_FINDER,      1
-	card_item POTION,           1
-	card_item FULL_HEAL,        1
+	card_item WATER_ENERGY,     24
+	card_item SQUIRTLE,          4
+	card_item WARTORTLE,         2
+	card_item BLASTOISE,         1
+	card_item TOTODILE1,         4
+	card_item CROCONAW2,         2
+	card_item FERALIGATR2,       1
+	card_item SEEL,              2
+	card_item DEWGONG,           1
+	card_item STARYU,            2
+	card_item STARMIE,           1
+	card_item GOLDEEN,           1
+	card_item BILL,              3
+	card_item PROFESSOR_OAK,     2
+	card_item SWITCH,            2
+	card_item POTION,            2
+	card_item ENERGY_REMOVAL,    2
+	card_item ENERGY_RETRIEVAL,  2
+	card_item ENERGY_SEARCH,     2
 	deck_list_end
 	tx SquirtleAndFriendsDeckName
 
@@ -735,38 +717,30 @@ SquirtleExtraDeck:
 	tx SquirtleExtraDeckName
 
 BulbasaurAndFriendsDeck:
+	; ROM hack: redesigned mono-Grass starter pairing the Bulbasaur and
+	; Chikorita evolution lines, with Caterpie/Metapod/Butterfree and
+	; Sunkern/Sunflora as secondary plays. 21 Pokemon / 24 Energy / 15
+	; Trainers = 60.
 	deck_list_start
-	card_item GRASS_ENERGY,    11
-	card_item FIRE_ENERGY,      3
-	card_item WATER_ENERGY,     9
-	card_item BULBASAUR,        2
-	card_item IVYSAUR,          1
-	card_item VENUSAUR_LV67,    1
-	card_item CATERPIE,         2
-	card_item METAPOD,          1
-	card_item NIDORANF,         2
-	card_item NIDORANM,         2
-	card_item NIDORINO,         1
-	card_item TANGELA_LV12,     1
-	card_item FLAREON_LV28,     1
-	card_item SEEL,             1
-	card_item DEWGONG,          1
-	card_item KRABBY,           2
-	card_item KINGLER,          1
-	card_item GOLDEEN,          2
-	card_item SEAKING,          1
-	card_item VAPOREON_LV42,    1
-	card_item JIGGLYPUFF_LV14,  1
-	card_item MEOWTH_LV14,      1
-	card_item EEVEE,            2
-	card_item KANGASKHAN,       1
-	card_item PROFESSOR_OAK,    1
-	card_item SWITCH,           1
-	card_item POKE_BALL,        1
-	card_item PLUSPOWER,        2
-	card_item DEFENDER,         1
-	card_item FULL_HEAL,        2
-	card_item REVIVE,           1
+	card_item GRASS_ENERGY,     24
+	card_item BULBASAUR,         4
+	card_item IVYSAUR,           2
+	card_item VENUSAUR_LV67,     1
+	card_item CHIKORITA1,        4
+	card_item BAYLEEF2,          2
+	card_item MEGANIUM1,         1
+	card_item CATERPIE,          2
+	card_item METAPOD,           1
+	card_item BUTTERFREE,        1
+	card_item SUNKERN,           2
+	card_item SUNFLORA,          1
+	card_item BILL,              3
+	card_item PROFESSOR_OAK,     2
+	card_item SWITCH,            2
+	card_item POTION,            2
+	card_item ENERGY_REMOVAL,    2
+	card_item ENERGY_RETRIEVAL,  2
+	card_item ENERGY_SEARCH,     2
 	deck_list_end
 	tx BulbasaurAndFriendsDeckName
 
