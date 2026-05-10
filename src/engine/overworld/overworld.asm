@@ -249,7 +249,6 @@ Func_c1b1:
 	ld [wBossSeriesActive], a
 	ld [wBossSeriesPlayerWins], a
 	ld [wBossSeriesOpponentWins], a
-	xor a
 	ld [wPlayTimeCounter + 0], a
 	ld [wPlayTimeCounter + 1], a
 	ld [wPlayTimeCounter + 2], a
