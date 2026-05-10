@@ -2443,6 +2443,17 @@ wd3b9:: ; d3b9
 wMastersBeatenList:: ; d3bb
 	ds $a
 
+; ROM hack: best-of-7 boss series state. Saved alongside the rest of the
+; general save block. wBossSeriesActive holds the NPC ID of the current
+; boss series, or 0 when no series is in progress; BO7_CM_MARKER ($fe)
+; stands in for "this is a Challenge Machine match".
+wBossSeriesActive::
+	ds 1
+wBossSeriesPlayerWins::
+	ds 1
+wBossSeriesOpponentWins::
+	ds 1
+
 wGeneralSaveDataCheckSum:: ; d3c5
 	ds $2
 

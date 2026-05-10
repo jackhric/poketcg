@@ -178,7 +178,14 @@ ChallengeMachine_Duel:
 	xor a
 	ld [wSongOverride], a
 	call SaveGeneralSaveData
+	; ROM hack: every Challenge Machine match is a BO7 series. Wrap the
+	; StartDuel call so the player and AI replay until one side hits 4
+	; wins; the existing CM outer loop then reads the final wDuelResult.
+	call BossSeries_BeginCMMatch
+.bo7_loop
 	bank1call StartDuel_VSAIOpp
+	call BossSeries_AfterDuel
+	jr nz, .bo7_loop
 	ret
 
 ChallengeMachine_SongIDs:

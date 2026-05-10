@@ -183,3 +183,10 @@ RecycleDescription:
 	line "in your discard pile on top of your"
 	line "deck."
 	done
+
+; ROM hack: shown between sub-matches of a best-of-7 boss series.
+; Uses two <RAMNUM> placeholders for the player and opponent win counts.
+BO7BossSeriesScoreText:
+	text "Series score <RAMNUM>-<RAMNUM>."
+	line "First to 4 wins takes the match."
+	done

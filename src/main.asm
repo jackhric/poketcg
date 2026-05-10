@@ -72,6 +72,7 @@ INCLUDE "engine/scenes.asm"
 
 SECTION "Challenge Machine", ROMX
 INCLUDE "engine/challenge_machine.asm"
+INCLUDE "engine/boss_series.asm"
 
 SECTION "Map Objects", ROMX
 INCLUDE "data/npc_map_data.asm"
