@@ -233,6 +233,8 @@ IsRematchExemptNPC:
 	jr z, .exempt
 	cp NPC_AARON
 	jr z, .exempt
+	cp NPC_IMAKUNI              ; multi-fight char with EVENT_IMAKUNI_WIN_COUNT rewards
+	jr z, .exempt
 	jp IsBossSeriesNPC          ; tail-call; carry already encodes match
 .exempt
 	scf

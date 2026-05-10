@@ -363,46 +363,14 @@ Script_EnterLabFirstTime:
 	print_npc_text Text05e8
 .ows_d7bc
 	close_text_box
-	show_sam_rules_multichoice
-	close_text_box
-	jump_if_event_equal EVENT_SAM_MENU_CHOICE, SAM_MENU_NOTHING_TO_ASK, .ows_d80c
-	jump_if_event_equal EVENT_SAM_MENU_CHOICE, SAM_MENU_ATTACKING, .ows_d7e8
-	jump_if_event_equal EVENT_SAM_MENU_CHOICE, SAM_MENU_RETREATING, .ows_d7ee
-	jump_if_event_equal EVENT_SAM_MENU_CHOICE, SAM_MENU_EVOLVING, .ows_d7f4
-	jump_if_event_equal EVENT_SAM_MENU_CHOICE, SAM_MENU_POKEMON_POWER, .ows_d7fa
-	jump_if_event_equal EVENT_SAM_MENU_CHOICE, SAM_MENU_ENDING_YOUR_TURN, .ows_d800
-	jump_if_event_equal EVENT_SAM_MENU_CHOICE, SAM_MENU_WIN_OR_LOSS, .ows_d806
-; SAM_MENU_ENERGY
-	print_npc_text Text05d6
-	script_jump .ows_d7bc
-
-.ows_d7e8
-	print_npc_text Text05d7
-	script_jump .ows_d7bc
-
-.ows_d7ee
-	print_npc_text Text05d8
-	script_jump .ows_d7bc
-
-.ows_d7f4
-	print_npc_text Text05d9
-	script_jump .ows_d7bc
-
-.ows_d7fa
-	print_npc_text Text05da
-	script_jump .ows_d7bc
-
-.ows_d800
-	print_npc_text Text05db
-	script_jump .ows_d7bc
-
-.ows_d806
-	print_npc_text Text05dc
-	script_jump .ows_d7bc
-
+	; ROM hack: the vanilla rules multichoice (with its eight loops of
+	; gameplay-instruction text) forced the player through a menu before
+	; they could reach the practice-duel prompt. Skip it entirely so the
+	; player drops straight into the duel question, which now defaults
+	; to NO -- mashing A through Sam's dialog skips the tutorial.
 .ows_d80c
 	print_npc_text Text05e9
-	ask_question_jump_default_yes NULL, .ows_d817
+	ask_question_jump NULL, .ows_d817
 	; ROM hack: NO at "want a practice duel?" used to loop back into the
 	; rules multichoice with no exit. Now it short-circuits straight into
 	; the post-duel handler, which gives the player their starter deck
