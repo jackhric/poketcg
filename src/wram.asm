@@ -2454,6 +2454,15 @@ wBossSeriesPlayerWins::
 wBossSeriesOpponentWins::
 	ds 1
 
+; ROM hack: bitmap of defeated typical opponents, indexed by NPC ID.
+; Once a typical (non-boss) NPC's bit is set, talking to them again can no
+; longer trigger a duel; instead a "no rematch" textbox is shown. The bit is
+; set when the player wins their first match against that NPC and is
+; awarded a bonus booster pack at the same time. NUM_NPCS is currently 116
+; so 16 bytes is enough; the extra slack is reserved for future NPC IDs.
+wDefeatedNPCs::
+	ds DEFEATED_NPCS_BITMAP_BYTES
+
 wGeneralSaveDataCheckSum:: ; d3c5
 	ds $2
 

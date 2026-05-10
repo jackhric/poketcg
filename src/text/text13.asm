@@ -190,3 +190,10 @@ BO7BossSeriesScoreText:
 	text "Series score <RAMNUM>-<RAMNUM>."
 	line "First to 4 wins takes the match."
 	done
+
+; ROM hack: shown when the player tries to re-fight a typical opponent
+; they have already defeated.
+AlreadyDefeatedNoRematchText:
+	text "I have nothing more"
+	line "to teach you."
+	done

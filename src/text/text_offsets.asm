@@ -2992,3 +2992,4 @@ TextOffsets::
 	textpointer RecycleName                                        ; 0x0bac
 	textpointer RecycleDescription                                 ; 0x0bad
 	textpointer BO7BossSeriesScoreText                             ; 0x0bae
+	textpointer AlreadyDefeatedNoRematchText                       ; 0x0baf

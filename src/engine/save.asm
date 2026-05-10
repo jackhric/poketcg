@@ -497,6 +497,7 @@ WRAMToSRAMMapper:
 	wram_sram_map wBossSeriesActive,                  1, $00, $ff ; ROM hack: BO7 series state
 	wram_sram_map wBossSeriesPlayerWins,              1, $00, $ff
 	wram_sram_map wBossSeriesOpponentWins,            1, $00, $ff
+	wram_sram_map wDefeatedNPCs, DEFEATED_NPCS_BITMAP_BYTES, $00, $ff ; ROM hack
 	dw NULL
 
 ; fills an empty SRAM slot with zero

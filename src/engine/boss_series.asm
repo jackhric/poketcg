@@ -154,6 +154,152 @@ BossSeries_AfterDuel::
 	xor a   ; z
 	ret
 
+; --- ROM hack: defeated-NPC tracking and rematch / bonus-pack hooks. -------
+;
+; "Typical opponent" = any NPC that is not on BossSeriesNPCList. A typical
+; opponent can only be dueled once: winning the first match marks them in
+; wDefeatedNPCs and awards an extra booster pack. Subsequent attempts to
+; trigger a duel against them (via ScriptCommand_StartDuel) are short-
+; circuited with a "no rematch" textbox.
+
+; Resolve an NPC ID into a byte address and bit mask within wDefeatedNPCs.
+; Input:  a = NPC ID
+; Output: hl = pointer to the NPC's byte in wDefeatedNPCs
+;         d  = bitmask (single bit set, position = NPC_ID mod 8)
+;         a  = NPC ID (preserved)
+; Clobbers b, c, e.
+DefeatedNPCsAddrAndMask:
+	ld e, a            ; preserve NPC ID
+	; build d = 1 << (a & 7)
+	and $07
+	ld d, $01
+	or a
+	jr z, .mask_ready
+	ld b, a
+.mask_shift
+	sla d
+	dec b
+	jr nz, .mask_shift
+.mask_ready
+	; hl = wDefeatedNPCs + (NPC_ID >> 3)
+	ld a, e
+	srl a
+	srl a
+	srl a
+	ld c, a
+	ld b, 0
+	ld hl, wDefeatedNPCs
+	add hl, bc
+	ld a, e            ; restore a
+	ret
+
+; Returns carry if the NPC ID in a is marked defeated. Clobbers a and flags.
+IsNPCDefeated::
+	push bc
+	push de
+	push hl
+	call DefeatedNPCsAddrAndMask
+	ld a, [hl]
+	and d                ; z = not set, nz = set; carry always clear after AND
+	pop hl
+	pop de
+	pop bc
+	ret z                ; bit clear => no carry
+	scf
+	ret
+
+; Sets the defeated bit for the NPC ID in a. Clobbers a and flags.
+MarkNPCDefeated::
+	push bc
+	push de
+	push hl
+	call DefeatedNPCsAddrAndMask
+	ld a, [hl]
+	or d
+	ld [hl], a
+	pop hl
+	pop de
+	pop bc
+	ret
+
+; Returns carry if the NPC ID in a is exempt from the rematch-blocking and
+; bonus-pack systems entirely: bosses (handled by BO7), plus a small set of
+; gameplay-special NPCs whose script depends on being talkable repeatedly
+; (Sam runs the practice duel after the tutorial; Aaron offers a legendary-
+; cards challenge keyed on the deck the player picked). Clobbers a/flags;
+; callers must save the NPC ID separately if they need it after the call.
+IsRematchExemptNPC:
+	cp NPC_SAM
+	jr z, .exempt
+	cp NPC_AARON
+	jr z, .exempt
+	jp IsBossSeriesNPC          ; tail-call; carry already encodes match
+.exempt
+	scf
+	ret
+
+; Used by ScriptCommand_GiveBoosterPacks to decide whether to award a bonus
+; booster pack at the end of a winning duel script. Returns carry, AND sets
+; the NPC's defeated bit, only when ALL of:
+;   - the script that's running belongs to the NPC the player just dueled
+;     (wNPCDuelist == the resolved NPC ID passed in)
+;   - the player won (wDuelResult == DUEL_WIN)
+;   - the NPC is a regular pupil (not exempt: not boss, not Sam, not Aaron)
+;   - the NPC hasn't already been marked defeated
+; Input:  a = NPC ID, already resolved from wScriptNPC by the caller
+; Output: carry set => caller should give one extra pack and update SRAM
+;         carry clear => normal post-duel flow
+TryMarkFirstDefeatOfTypical::
+	push bc
+	ld c, a                  ; preserve NPC ID
+	ld a, [wNPCDuelist]
+	cp c
+	jr nz, .no
+	ld a, [wDuelResult]
+	or a
+	jr nz, .no
+	ld a, c
+	call IsRematchExemptNPC
+	jr c, .no
+	ld a, c
+	call IsNPCDefeated
+	jr c, .no
+	ld a, c
+	call MarkNPCDefeated
+	pop bc
+	scf
+	ret
+.no
+	pop bc
+	or a
+	ret
+
+; Returns carry if the NPC ID in a is a typical (non-exempt) opponent that
+; the player has already defeated, and so should not be re-fightable.
+; Preserves a.
+ShouldBlockRematch::
+	push bc
+	push hl
+	push af
+	call IsRematchExemptNPC
+	jr c, .not_blocked
+	; not exempt; check defeated bit
+	pop af
+	push af
+	call IsNPCDefeated
+	jr nc, .not_blocked
+	pop af
+	pop hl
+	pop bc
+	scf
+	ret
+.not_blocked
+	pop af
+	pop hl
+	pop bc
+	or a
+	ret
+
 ; Display "Series score X-Y. First to 4 wins." textbox. Resets the wTxRam3
 ; cursor each call so the two <RAMNUM> placeholders pick up our two values.
 BossSeries_PrintScore:

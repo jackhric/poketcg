@@ -48,6 +48,11 @@ DEF NUM_CHALLENGE_MACHINE_OPPONENTS EQU 5
 DEF BO7_NEEDED_WINS EQU 4
 DEF BO7_CM_MARKER   EQU $fe
 
+; ROM hack: defeated-NPCs bitmap. NUM_NPCS is well under 128 (currently
+; 116), and we round up to 16 bytes so future NPC additions have headroom
+; without re-jiggering save layout.
+DEF DEFEATED_NPCS_BITMAP_BYTES EQU 16
+
 ; rJOYP constants to read SNES input
 DEF JOYP_SGB_MLT_REQ EQU %00000011
 
