@@ -53,6 +53,7 @@ ROMX $04
 	"Map Objects"
 ROMX $05
 	"AI Logic 1"
+	"Boss Series"
 ROMX $06
 	"Menus 4"
 	"Effect Commands"
