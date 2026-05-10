@@ -174,17 +174,17 @@ ROMX $3b
 	"Card Gfx 11"
 ROMX $3c
 	"Card Gfx 12"
-ROMX $30
-	"Card Gfx 13"
-ROMX $1a
-	"Card Gfx 14"
-ROMX $1b
-	"Card Gfx 15"
 ROMX $3d
-	"Audio 1"
+	"Card Gfx 13"
 ROMX $3e
-	"Audio 2"
+	"Card Gfx 14"
 ROMX $3f
+	"Card Gfx 15"
+ROMX $30
+	"Audio 1"
+ROMX $1a
+	"Audio 2"
+ROMX $1b
 	"Audio 3"
 WRAM0
 	"WRAM"
