@@ -616,22 +616,28 @@ SamsPracticeDeck:
 	tx SamsPracticeDeckName
 
 CharmanderAndFriendsDeck:
-	; ROM hack: redesigned mono-Fire starter pairing the Charmander and
-	; Cyndaquil evolution lines, with extra Fire support and a tight
-	; trainer skeleton. 21 Pokemon / 24 Energy / 15 Trainers = 60.
+	; ROM hack: Fire + Lightning dual-type with a colorless splash, in
+	; the spirit of the original game's starter design (Charmander deck
+	; was Fire/Lightning/Fighting). Pairs the Charmander and Cyndaquil
+	; evolution lines as the Fire core, with Pikachu/Magneton lines as
+	; Lightning support and Meowth/Rattata as colorless basics.
+	; 22 Pokemon / 22 Energy / 16 Trainers = 60.
 	deck_list_start
-	card_item FIRE_ENERGY,      24
+	card_item FIRE_ENERGY,      12
+	card_item LIGHTNING_ENERGY, 10
 	card_item CHARMANDER,        4
 	card_item CHARMELEON,        2
 	card_item CHARIZARD,         1
-	card_item CYNDAQUIL1,        4
-	card_item QUILAVA1,          2
+	card_item CYNDAQUIL1,        3
+	card_item QUILAVA1,          1
 	card_item TYPHLOSION1,       1
-	card_item VULPIX,            2
-	card_item NINETALES_LV35,    1
-	card_item MAGMAR_LV24,       2
-	card_item GROWLITHE,         2
-	card_item BILL,              3
+	card_item PIKACHU_LV12,      2
+	card_item RAICHU_LV40,       1
+	card_item MAGNEMITE_LV13,    2
+	card_item MAGNETON_LV28,     1
+	card_item MEOWTH_LV14,       2
+	card_item RATTATA,           2
+	card_item BILL,              4
 	card_item PROFESSOR_OAK,     2
 	card_item SWITCH,            2
 	card_item POTION,            2
@@ -665,23 +671,28 @@ CharmanderExtraDeck:
 	tx CharmanderExtraDeckName
 
 SquirtleAndFriendsDeck:
-	; ROM hack: redesigned mono-Water starter pairing the Squirtle and
-	; Totodile evolution lines, with Seel/Dewgong and Staryu/Starmie as
-	; secondary pressure. 21 Pokemon / 24 Energy / 15 Trainers = 60.
+	; ROM hack: Water + Fighting dual-type with a colorless splash, in
+	; the spirit of the original game's starter design (Squirtle deck
+	; was Water/Fighting/Psychic). Pairs the Squirtle and Totodile
+	; evolution lines as the Water core, with Machop/Geodude lines as
+	; Fighting support and Meowth/Rattata as colorless basics.
+	; 22 Pokemon / 22 Energy / 16 Trainers = 60.
 	deck_list_start
-	card_item WATER_ENERGY,     24
+	card_item WATER_ENERGY,     12
+	card_item FIGHTING_ENERGY,  10
 	card_item SQUIRTLE,          4
 	card_item WARTORTLE,         2
 	card_item BLASTOISE,         1
-	card_item TOTODILE1,         4
-	card_item CROCONAW2,         2
+	card_item TOTODILE1,         3
+	card_item CROCONAW2,         1
 	card_item FERALIGATR2,       1
-	card_item SEEL,              2
-	card_item DEWGONG,           1
-	card_item STARYU,            2
-	card_item STARMIE,           1
-	card_item GOLDEEN,           1
-	card_item BILL,              3
+	card_item MACHOP,            2
+	card_item MACHOKE,           1
+	card_item GEODUDE,           2
+	card_item GRAVELER,          1
+	card_item MEOWTH_LV14,       2
+	card_item RATTATA,           2
+	card_item BILL,              4
 	card_item PROFESSOR_OAK,     2
 	card_item SWITCH,            2
 	card_item POTION,            2
@@ -717,24 +728,28 @@ SquirtleExtraDeck:
 	tx SquirtleExtraDeckName
 
 BulbasaurAndFriendsDeck:
-	; ROM hack: redesigned mono-Grass starter pairing the Bulbasaur and
-	; Chikorita evolution lines, with Caterpie/Metapod/Butterfree and
-	; Sunkern/Sunflora as secondary plays. 21 Pokemon / 24 Energy / 15
-	; Trainers = 60.
+	; ROM hack: Grass + Psychic dual-type with a colorless splash, in
+	; the spirit of the original game's starter design (Bulbasaur deck
+	; was Grass/Fire/Water). Pairs the Bulbasaur and Chikorita evolution
+	; lines as the Grass core, with Abra/Gastly lines as Psychic support
+	; and Meowth/Rattata as colorless basics.
+	; 22 Pokemon / 22 Energy / 16 Trainers = 60.
 	deck_list_start
-	card_item GRASS_ENERGY,     24
+	card_item GRASS_ENERGY,     12
+	card_item PSYCHIC_ENERGY,   10
 	card_item BULBASAUR,         4
 	card_item IVYSAUR,           2
 	card_item VENUSAUR_LV67,     1
-	card_item CHIKORITA1,        4
-	card_item BAYLEEF2,          2
+	card_item CHIKORITA1,        3
+	card_item BAYLEEF2,          1
 	card_item MEGANIUM1,         1
-	card_item CATERPIE,          2
-	card_item METAPOD,           1
-	card_item BUTTERFREE,        1
-	card_item SUNKERN,           2
-	card_item SUNFLORA,          1
-	card_item BILL,              3
+	card_item ABRA,              2
+	card_item KADABRA,           1
+	card_item GASTLY_LV17,       2
+	card_item HAUNTER_LV17,      1
+	card_item MEOWTH_LV14,       2
+	card_item RATTATA,           2
+	card_item BILL,              4
 	card_item PROFESSOR_OAK,     2
 	card_item SWITCH,            2
 	card_item POTION,            2
