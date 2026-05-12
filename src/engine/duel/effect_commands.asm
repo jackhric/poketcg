@@ -1756,9 +1756,11 @@ ReduceDamageBy10EffectCommands:
 
 ; --- Neo additive batch 5 EffectCommands ---
 
-; Damage to attacker + 10 to all opp benched (Magneton Selfdestruct pattern)
+; 10 damage to each of the opponent's benched Pokemon, no recoil.
+; ROM hack: was pointing at MagnetonLv28SelfdestructEffect (80 self +
+; 20 both benches), which doesn't match the description.
 Do10ToAllOppBenchedEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MagnetonLv28SelfdestructEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Do10ToAllOppBenchedEffect
 	db  $00
 
 ; +10 damage per attached water energy (Omanyte Water Gun pattern)
@@ -1987,10 +1989,13 @@ Do10LessPerSelfDamageEffectCommands:
 	dbw EFFECTCMDTYPE_AI, KarateChop_AIEffect
 	db  $00
 
-; +10 damage per defender colorless retreat cost (Butterfree Mega Drain pattern)
+; +10 damage per energy needed to retreat the defending Pokemon.
+; ROM hack: was pointing at ButterfreeMegaDrainEffect (a drain-heal
+; effect that halves damage), which is the opposite of what the
+; description says.
 Do10MorePerOppRCEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ButterfreeMegaDrainEffect
-	dbw EFFECTCMDTYPE_AI, ButterfreeMegaDrainEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Bayleef2GrassKnotEffect
+	dbw EFFECTCMDTYPE_AI, Bayleef2GrassKnotEffect
 	db  $00
 
 ; 20 damage to self after attack (Jigglypuff Double Edge pattern)

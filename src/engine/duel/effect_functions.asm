@@ -11221,3 +11221,43 @@ HealPlayAreaCardHP:
 	add e
 	ld [hl], a
 	ret
+
+; ROM hack: bug fixes for Gen-2 attack effects that were ported with the
+; wrong vanilla effect callbacks.
+
+; Pupitar Sandstorm and Lanturn2 Ion Storm: do 10 damage to each of the
+; opponent's benched Pokemon. The vanilla port pointed these at
+; MagnetonLv28SelfdestructEffect, which also deals 80 to the attacker
+; and 20 to each side's bench -- way more than the description says.
+Do10ToAllOppBenchedEffect::
+	call SwapTurn
+	xor a ; FALSE -- damage to opponent's bench, not self
+	ld [wIsDamageToSelf], a
+	ld a, 10
+	call DealDamageToAllBenchedPokemon
+	call SwapTurn
+	ret
+
+; Bayleef Grass Knot: base damage + 10 per energy needed to retreat the
+; defending Pokemon. The vanilla port pointed this at
+; ButterfreeMegaDrainEffect (which halves damage as drain healing) --
+; the opposite of what the card's description says.
+Bayleef2GrassKnotEffect::
+	call SwapTurn
+	xor a ; PLAY_AREA_ARENA
+	ldh [hTempPlayAreaLocation_ff9d], a
+	call GetPlayAreaCardRetreatCost
+	call SwapTurn
+	or a
+	ret z              ; retreat cost 0 -- no bonus
+	; multiply retreat cost (a) by 10
+	ld b, a
+	xor a
+.scale_loop
+	add 10
+	dec b
+	jr nz, .scale_loop
+	; a = bonus damage; also feed AI's expected-damage tracker
+	ld d, a
+	ld e, a
+	jp UpdateExpectedAIDamage
