@@ -11261,3 +11261,97 @@ Bayleef2GrassKnotEffect::
 	ld d, a
 	ld e, a
 	jp UpdateExpectedAIDamage
+
+; Steelix Heavy Slam: base damage - 10 per energy needed to retreat the
+; defending Pokemon. The vanilla port pointed this at
+; PoliwagWaterGunEffect (which adds damage per attached water energy),
+; the wrong direction and the wrong scaling variable.
+SteelixHeavySlamEffect::
+	call SwapTurn
+	xor a ; PLAY_AREA_ARENA
+	ldh [hTempPlayAreaLocation_ff9d], a
+	call GetPlayAreaCardRetreatCost
+	call SwapTurn
+	or a
+	ret z              ; retreat cost 0 -- no penalty
+	; multiply retreat cost (a) by 10
+	ld b, a
+	xor a
+.scale_loop
+	add 10
+	dec b
+	jr nz, .scale_loop
+	call SubtractFromDamage
+	ret
+
+; Miltank Milk Drink: heal 20 HP from Miltank itself (description: "Remove
+; 2 damage counters from Miltank"). The vanilla port pointed this at
+; DodrioRage_DamageBoostEffect, which adds damage per self-damage counter
+; -- no healing happened.
+MiltankMilkDrinkEffect::
+	ld de, 20
+	jp ApplyAndAnimateHPRecovery
+
+; Hitmontop Triple Kick: flip 3 coins, 30 damage per heads. The vanilla
+; port pointed this at JolteonDoubleKick_MultiplierEffect (2 coins x 20)
+; -- wrong coin count, wrong damage scaling.
+HitmontopTripleKickEffect::
+	ld hl, 30
+	call LoadTxRam3
+	ldtx de, DamageCheckIfHeadsXDamageText
+	ld a, 3
+	call TossCoinATimes_BankB
+	; a = heads (0..3); damage = heads * 30 = (heads*3) * 10
+	ld b, a
+	add a      ; a = 2 * heads
+	add b      ; a = 3 * heads
+	call ATimes10
+	call SetDefiniteDamage
+	ret
+
+; Ledyba Comet Punch: flip 4 coins, 10 damage per heads. The vanilla port
+; pointed this at AcidEffect (which is paralysis/poison-block from Acid),
+; nothing to do with coin-flip damage.
+LedybaCometPunchEffect::
+	ld hl, 10
+	call LoadTxRam3
+	ldtx de, DamageCheckIfHeadsXDamageText
+	ld a, 4
+	call TossCoinATimes_BankB
+	; a = heads (0..4); damage = heads * 10
+	call ATimes10
+	call SetDefiniteDamage
+	ret
+
+; Slowking Psyshock: flip a coin. If heads, deal 10 extra damage and the
+; defending Pokemon becomes Confused. The vanilla port pointed this at
+; NidorinaDoubleKick_MultiplierEffect (2 coins x 30 damage), totally
+; different attack pattern.
+SlowkingPsyshockEffect::
+	ld hl, 10
+	call LoadTxRam3
+	ldtx de, DamageCheckIfHeadsPlusDamageText
+	call TossCoin_BankB
+	ret nc           ; tails: no bonus damage, no confusion
+	ld a, 10
+	call AddToDamage
+	jp ConfusionEffect
+
+; Pineco Selfdestruct: 40 damage to self, 10 to each Pokemon on both
+; benches. The vanilla port pointed this at GolemSelfdestructEffect
+; (100 self + 20 to both benches), so a 70HP Pineco was self-KOing
+; every time.
+PinecoSelfdestructEffect::
+	ld a, 40
+	call DealRecoilDamageToSelf
+	ld a, TRUE
+	ld [wIsDamageToSelf], a
+	ld a, 10
+	call DealDamageToAllBenchedPokemon
+	call SwapTurn
+	xor a ; FALSE
+	ld [wIsDamageToSelf], a
+	ld a, 10
+	call DealDamageToAllBenchedPokemon
+	call SwapTurn
+	ret
