@@ -1709,9 +1709,11 @@ DontApplyWREffectCommands:
 
 ; --- Neo additive batch 3 EffectCommands ---
 
-; Selfdestruct variant: 10 to all benched, 40 to self
+; Selfdestruct variant: 10 to all benched, 40 to self (Pineco). ROM
+; hack: was wired to GolemSelfdestructEffect (100 self + 20 each bench),
+; so Pineco self-KO'd every Selfdestruct.
 Do10ToAllBenchAnd40ToSelfEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GolemSelfdestructEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PinecoSelfdestructEffect
 	db  $00
 
 ; Flip 3 coins, deal 10 per heads
@@ -1756,9 +1758,11 @@ ReduceDamageBy10EffectCommands:
 
 ; --- Neo additive batch 5 EffectCommands ---
 
-; Damage to attacker + 10 to all opp benched (Magneton Selfdestruct pattern)
+; 10 damage to each of the opponent's benched Pokemon, no recoil.
+; ROM hack: was pointing at MagnetonLv28SelfdestructEffect (80 self +
+; 20 both benches), which doesn't match the description.
 Do10ToAllOppBenchedEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MagnetonLv28SelfdestructEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Do10ToAllOppBenchedEffect
 	db  $00
 
 ; +10 damage per attached water energy (Omanyte Water Gun pattern)
@@ -1769,11 +1773,16 @@ WWaterBoostEffectCommands:
 
 ; --- Neo additive batch 6 EffectCommands ---
 
-; Damage to a benched opp once per duel (Leek Slap pattern)
+; 20 damage to a chosen benched opponent (Crobat Surprise Bite, same
+; description as Natu Psywave). ROM hack: was wired to LeekSlap_* (a
+; once-per-duel coin-flip attack), which never dealt bench damage.
+; Re-using the StretchKick selection + damage helpers, which already
+; do exactly this.
 Do20ToABenchEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, LeekSlap_SetUsedThisDuelFlag
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, LeekSlap_OncePerDuelCheck
-	dbw EFFECTCMDTYPE_AI_SELECTION, GengarDarkMind_AISelectEffect
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, StretchKick_CheckBench
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StretchKick_BenchDamageEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StretchKick_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, StretchKick_AISelectEffect
 	db  $00
 
 ; Toxic — double poison (canonical Toxic effect)
@@ -1789,15 +1798,21 @@ Discard1EnergyFromTargetEffectCommands:
 	dbw EFFECTCMDTYPE_AI_SELECTION, Whirlpool_AISelectEffect
 	db  $00
 
-; Flip a coin per opp's benched Pokemon, 20 per heads (Trample pattern)
+; Flip a coin per opp's benched Pokemon, 20 per heads (Trample pattern).
+; TODO: write a proper per-bench coin-flip damage effect. Right now this
+; deliberately has no effect handler, so Tyranitar's Trample lands its
+; base damage but the bench-coin side effect is skipped. Previously the
+; AFTER_DAMAGE handler was wired to ExeggcuteLeechSeedEffect, which
+; HEALED the attacker -- worse than doing nothing.
 MayDo20ToEachOppBenchEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExeggcuteLeechSeedEffect
 	db  $00
 
-; Damage scales down with opp retreat cost (Heavy Slam pattern)
+; Damage scales down with opp retreat cost (Heavy Slam pattern).
+; ROM hack: was pointing at PoliwagWaterGunEffect (which adds damage
+; per attached water energy), the opposite of what the card says.
 Do10LessPerOppRCEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoliwagWaterGunEffect
-	dbw EFFECTCMDTYPE_AI, PoliwagWaterGunEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SteelixHeavySlamEffect
+	dbw EFFECTCMDTYPE_AI, SteelixHeavySlamEffect
 	db  $00
 
 ; Reduce incoming damage by 20 next turn (Iron Tail pattern)
@@ -1829,9 +1844,14 @@ IfNoKOReturnToHandEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, HurricaneEffect
 	db  $00
 
-; Pkmn Power: damage attacker on attack (Kabuto Armor pattern)
+; Pkmn Power: damage the attacker whenever Forretress is hit. TODO:
+; this needs a hook in the damage-resolution path (similar to how
+; KABUTO is special-cased in src/home/substatus.asm to halve damage).
+; The vanilla KabutoArmorEffect only does `scf; ret` -- the actual
+; reduction is keyed on card ID KABUTO and doesn't fire for FORRETRESS.
+; Leaving the table empty makes the power a documented no-op rather
+; than a misleading pointer to an unrelated function.
 IroncladEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, KabutoArmorEffect
 	db  $00
 
 ; Flip 3 coins, 20 per heads (Sandslash Fury Swipes pattern)
@@ -1840,9 +1860,11 @@ CF20X3EffectCommands:
 	dbw EFFECTCMDTYPE_AI, SandslashFurySwipes_AIEffect
 	db  $00
 
-; Flip 4 coins, 10 per heads (uses Acid effect machinery)
+; Flip 4 coins, 10 damage per heads (Ledyba Comet Punch pattern).
+; ROM hack: was pointing at AcidEffect (which is paralysis from Acid),
+; nothing to do with coin-flip damage.
 CF10X4EffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AcidEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LedybaCometPunchEffect
 	dbw EFFECTCMDTYPE_AI, GloomPoisonPowder_AIEffect
 	db  $00
 
@@ -1871,10 +1893,12 @@ DamageSwapEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DamageSwap_SwapEffect
 	db  $00
 
-; Heads = +10 damage and confusion (Nidorina Double Kick pattern)
+; Heads = +10 damage AND confusion (Slowking Psyshock pattern). ROM
+; hack: was pointing at NidorinaDoubleKick_MultiplierEffect (2 coins x
+; 30 damage), which is a different attack pattern entirely.
 MayDo10MoreAndConfuseEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, NidorinaDoubleKick_MultiplierEffect
-	dbw EFFECTCMDTYPE_AI, NidorinaDoubleKick_AIEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SlowkingPsyshockEffect
+	dbw EFFECTCMDTYPE_AI, TaurosStomp_AIEffect
 	db  $00
 
 ; 10 damage to all your benched (Earthquake pattern)
@@ -1882,9 +1906,11 @@ Do10ToOwnBenchEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EarthquakeEffect
 	db  $00
 
-; Flip 3 coins, 30 per heads (Jolteon Double Kick pattern)
+; Flip 3 coins, 30 damage per heads (Hitmontop Triple Kick pattern).
+; ROM hack: was pointing at JolteonDoubleKick_MultiplierEffect (2
+; coins x 20), the wrong coin count and damage.
 CF30X3EffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, JolteonDoubleKick_MultiplierEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HitmontopTripleKickEffect
 	dbw EFFECTCMDTYPE_AI, JolteonDoubleKick_AIEffect
 	db  $00
 
@@ -1895,11 +1921,17 @@ HealHalfDamageEffectCommands:
 
 ; --- Neo additive batch 9 EffectCommands ---
 
-; 20 damage to a single benched opp (Stretch Kick pattern)
+; 20 damage to a single benched opp (Stretch Kick pattern). ROM hack:
+; the AFTER_DAMAGE handler was wired to PikachuLv16GrowlEffect (apply
+; -damage substatus), which had nothing to do with bench damage.
+; Pointing at the real StretchKick_BenchDamageEffect (20 dmg to the
+; selected bench Pokemon) and adding AI_SELECTION so the AI can pick
+; a target.
 Do20ToOppBenchOnlyEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, StretchKick_CheckBench
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PikachuLv16GrowlEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StretchKick_BenchDamageEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StretchKick_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, StretchKick_AISelectEffect
 	db  $00
 
 ; Look at top 3 of opp deck and rearrange (Prophecy pattern)
@@ -1944,10 +1976,11 @@ CFT20ToSelfEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Thrash_RecoilEffect
 	db  $00
 
-; Heal 20 from self (First Aid / Dodrio Rage pattern)
+; Heal 20 from self (Miltank Milk Drink pattern). ROM hack: was pointing
+; at DodrioRage_DamageBoostEffect (which adds damage per self-damage
+; counter), no healing happened.
 Heal20DamageEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DodrioRage_AIEffect
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DodrioRage_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MiltankMilkDrinkEffect
 	db  $00
 
 ; Pkmn Power: heal 30 from all your Pokemon on play (Healing Wind)
@@ -1956,9 +1989,12 @@ ETBHeal30AllSelfEffectCommands:
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, HealingWind_PlayAreaHealEffect
 	db  $00
 
-; Mill 1 opp deck card if attack dealt damage (Spit Poison AI pattern)
+; Mill 1 opp deck card if attack dealt damage. TODO: write a proper
+; top-of-deck-to-discard helper; right now this has no effect handler,
+; so Cyndaquil's Burn lands its base 10 damage but the mill side effect
+; is skipped. Previously this was wired to SpitPoison_AIEffect, which
+; only adjusts the AI's damage estimate and never milled anything.
 Mill1OppCardEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, SpitPoison_AIEffect
 	db  $00
 
 ; +10 damage per self damage counters (Cubone Rage pattern)
@@ -1987,10 +2023,13 @@ Do10LessPerSelfDamageEffectCommands:
 	dbw EFFECTCMDTYPE_AI, KarateChop_AIEffect
 	db  $00
 
-; +10 damage per defender colorless retreat cost (Butterfree Mega Drain pattern)
+; +10 damage per energy needed to retreat the defending Pokemon.
+; ROM hack: was pointing at ButterfreeMegaDrainEffect (a drain-heal
+; effect that halves damage), which is the opposite of what the
+; description says.
 Do10MorePerOppRCEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ButterfreeMegaDrainEffect
-	dbw EFFECTCMDTYPE_AI, ButterfreeMegaDrainEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Bayleef2GrassKnotEffect
+	dbw EFFECTCMDTYPE_AI, Bayleef2GrassKnotEffect
 	db  $00
 
 ; 20 damage to self after attack (Jigglypuff Double Edge pattern)
