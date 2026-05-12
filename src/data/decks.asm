@@ -882,41 +882,52 @@ GrassAndPsychicDeck:
 	tx GrassAndPsychicDeckName
 
 LegendaryMoltresDeck:
+	; ROM hack: difficulty bump for the Grand Master / E4 fights.
+	; Cut Houndour 2 (dead-end line, no Houndoom) and Tauros 1 (singleton
+	; filler) and 2 Fire Energy; added Vulpix 2 + Ninetales Lv35 1 as a
+	; better fire line, Defender 1 against the Water weakness, and a
+	; second Super Energy Retrieval to back the heavy attackers.
 	deck_list_start
-	card_item FIRE_ENERGY,             22
+	card_item FIRE_ENERGY,             20
 	card_item CYNDAQUIL1,               4
 	card_item QUILAVA1,                 3
 	card_item TYPHLOSION1,              2
 	card_item MAGMAR_LV31,              2
 	card_item MOLTRES_LV37,             2
-	card_item HOUNDOUR1,                2
-	card_item TAUROS,                   1
+	card_item VULPIX,                   2
+	card_item NINETALES_LV35,           1
 	card_item BILL,                     4
 	card_item PROFESSOR_OAK,            3
 	card_item POKEMON_BREEDER,          2
 	card_item POKEMON_TRADER,           2
 	card_item ENERGY_RETRIEVAL,         2
-	card_item SUPER_ENERGY_RETRIEVAL,   1
+	card_item SUPER_ENERGY_RETRIEVAL,   2
 	card_item ENERGY_REMOVAL,           2
 	card_item PLUSPOWER,                2
+	card_item DEFENDER,                 1
 	card_item SWITCH,                   2
 	card_item GUST_OF_WIND,             2
 	deck_list_end
 	tx LegendaryMoltresDeckName
 
 LegendaryZapdosDeck:
+	; ROM hack: difficulty bump. Trimmed the Voltorb 4 / Electrode 2
+	; selfdestruct line to 3-1 and added Pokemon Trader 2 so the deck
+	; can actually tutor its Magneton/Lanturn/Electrode finishers
+	; instead of relying on natural draws.
 	deck_list_start
 	card_item LIGHTNING_ENERGY,        20
 	card_item MAGNEMITE_LV13,           3
 	card_item MAGNETON_LV28,            2
-	card_item VOLTORB,                  4
-	card_item ELECTRODE_LV35,           2
+	card_item VOLTORB,                  3
+	card_item ELECTRODE_LV35,           1
 	card_item ELECTABUZZ_LV35,          3
 	card_item ZAPDOS_LV68,              2
 	card_item CHINCHOU1,                2
 	card_item LANTURN2,                 1
 	card_item BILL,                     4
 	card_item PROFESSOR_OAK,            3
+	card_item POKEMON_TRADER,           2
 	card_item ENERGY_RETRIEVAL,         2
 	card_item ENERGY_REMOVAL,           2
 	card_item SUPER_ENERGY_REMOVAL,     1
@@ -929,6 +940,10 @@ LegendaryZapdosDeck:
 	tx LegendaryZapdosDeckName
 
 LegendaryArticunoDeck:
+	; ROM hack: difficulty bump. Cut the unworkable Seel 1 / Dewgong 1
+	; mini-line and the lone Imposter Oak; tightened to Mr Mime 2 and
+	; added Pokemon Trader 2 + Defender 1 so the Slowking/Articuno/
+	; Chansey core actually shows up in hand and survives longer.
 	deck_list_start
 	card_item WATER_ENERGY,            16
 	card_item PSYCHIC_ENERGY,           4
@@ -938,28 +953,30 @@ LegendaryArticunoDeck:
 	card_item MANTINE,                  2
 	card_item SLOWPOKE_LV9,             2
 	card_item SLOWKING,                 2
-	card_item SEEL,                     1
-	card_item DEWGONG,                  1
 	card_item CHANSEY,                  2
-	card_item MR_MIME,                  1
+	card_item MR_MIME,                  2
 	card_item BILL,                     4
 	card_item PROFESSOR_OAK,            3
-	card_item IMPOSTER_PROFESSOR_OAK,   1
+	card_item POKEMON_TRADER,           2
 	card_item COMPUTER_SEARCH,          2
 	card_item ENERGY_RETRIEVAL,         2
 	card_item POKEMON_CENTER,           2
+	card_item DEFENDER,                 1
 	card_item SWITCH,                   2
 	card_item GUST_OF_WIND,             2
-	card_item PLUSPOWER,                2
+	card_item PLUSPOWER,                1
 	deck_list_end
 	tx LegendaryArticunoDeckName
 
 LegendaryDragoniteDeck:
+	; ROM hack: difficulty bump. Thickened Charmander 3 -> 4 so the
+	; Charizard line actually lands; cut the singleton Lapras filler
+	; and Imposter Oak; added Pokemon Trader 2 to tutor the dragons.
 	deck_list_start
 	card_item FIRE_ENERGY,             11
 	card_item WATER_ENERGY,             7
 	card_item DOUBLE_COLORLESS_ENERGY,  4
-	card_item CHARMANDER,               3
+	card_item CHARMANDER,               4
 	card_item CHARMELEON,               2
 	card_item CHARIZARD,                2
 	card_item MAGIKARP,                 2
@@ -967,10 +984,9 @@ LegendaryDragoniteDeck:
 	card_item DRATINI,                  3
 	card_item DRAGONAIR,                2
 	card_item DRAGONITE_LV41,           2
-	card_item LAPRAS,                   1
 	card_item BILL,                     3
 	card_item PROFESSOR_OAK,            3
-	card_item IMPOSTER_PROFESSOR_OAK,   1
+	card_item POKEMON_TRADER,           1
 	card_item POKEMON_BREEDER,          2
 	card_item ENERGY_RETRIEVAL,         2
 	card_item SUPER_ENERGY_RETRIEVAL,   1
@@ -1229,31 +1245,35 @@ PowerfulRonaldDeck:
 	tx PowerfulRonaldDeckName
 
 InvincibleRonaldDeck:
+	; ROM hack: rebuilt as a focused Haymaker. The vanilla deck spread
+	; 5 energy types across multiple half-finished evolution lines
+	; (Muk 1 / Crobat 1 / Espeon 1 / Geodude with no Golem), none of
+	; which reliably landed. The new build trims to 4 energy types and
+	; runs hyper-aggressive basics: Scyther 4, Hitmonchan 3, Magmar
+	; Lv31 4, Mr Mime 2, Eevee 4 -- 17 strong basics, no dead-end
+	; evolutions. Adds Computer Search 2 + Pokemon Trader 2 for tutor
+	; consistency.
 	deck_list_start
-	card_item GRASS_ENERGY,             4
 	card_item FIRE_ENERGY,              6
-	card_item FIGHTING_ENERGY,          4
+	card_item FIGHTING_ENERGY,          8
 	card_item PSYCHIC_ENERGY,           4
 	card_item DOUBLE_COLORLESS_ENERGY,  4
-	card_item GRIMER,                   2
-	card_item MUK,                      1
-	card_item SCYTHER,                  3
-	card_item MAGMAR_LV31,              2
-	card_item GEODUDE,                  3
-	card_item GRAVELER,                 2
-	card_item ZUBAT,                    2
-	card_item GOLBAT,                   1
-	card_item CROBAT,                   1
-	card_item EEVEE,                    2
-	card_item ESPEON1,                  1
+	card_item SCYTHER,                  4
+	card_item HITMONCHAN,               3
+	card_item MAGMAR_LV31,              4
+	card_item MR_MIME,                  2
+	card_item EEVEE,                    4
 	card_item BILL,                     4
 	card_item PROFESSOR_OAK,            3
-	card_item POKEMON_BREEDER,          2
+	card_item POKEMON_TRADER,           2
+	card_item COMPUTER_SEARCH,          2
+	card_item ENERGY_RETRIEVAL,         1
 	card_item ENERGY_REMOVAL,           1
 	card_item SUPER_ENERGY_REMOVAL,     1
 	card_item SCOOP_UP,                 2
 	card_item GUST_OF_WIND,             2
-	card_item PLUSPOWER,                2
+	card_item PLUSPOWER,                1
+	card_item DEFENDER,                 1
 	card_item SWITCH,                   1
 	deck_list_end
 	tx InvincibleRonaldDeckName
